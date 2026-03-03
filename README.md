@@ -5,6 +5,8 @@
 
 Install Git if you don't have it: https://git-scm.com/downloads
 
+------ X ------ X ------ X ----- X ------ X ------ X ----- X -----
+
 Open Terminal/Command Prompt and run:
 
 git clone https://github.com/pondaSohem/repo-name.git

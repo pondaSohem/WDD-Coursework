@@ -9,9 +9,9 @@ Install Git if you don't have it: https://git-scm.com/downloads
 
 Open Terminal/Command Prompt and run:
 
-git clone https://github.com/pondaSohem/repo-name.git
+git clone https://github.com/pondaSohem/WDD-Coursework.git
 
-cd repo-name
+cd WDD-Coursework
 
 ------ X ------ X ------ X ----- X ------ X ------ X ----- X -----
 

@@ -1,3 +1,91 @@
 :root {
     --primary-color: hsl(190, 100%, 66%);
 }
+
+body {
+    background-color: aliceblue;
+    font-family:Helvetica, sans-serif;
+}
+
+
+/* CARDS & CONTAINER */
+.card {
+            background-color:#a8a8a8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+           
+            
+        }
+
+.head-card{
+  background-color:#a8a8a8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+
+}
+
+
+.container{
+  background-color: #c7c3c3;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADINGS */
+
+
+
+/* header */
+header{
+    background-color:#009cd9;
+}
+/* Navigation Bar */
+.nav-menu {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  display: flex; /* Arranges list items in a row */
+  justify-content: space-around; /* Distributes items evenly with space around them */
+}
+
+.nav-menu li {
+  padding: 5px; /* Adds space around each list item */
+}
+
+.nav-menu a {
+  text-decoration: none; /* Removes underlines from links */
+}
+
+
+
+/* Main */
+main{}
+
+/* Galley */
+
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+  height:300px;
+    width:300px;
+}
+
+/* footer */
+footer{}
+
+/* Card Container */
+.card{}

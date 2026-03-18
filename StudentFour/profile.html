@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coursework </title>
+    <!-- Linking css -->
+    <link rel="stylesheet" href="../GlobalTemplate/template.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
+
 <body>
-    
+
+    <!-- HEADER -->
+    <header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../StudentOne/home.html">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li class="active"><a href="#">User Profile</a></li>
+                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+
+                <!-- LOGO -->
+                <img src="../assets/MUULA.png" height="50px" width="50px">
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SPACER DIV - NEW -->
+    <div class="header-spacer"></div>
+
+    <!-- MAIN -->
+    <main>
+
+        <div class="prompt-input-pd">
+            <div class="container">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <p id="prompt-name">
+                        Name: 
+                    </p>
+                    <p id="prompt-username">
+                        Username:
+                    </p>
+                    <p id="prompt-role">
+                        Role:
+                    </p>
+                    <div class="btn-container">
+                        <button class="pd-prompt" onclick="startPDPrompt()">Enter</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="prompt-input-pref">
+            <div class="container">
+                <fieldset>
+                    <legend>Preferences</legend>
+
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="prompt-input-other">
+            <div class="container">
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                </fieldset>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
+
+    <!-- JavaScript linking -->
+    <script src="profile.js"></script>
 </body>
+
 </html>

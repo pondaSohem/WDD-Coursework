@@ -1,0 +1,50 @@
+:root {
+    --bd-colour: hsl(0, 0%, 0%);
+    --btn-colour: hsl(0, 0%, 100%);
+    --btn-active-colour: hsl(0, 0%, 80%);
+    --radius: 10px;
+    --pad: 10px
+}
+
+.prompt-input-pd, .prompt-input-pref, .prompt-input-other {
+    background-color: var(--bd-colour);
+    border-radius: var(--radius);
+}
+
+fieldset {
+    border: 3px solid var(--bd-colour);
+    border-radius: var(--radius);
+}
+
+legend {
+    background-color: antiquewhite;
+    padding: var(--pad);
+    border-radius: var(--radius);
+}
+
+p {
+    font-size: 17px;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pd-prompt {
+    border: 2px solid var(--bd-colour);
+    background-color: var(--btn-colour);
+    transition: 0.3s ease-out;
+    height: 40px;
+    width: 70px;
+}
+
+.pd-prompt:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.pd-prompt:active {
+    background-color: var(--btn-active-colour);
+}

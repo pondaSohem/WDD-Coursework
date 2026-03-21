@@ -60,13 +60,13 @@
                         Name: 
                     </p>
                     <p id="prompt-username">
-                        Username:
+                        Username: 
                     </p>
                     <p id="prompt-role">
-                        Role:
+                        Role: 
                     </p>
                     <div class="btn-container">
-                        <button class="pd-prompt" onclick="startPDPrompt()">Enter</button>
+                        <button class="prompt-btn" onclick="startPDPrompt()">Enter</button>
                     </div>
                 </fieldset>
             </div>
@@ -76,7 +76,18 @@
             <div class="container">
                 <fieldset>
                     <legend>Preferences</legend>
-
+                    <p id="prompt-topic-pref">
+                        Subject/Topic Most Passionate About: 
+                    </p>
+                    <p id="prompt-curr-level">
+                        Current Education Level: 
+                    </p>
+                    <p id="prompt-learning-res">
+                        Most Used Learning Resource: 
+                    </p>
+                    <div class="btn-container">
+                        <button class="prompt-btn" onclick="startPrefPrompt()">Enter</button>
+                    </div>
                 </fieldset>
             </div>
         </div>
@@ -84,8 +95,22 @@
         <div class="prompt-input-other">
             <div class="container">
                 <fieldset>
-                    <legend>Preferences</legend>
-                    
+                    <legend>Goals/Contributions</legend>
+                        <p id="prompt-contribution">
+                            I Wish To Contribute By: 
+                        </p>
+                        <p id="prompt-challenge">
+                            Educational Challenge I Want To Solve:
+                        </p>
+                        <p id="prompt-learning-goal">
+                            My Personal Learning Goal: 
+                        </p>
+                        <p id="prompt-resource">
+                            Personal Resource I Am Willing To Offer:
+                        </p>
+                        <div class="btn-container">
+                            <button class="prompt-btn" onclick="startGoalPrompt()">Enter</button>
+                        </div>
                 </fieldset>
             </div>
         </div>

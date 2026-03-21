@@ -19,7 +19,7 @@
     background-color: hsl(85, 100%, 66%);
     border-radius: var(--radius);
     padding: 0;
-    height: var(--pad);
+    height: 15px;
     width: 1%;
 }
 
@@ -49,7 +49,7 @@ legend {
     justify-content: center;
 }
 
-.pd-prompt {
+.prompt-btn {
     border: 2px solid var(--bd-colour);
     background-color: var(--btn-colour);
     transition: 0.3s ease-out;
@@ -57,12 +57,15 @@ legend {
     width: 70px;
 }
 
-.pd-prompt:hover {
+.prompt-btn:hover {
     cursor: pointer;
     transform: scale(1.15);
 }
 
-.pd-prompt:active {
+.prompt-btn:active {
     background-color: var(--btn-active-colour);
 }
 
+.change-btn {
+    margin-right: var(--pad);
+}

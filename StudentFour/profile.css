@@ -16,21 +16,42 @@
 }
 
 .progress-bar {
-    background-color: hsl(85, 100%, 66%);
+    background-color: hsl(0, 100%, 50%);
     border-radius: var(--radius);
     padding: 0;
     height: 15px;
     width: 1%;
 }
 
-.prompt-input-pd, .prompt-input-pref, .prompt-input-other {
-    background-color: var(--bd-colour);
-    border-radius: var(--radius);
+.flex-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
+
+.prompt-input-pd, .prompt-input-pref {
+    border-radius: var(--radius);
+    flex: 1;
+    /* Makes both containers grow equally */
+    min-width: 250px;
+    /* Prevents them from getting too small */
+    max-width: 45%;
+    /* Limits maximum width */
+}
+
+ .prompt-input-other {
+    border-radius: var(--radius);
+    margin-top: 20px;
+    max-width: 100%;
+ }
 
 fieldset {
     border: 3px solid var(--bd-colour);
     border-radius: var(--radius);
+    background-color: hsl(0, 0%, 100%);
 }
 
 legend {
@@ -49,7 +70,7 @@ legend {
     justify-content: center;
 }
 
-.prompt-btn {
+.prompt-btn{
     border: 2px solid var(--bd-colour);
     background-color: var(--btn-colour);
     transition: 0.3s ease-out;
@@ -62,10 +83,19 @@ legend {
     transform: scale(1.15);
 }
 
-.prompt-btn:active {
+.prompt-btn:active, .change-btn:active {
     background-color: var(--btn-active-colour);
 }
 
 .change-btn {
-    margin-right: var(--pad);
+    border: 2px solid var(--bd-colour);
+    background-color: var(--btn-colour);
+    transition: 0.3s ease-out;
+    height: 25px;
+    width: 70px;
+}
+
+.change-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }

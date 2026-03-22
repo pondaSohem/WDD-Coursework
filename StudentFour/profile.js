@@ -19,6 +19,7 @@ const promptChallenge = document.getElementById("prompt-challenge");
 const promptLearningGoal = document.getElementById("prompt-learning-goal");
 const promptResource = document.getElementById("prompt-resource");
 
+
 const fields = [
     [promptName, promptUsernameName, promptRole],
     [promptTopic, promptEducationLevel, promptLearningRes],
@@ -35,7 +36,6 @@ function addChangeButton(field) {
     newButton.onclick = function() {
         changeThis(field);
     };
-    newButton.id = "change-btn";
     newButton.textContent = "Change";
     field.appendChild(newButton);
 }
@@ -52,25 +52,36 @@ function changeThis(field) {
     const newValue = prompt("Change to", defaultMessage);
     
     if (newValue && newValue.trim() !== "" && newValue !== defaultMessage) {
-        // Get the label part (before colon)
-        const label = field.innerHTML.split(':')[0];
-        // Update with new value
-        field.innerHTML = `${label}: ${newValue}\t`;
+        const label = field.innerHTML.split(':')[0]; // Get the label part (before colon)
+        field.innerHTML = `${label}: ${newValue}\t`; // Update with new value
+        addChangeButton(field); // Keep the change button
         alert(`Changed to: ${newValue}`);
     } else if (newValue !== null) {
         alert("Invalid input! Keeping original value.");
     }
 }
 
+function removeEnterButton(category) {
+    document.getElementById(`${category}-btn`).remove();
+}
+
+// function checkEntryButton(categoryNum) {
+//     for (let i = 0; i < fields[categoryNum].length; i++) {
+//         if (fields[categoryNum][i].innerHTML) {
+//         }
+//     }
+// }
+
 function updateProgressBar() {
     // get the number bit and then set it with the counter
     currentProgress.innerHTML = `Current Progress: ${completeCounter}/10`;
     // increasing the width of the bar
-    currentProgressBar.style.width = `${completeCounter * 10}%`;
+    currentProgressBar.style.width = `${completeCounter * 10}%`; // Update the progress
+    currentProgressBar.style.backgroundColor = `hsl(${completeCounter * 10}, 100%, 50%)`; // Update colour from red to green
 }
 
 function showSkipMessage() {
-    alert("SKIPPED!\nYou many do this later");
+    alert("SKIPPED!\nYou may do this later");
 }
 
 function startPDPrompt() {

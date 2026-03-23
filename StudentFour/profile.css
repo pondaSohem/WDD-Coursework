@@ -1,7 +1,8 @@
 :root {
     --bd-colour: hsl(0, 0%, 0%);
-    --btn-colour: hsl(0, 0%, 100%);
-    --btn-active-colour: hsl(0, 0%, 80%);
+    --btn-colour: hsl(205, 47%, 42%);
+    --btn-hover-colour: hsl(205, 47%, 35%);
+    --btn-active-colour: hsl(205, 47%, 22%);
     --radius: 10px;
     --pad: 10px
 }
@@ -23,30 +24,10 @@
     width: 1%;
 }
 
-.flex-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.prompt-input-pd, .prompt-input-pref {
+.prompt-input-pd, .prompt-input-pref, .prompt-input-other {
     border-radius: var(--radius);
-    flex: 1;
-    /* Makes both containers grow equally */
-    min-width: 250px;
-    /* Prevents them from getting too small */
-    max-width: 45%;
-    /* Limits maximum width */
+    font-size: 16px;
 }
-
- .prompt-input-other {
-    border-radius: var(--radius);
-    margin-top: 20px;
-    max-width: 100%;
- }
 
 fieldset {
     border: 3px solid var(--bd-colour);
@@ -60,42 +41,30 @@ legend {
     border-radius: var(--radius);
 }
 
-.prompt-input-pd p {
-    font-size: 17px;
-}
-
-.btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .prompt-btn{
-    border: 2px solid var(--bd-colour);
-    background-color: var(--btn-colour);
-    transition: 0.3s ease-out;
-    height: 40px;
-    width: 70px;
+    background: hsl(0, 0%, 100%);
+    border: none;
+    color: var(--btn-colour);
+    text-decoration: underline;
+    font-size: 16px;
 }
 
 .prompt-btn:hover {
     cursor: pointer;
-    transform: scale(1.15);
-}
-
-.prompt-btn:active, .change-btn:active {
-    background-color: var(--btn-active-colour);
-}
-
-.change-btn {
-    border: 2px solid var(--bd-colour);
-    background-color: var(--btn-colour);
-    transition: 0.3s ease-out;
-    height: 25px;
-    width: 70px;
-}
-
-.change-btn:hover {
-    cursor: pointer;
+    color: var(--btn-hover-colour);
     transform: scale(1.05);
+}
+
+.prompt-btn:active {
+    color: var(--btn-active-colour);
+}
+
+.left-field {
+    float: left;
+    text-align: left;
+}
+
+.right-value {
+    float: right;
+    text-align: right;
 }

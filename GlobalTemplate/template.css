@@ -1,138 +1,110 @@
-/* Variable Declaration Used in the Global Template */
-:root {
-    --black-alpha: rgba(0, 0, 0, 0.1);
-    --header-colour: #0186bb;
-    --hover-colour: #009cd9;
-    --active-colour: #007dae;
-    --card-bg-colour: #a8a8a8;
-    --container-bg-colour: #c7c3c3;
-    --header-height: 70px;
-}
-
 body {
     background-color: aliceblue;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: var(--header-height) 0 0 0; /* Top padding = header height */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    font-family:Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
+    
 }
 
-/* HEADER */
-header {
-    background-color: var(--header-colour);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
-    box-shadow: 0 2px 5px var(--black-alpha);
-}
-
-/* Navigation Bar */
-.nav-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch; /* Makes items stretch full height */
-    flex-wrap: nowrap; /* Prevents wrapping */
-    height: var(--header-height); /* Match header height */
-}
-
-.nav-menu li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 12px;
-    transition: background-color 0.3s ease-in-out;
-    text-align: center;
-    height: var(--header-height); /* Full height */
-    flex: 0 0 auto; /* Prevents shrinking */
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: whitesmoke;
-    font-weight: bolder;
-    display: block;
-    white-space: nowrap; /* Prevents text wrapping */
-    font-size: 15px;
-}
-
-/* Logo styling */
-.nav-menu img {
-    align-self: center;
-    padding: 5px;
-    margin-left: auto;
-    flex: 0 0 auto;
-    height: 50px;
-    width: 50px;
-}
-
-/* Hover effects */
-nav li:hover {
-    background-color: var(--hover-colour);
-    cursor: pointer;
-}
-
-nav li:active {
-    background-color: var(--active-colour);
-}
-
-.active,
-.active:hover {
-    background-color: var(--active-colour);
-    border: solid var(--hover-colour) 0.5px;
-    box-sizing: border-box;
-}
-
-/* MAIN CONTENT */
-main {
-    flex: 1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-}
 
 /* CARDS & CONTAINER */
 .card {
-    background-color: var(--card-bg-colour);
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px var(--black-alpha);
-    letter-spacing: 1px;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+            background-color:#a8a8a8;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+           
+            
+        }
+
+.head-card{
+  background-color:#a8a8a8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+
 }
 
-.head-card {
-    background-color: var(--card-bg-colour);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px var(--black-alpha);
-    text-align: center;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+
+.container{
+  background-color: #c7c3c3;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
 }
 
-.container {
-    background-color: var(--container-bg-colour);
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px var(--black-alpha);
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+
+
+/* HEADINGS */
+
+
+
+/* header */
+header{
+    background-color:#009cd9;
+    position: fixed;/* Makes the Navigatioon bar stay fixed to the top of the page */
+    margin: 0%;
+    margin-top: auto;
+    padding: 0%;
+    top: 0%;
+    width: 100%;
+      z-index: 1000; /*This keeps the nav bar on top */
+
+
+}
+/* Navigation Bar */
+.nav-menu {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  display: flex; /* Arranges list items in a row */
+  justify-content: space-around; /*Distributes items evenly with space around them*/
+}
+
+.nav-menu li {
+  padding: 5px; /* Adds space around each list item */
+  border: solid #009cd9 0.5px;
+  border-radius: 20%;
+  
+}
+
+.nav-menu a {
+  text-decoration: none; /* Removes underlines from links */
+  line-height: 50px; /* Makes the text float in the centre of the container */
+  color: whitesmoke;
+  font-weight: bolder;
+}
+nav li:hover {
+   background-color: #0186bb;
+  }
+        
+nav a.active {
+  background-color: #cf7369;
+  font-weight: bold;
+        }
+
+
+
+
+/* Main */
+main{
+    margin-top: 70px;
+
+
 }
 
 /* SECTIONS */
@@ -142,7 +114,7 @@ main {
     grid-template-rows: repeat(6, 1fr);
     gap: 8px;
 }
-
+    
 .div1 {
     grid-column: span 4 / span 4;
     grid-row: span 3 / span 3;
@@ -161,29 +133,75 @@ main {
     grid-row-start: 4;
 }
 
-/* Gallery */
+
+
+
+/* Galley */
+
 .scroll-container {
-    background-color: #333;
-    overflow: auto;
-    white-space: nowrap;
-    padding: 10px;
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+   position: relative;
+    z-index: 1; /* Lower z-index so images stay behind nav */
+    margin-top: 70px; /* Add space for fixed header */
+
 }
 
 .scroll-container img {
-    padding: 10px;
-    height: 400px;
-    width: 400px;
-    margin-top: 4%;
+  padding: 10px;
+  height:400px;
+  width:400px;
+  margin-top: 4%;
 }
 
-/* FOOTER */
-footer {
-     background-color:#009cd9;
+/* HOVER */
+/* Gallery */
+.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container a {
+  display: inline-block;
+  overflow: visible;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.scroll-container img {
+  padding: 10px;
+  height: 400px;
+  width: 400px;
+  margin-top: 4%;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.scroll-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Higher than container but lower than header */
+
+}
+
+
+/* footer */
+footer{
+   background-color:#009cd9;
     /* position: fixed;Makes the Navigatioon bar stay fixed to the top of the page */
     margin: 0%;
     padding: 0%;
     width: 100%;
 }
+
+/* Card Container */
+.card{}
+
 .foot-container {
   display: flex;
   justify-content: center;
@@ -198,3 +216,26 @@ footer {
   font-weight: bolder;
   color: black;
 }
+
+/* BACK TO TOP */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+
+.back-to-top:hover {
+    background-color: #1abc9c;
+    transform: scale(1.1);
+}
+

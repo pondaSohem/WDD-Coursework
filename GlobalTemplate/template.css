@@ -178,9 +178,23 @@ main {
 
 /* FOOTER */
 footer {
-    background-color: var(--header-colour);
-    color: whitesmoke;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
+     background-color:#009cd9;
+    /* position: fixed;Makes the Navigatioon bar stay fixed to the top of the page */
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+}
+.foot-container {
+  display: flex;
+  justify-content: center;
+}
+
+.foot-link {
+  list-style: none;
+}
+
+.footer-link {
+  
+  font-weight: bolder;
+  color: black;
 }

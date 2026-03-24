@@ -53,7 +53,7 @@
 
         <!-- CONTAINERS FOR DIFFERENT SECTIONS THAT WILL PROMPT -->
 
-        <div class="flex-container">
+        <!-- <div class="flex-container">
             <div class="prompt-input-pd">
                 <div class="container">
                     <fieldset>
@@ -74,47 +74,104 @@
                 </div>
             </div>
             
+            
+        </div> -->
+        <div class="flex-container">
+
+            <div class="prompt-input-pd">
+                <div class="container">
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                        <div class="left-field">
+                            <p id="prompt-name">
+                                Name:
+                            </p>
+                            <p id="prompt-username">
+                                Username:
+                            </p>
+                            <p id="prompt-role">
+                                Role:
+                            </p>
+                        </div>
+                        <div class="right-value">
+                            <p id="value-name">
+                                <button id="name" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
+                            <p id="value-username">
+                                <button id="username" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
+                            <p id="value-role">
+                                <button id="role" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
             <div class="prompt-input-pref">
                 <div class="container">
                     <fieldset>
                         <legend>Preferences</legend>
-                        <p id="prompt-topic-pref">
-                            Subject/Topic Most Passionate About:
-                        </p>
-                        <p id="prompt-curr-level">
-                            Current Education Level:
-                        </p>
-                        <p id="prompt-learning-res">
-                            Most Used Learning Resource:
-                        </p>
-                        <div class="btn-container">
-                            <button class="prompt-btn" onclick="startPrefPrompt()" id="pref-btn">Enter</button>
+                            <div class="left-field">
+                                <p id="prompt-topic-pref">
+                                    Subject/Topic Most Passionate About:
+                                </p>
+                                <p id="prompt-curr-level">
+                                    Current Education Level:
+                                </p>
+                                <p id="prompt-learning-res">
+                                    Most Used Learning Resource:
+                                </p>
+                            </div>
+                            <div class="right-value">
+                                <p id="value-topic-pref">
+                                    <button id="topic-pref" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                                </p>
+                                <p id="value-curr-level">
+                                    <button id="curr-level" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                                </p>
+                                <p id="value-learning-res">
+                                    <button id="learning-res" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                                </p>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <div class="prompt-input-other">
+                <div class="container">
+                    <fieldset>
+                        <legend>Goals/Contributions</legend>
+                        <div class="left-field">
+                            <p id="prompt-contribution">
+                                I Wish To Contribute By:
+                            </p>
+                            <p id="prompt-challenge">
+                                Educational Challenge I Want To Solve:
+                            </p>
+                            <p id="prompt-learning-goal">
+                                My Personal Learning Goal:
+                            </p>
+                            <p id="prompt-resource">
+                                Personal Resource I Am Willing To Offer:
+                            </p>
+                        </div>
+                        <div class="right-value">
+                            <p id="value-contribution">
+                                <button id="contribution" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
+                            <p id="value-challenge">
+                                <button id="challenge" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
+                            <p id="value-learning-goal">
+                                <button id="learning-goal" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
+                            <p id="value-resource">
+                                <button id="resource" class="prompt-btn" onclick="enterValue(this.id)">Enter Here</button>
+                            </p>
                         </div>
                     </fieldset>
                 </div>
-            </div>    
-        </div>
-
-        <div class="prompt-input-other">
-            <div class="container">
-                <fieldset>
-                    <legend>Goals/Contributions</legend>
-                    <p id="prompt-contribution">
-                        I Wish To Contribute By:
-                    </p>
-                    <p id="prompt-challenge">
-                        Educational Challenge I Want To Solve:
-                    </p>
-                    <p id="prompt-learning-goal">
-                        My Personal Learning Goal:
-                    </p>
-                    <p id="prompt-resource">
-                        Personal Resource I Am Willing To Offer:
-                    </p>
-                    <div class="btn-container">
-                        <button class="prompt-btn" onclick="startGoalPrompt()" id="goal-btn">Enter</button>
-                    </div>
-                </fieldset>
             </div>
         </div>
             

@@ -20,14 +20,16 @@
             <ul class="nav-menu">
                 <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>x`
                 <li class="active"><a href="#">User Profile</a></li>
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
                 <!-- LOGO -->
-                <img src="../assets/MUULA.png" height="50px" width="50px">
+                 <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50px" width="50px">
+                 </div>
             </ul>
         </nav>
     </header>
@@ -53,29 +55,6 @@
 
         <!-- CONTAINERS FOR DIFFERENT SECTIONS THAT WILL PROMPT -->
 
-        <!-- <div class="flex-container">
-            <div class="prompt-input-pd">
-                <div class="container">
-                    <fieldset>
-                        <legend>Personal Details</legend>
-                        <p id="prompt-name">
-                            Name:
-                        </p>
-                        <p id="prompt-username">
-                            Username:
-                        </p>
-                        <p id="prompt-role">
-                            Role:
-                        </p>
-                        <div class="btn-container">
-                            <button class="prompt-btn" onclick="startPDPrompt()" id="pd-btn">Enter</button>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-            
-            
-        </div> -->
         <div class="flex-container">
 
             <div class="prompt-input-pd">
@@ -177,13 +156,38 @@
             
     </main>
 
-    <!-- FOOTER -->
     <footer>
-
+        <div class="foot-container">
+            <h4>&copy; TWATS</h4>
+            <ul class="foot-link">
+                <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
+                <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
+            </ul>
+    
+        </div>
     </footer>
 
+    <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+
     <!-- JavaScript linking -->
-    <script src="profile.js"></script>
+    <script src="profile.js">
+    </script>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 </body>
 
 </html>

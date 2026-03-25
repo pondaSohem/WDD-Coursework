@@ -53,5 +53,16 @@
     </footer>
 </body>
 
-<a href="#top" class="back-to-top">⬆ Back to Top</a>
+<a href="#top" class="top-btn" id="top-btn">⬆</a>
+<script>
+    const topButton = document.getElementById("top-btn");
+    topButton.addEventListener('mouseenter', () => {
+        topButton.innerHTML = "⬆ Back To Top";
+        topButton.style.backgroundColor = "#1abc9c";
+    })
+    topButton.addEventListener('mouseleave', () => {
+        topButton.innerHTML = "⬆";
+        topButton.style.backgroundClip = "#2c3e50";
+    })
+</script>
 </html>

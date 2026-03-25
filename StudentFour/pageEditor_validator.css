@@ -12,6 +12,12 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+
+.header-space {
+    height: 70px;
+    width: 100%;
+}
+
 main {
     flex: 3;
 }
@@ -57,7 +63,7 @@ aside li{
     line-height: 0;
     background-color: #cbccc2ef;
     color: white;
-    margin-top: 8px;
+    margin-top: 70px;
 }
 
 .top {

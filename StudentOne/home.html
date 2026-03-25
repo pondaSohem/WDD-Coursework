@@ -17,7 +17,7 @@
         <!-- NAVIGATION -->
          <nav>
             <ul class="nav-menu">
-                <li><a href="#Home">Home</a></li>
+                <li class="active"><a href="#Home">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
                 <li><a href="../StudentFour/profile.html">User Profile</a></li>
@@ -26,7 +26,10 @@
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
                 <!-- LOGO -->
-                <img src="../assets/MUULA.png" height="50px" width="50px">
+                 <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50px" width="50px">
+                 </div>
+                
             </ul>
         </nav>
 
@@ -145,8 +148,23 @@ wait a minute. I have a great idea... I'll stick with you. You and me in green f
             
         </div>
     </footer>
+    <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 </body>
-
-<a href="#top" class="back-to-top">⬆ Back to Top</a>
 
 </html>

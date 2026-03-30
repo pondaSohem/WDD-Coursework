@@ -308,7 +308,6 @@ footer{
     margin: 0 5px;
 }
 
-<<<<<<< HEAD
 /* Overlay text - hidden by default */
 .overlay-text {
     position: absolute;
@@ -351,6 +350,7 @@ footer{
     transform: scale(1.04);
 }
 
+
 /* footer */
 footer{
    background-color:#009cd9;
@@ -387,7 +387,6 @@ footer{
     color: white;
     padding: 12px 18px;
     border-radius: 25px;
-=======
 /* TEXT POP UP */
 /* Image card container */
 .image-card {
@@ -395,7 +394,6 @@ footer{
     display: inline-block;
     overflow: hidden;
     border-radius: 10px;
->>>>>>> dea96ceee78a62c74a55ac23b2bd60b266ca021f
     text-decoration: none;
     margin: 0 5px;
 }

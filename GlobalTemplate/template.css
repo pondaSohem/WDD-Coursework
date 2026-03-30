@@ -93,15 +93,12 @@ header{
   padding: 0 10px;
 }
 
-<<<<<<< HEAD
-=======
 .logo-img {
   margin-left: auto;
   flex-shrink: 0;
   padding: 0 10px;
 }
 
->>>>>>> f792b777cd65340ead6069d0b0ec1bce05b0bb80
 nav li:hover {
    background-color: #0186bb;
 }
@@ -109,16 +106,10 @@ nav li:hover {
 nav a:active {
   font-weight: bold;
 }
-<<<<<<< HEAD
-=======
 
 .active {
   background-color: #0186bb;
 }
-
-
-
->>>>>>> f792b777cd65340ead6069d0b0ec1bce05b0bb80
 
 /* Main */
 main{
@@ -206,7 +197,6 @@ main{
   z-index: 2; /* Higher than container but lower than header */
 
 }
-
 
 /* footer */
 footer{

@@ -42,6 +42,56 @@ function showSkipMessage() {
     alert("SKIPPED!\nYou may do this later");
 }
 
+function isValidUsername(username) {
+    const checks = {
+        hasUpper : false,
+        hasLower : false,
+        hasSpecial : false,
+        hasNumber : false,
+        hasNoSpace : username.includes(' '),
+    }
+
+    // helper functions
+
+    const isUpper = (char) => {
+        return char === char.toUpperCase() && char !== char.toLowerCase();
+    }
+
+    const isLower = (char) => {
+        return char === char.toLowerCase() && char !== char.toUpperCase();
+    }
+
+    const isDigit = (char) => {
+        return /^\d$/.test(char);
+    }
+
+    const special = [
+        '!', '@', '#', '$', '%', '*',
+    ];
+
+    for (let i = 0; i < username.length; i++) {
+        let thisChar = username[i];
+        switch (thisChar) {
+            case isUpper(thisChar):
+                checks.hasUpper = true;
+                break;
+            case isLower(thisChar):
+                checks.hasLower = true;
+                break;
+            case special.includes(thisChar):
+                checks.hasSpecial = true;
+                break;
+            case isDigit(thisChar):
+                checks.hasNumber = true;
+                break;
+            default:
+                continue;
+        }
+    }
+
+    return Object.values(checks).every(value => value === true) ? true : false;
+}
+
 function enterValue(field) {
     const promptText = fieldConfig[field];
     if (!promptText) return;
@@ -66,7 +116,12 @@ function enterValue(field) {
         }
     } else if (value !== null && existingValue && existingValue !== "") {
         alert("Keeping original value!");
-    } else if (!existingValue || existingValue === "") {
+    } else {
         showSkipMessage();
     }
+
+    if (field === "username") {
+        console.log(isValidUsername(value));
+    }   
 }
+

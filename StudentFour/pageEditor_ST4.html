@@ -7,6 +7,7 @@
     <title>Page Editor Student - provide your student name</title>
 
     <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="../GlobalTemplate/template.css">
 
 </head>
 
@@ -18,7 +19,7 @@
         <!-- NAVIGATION -->
         <nav>
             <ul class="nav-menu">
-                <li><a href="#Home">Home</a></li>
+                <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
                 <li><a href="../StudentFour/profile.html">User Profile</a></li>
@@ -27,10 +28,15 @@
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
         
                 <!-- LOGO -->
-                <img src="../assets/MUULA.png" height="50px" width="50px">
+                <li class="logo-img">
+                    <img src="../assets/MUULA.png" height="50px" width="50px">
+                </li>
             </ul>
         </nav>
     </header>
+
+    <!-- SPACER DIV - NEW -->
+    <div class="header-spacer"></div>
 
     <section class="stud">
         <h2>Sohem Rai, team name, Student Four</h2>
@@ -154,8 +160,8 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>3 Feb 2026</td>
-                            <td>Face-to-face</td>
+                            <td>28 Feb 2026</td>
+                            <td>Online</td>
                             <td>Agree SDG and assign roles</td>
                             <td>Yes</td>
                             <td>I agreed to take responsibility for the Home Page and template.</td>
@@ -163,7 +169,7 @@
 
                         <tr>
                             <td>2</td>
-                            <td>17 Feb 2026</td>
+                            <td>15 April 2026</td>
                             <td>Online</td>
                             <td>Review Home Page design</td>
                             <td>Yes</td>
@@ -173,7 +179,7 @@
                         <tr>
                             <td>3</td>
                             <td>03 Mar 2026</td>
-                            <td>Hybrid</td>
+                            <td>Face-to-Face</td>
                             <td>Progress review</td>
                             <td>No</td>
                             <td>I reviewed meeting notes and followed up with tasks.</td>
@@ -236,28 +242,28 @@
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
                 <li>Student 1</li>
                 <ul>
-                    <li><a href="#home">Home page </a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#content">Content</a></li>
+                    <li><a href="../StudentOne/home.html">Home page </a></li>
+                    <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                    <li><a href="../StudentOne/content_ST1.html">Content</a></li>
                 </ul>
                 <li>Student 2</li>
                 <ul>
-                    <li><a href="#">Splash Screen</a></li>
-                    <li><a href="#">Action Impact Simulator</a></li>
-                    <li><a href="#">Content</a></li>
+                    <li><a href="../StudentTwo/splash.html">Splash Screen</a></li>
+                    <li><a href="../StudentTwo/splash.html">Action Impact Simulator</a></li>
+                    <li><a href="../StudentTwo/content_ST2.html">Content</a></li>
                 </ul>
 
                 <li>Student 3</li>
                 <ul>
-                    <li><a href="#">Feedback</a> </li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Content</a></li>
+                    <li><a href="../StudentThree/feedback.html">Feedback</a> </li>
+                    <li><a href="../StudentThree/team.html">Team</a></li>
+                    <li><a href="../StudentThree/content_ST3.html">Content</a></li>
                 </ul>
                 <li>Student 4</li>
                 <ul>
-                    <li><a href="#">User Profile </a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Content</a></li>
+                    <li><a href="profile.html">User Profile </a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="content_ST4.html">Content</a></li>
                 </ul>
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
@@ -268,7 +274,14 @@
     </div>
 
     <footer>
-        <p>Replace this footer with your teams' website footer</p>
+        <div class="foot-container">
+            <h4>&copy; TWATS</h4>
+            <ul class="foot-link">
+                <li><a href="#PageEditor" class="footer-link"> Page Editor</a></li>
+                <li><a href="#Validation" class="footer-link">Validation</a></li>
+            </ul>
+    
+        </div>
     </footer>
 </body>
 

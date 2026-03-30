@@ -6,6 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function checkname(frm) {
+            if (frm.username.value.length < 8) {
+                alert("Username must be at least 8 characters long.");
+                frm.username.value=" ";
+                return;
+            }cd
+
+
+
+
+
+            
+            alert(frm.username.value);
+        }
+    </script>
+    <form>
+        <input type="text" name="username" placeholder="Username">
+        <button type="button" onclick="checkname(this.form)">Test</button>
+
+    </form>
 </body>
 </html>

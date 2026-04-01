@@ -388,6 +388,10 @@ footer{
     padding: 12px 18px;
     border-radius: 25px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1706235d1157ae36b782706fd5f22a49cadd447d
 /* TEXT POP UP */
 /* Image card container */
 .image-card {
@@ -413,12 +417,6 @@ footer{
     transition: transform 0.3s ease;
     font-size: 18px;
     font-weight: bold;
-<<<<<<< HEAD
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: 0.3s ease-in-out;
-    z-index: 1000;
-=======
->>>>>>> dea96ceee78a62c74a55ac23b2bd60b266ca021f
 }
 
 .overlay-text span {

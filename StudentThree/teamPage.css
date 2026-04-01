@@ -1,0 +1,134 @@
+/* Make the body take full viewport height and use flexbox */
+body {
+  min-height: 110vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Make main content take remaining space */
+main {
+  flex: 1;
+  margin-top: 70px; /* Keep your existing margin-top */
+}
+
+/* Override conflicting global styles for team page only */
+.team-gallery .image-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  margin: 0;
+  flex: 1;
+  max-width: 23%;
+  background-color: #1a1a2e; /* Background color for the card */
+  
+  /* Remove aspect-ratio from card, let it be determined by content */
+  transition: all 0.4s ease;
+}
+
+/* Image wrapper maintains the square shape */
+.team-gallery .image-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square wrapper that never changes */
+  overflow: hidden;
+  flex-shrink: 0; /* Prevent the wrapper from shrinking */
+}
+
+.team-gallery .image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: grayscale(100%);
+}
+
+.team-gallery .image-card:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+/* Override overlay text for team page */
+.team-gallery .overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2)); /*Used AI to get Gradient right */
+  color: white;
+  padding: 15px 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.team-gallery .image-card:hover .overlay-text {
+  transform: translateY(0);
+}
+
+/* Style for the text inside overlay */
+.team-gallery .image-card__name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.team-gallery .image-card__role {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Info card that expands on hover */
+.team-gallery .info-card {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.team-gallery .image-card:hover .info-card {
+  max-height: 200px;
+  padding: 1rem;
+}
+
+/* Team gallery container */
+.team-gallery {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Info card typography */
+.team-gallery .info-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+.team-gallery .info-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Footer styling - ensure it stays at bottom */
+footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+.team-heading {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #1a1a2e;
+  font-weight: bold;
+}

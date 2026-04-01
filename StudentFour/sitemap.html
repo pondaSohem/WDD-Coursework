@@ -7,6 +7,7 @@
     <title>Coursework </title>
     <!-- Linking css -->
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
+    <link rel="stylesheet" href="sitemap.css">
 </head>
 
 
@@ -14,20 +15,22 @@
 
     <!-- HEADER -->
     <header>
-
+    
         <!-- NAVIGATION -->
         <nav>
             <ul class="nav-menu">
-                <li><a href="#Home">Home</a></li>
+                <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li class="active"><a href="#">User Profile</a></li>
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
-                <li class="active"><a href="../StudentFour/sitemap.html">Sitemap</a></li>
-
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+    
                 <!-- LOGO -->
-                <img src="../assets/MUULA.png" height="50px" width="50px">
+                <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50px" width="50px">
+                </div>
             </ul>
         </nav>
     </header>
@@ -35,13 +38,274 @@
 
     <!-- MAIN -->
     <main>
-
-
+        <!-- <svg width="360" height="150" viewBox="0 0 360 150" fill="none">
+            <rect x="2.5" y="2.5" width="100" height="40" rx="17.5" fill="#45B1E8" stroke="#A01C00" stroke-width="5" />
+            <text x ="30" y="30" fill="black">SPLASH!</text>
+        </svg> -->
+    <div class="container">
+        <div class="svg-wrapper">
+            <svg viewBox="0 0 1200 950">
+                <!-- Variable Declaration -->
+                <defs>
+                    <!-- Arrow marker for connection lines -->
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                        <polygon points="0 0, 10 5, 0 10" fill="#666" />
+                    </marker>
+    
+                    <!-- Gradients for different node types -->
+                    <linearGradient id="splashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#ee5a5a;stop-opacity:1" />
+                    </linearGradient>
+    
+                    <linearGradient id="homeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#009cd9;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0077aa;stop-opacity:1" />
+                    </linearGradient>
+    
+                    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#5dade2;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#3498db;stop-opacity:1" />
+                    </linearGradient>
+    
+                    <linearGradient id="contentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58d68d;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+    
+                <!-- Background -->
+                <rect width="1200" height="950" fill="#fff" />
+    
+                <!-- SPLASH SCREEN -->
+                <g class="node-group" id="splash-node">
+                    <a href="../StudentTwo/splash.html" class="node-link" tabindex="0">
+                        <rect x="525" y="30" width="150" height="60" rx="10" class="node-rect" fill="url(#splashGradient)"
+                            stroke="#ff6b6b" stroke-width="2" />
+                        <text x="600" y="68" text-anchor="middle" class="node-text" fill="white" font-size="14"
+                            font-weight="bold">Splash Screen</text>
+                    </a>
+                </g>
+    
+                <!-- Splash to Home -->
+                <line x1="600" y1="90" x2="600" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+    
+                <!-- HOME PAGE -->
+                <g class="node-group" id="home-node">
+                    <a href="../StudentOne/home.html" class="node-link" tabindex="0">
+                        <rect x="525" y="150" width="150" height="60" rx="10" class="node-rect" fill="url(#homeGradient)"
+                            stroke="#009cd9" stroke-width="2" />
+                        <text x="600" y="188" text-anchor="middle" class="node-text" fill="white" font-size="14"
+                            font-weight="bold">Home Page</text>
+                    </a>
+                </g>
+    
+                <!-- MAIN PAGES (Left to Right: AIS, Feedback, Team, Profile, Sitemap) -->
+                <!-- AIS -->
+                <g class="node-group" id="ais-node">
+                    <a href="../StudentTwo/ais.html" class="node-link" tabindex="0">
+                        <rect x="150" y="280" width="140" height="55" rx="8" class="node-rect" fill="url(#mainGradient)"
+                            stroke="#3498db" stroke-width="2" />
+                        <text x="220" y="315" text-anchor="middle" class="node-text" fill="white" font-size="11">Action
+                            Impact Simulator</text>
+                    </a>
+                </g>
+    
+                <!-- Feedback -->
+                <g class="node-group" id="feedback-node">
+                    <a href="../StudentThree/feedback.html" class="node-link" tabindex="0">
+                        <rect x="330" y="280" width="120" height="55" rx="8" class="node-rect" fill="url(#mainGradient)"
+                            stroke="#3498db" stroke-width="2" />
+                        <text x="390" y="315" text-anchor="middle" class="node-text" fill="white"
+                            font-size="11">Feedback</text>
+                    </a>
+                </g>
+    
+                <!-- Team Page -->
+                <g class="node-group" id="team-node">
+                    <a href="../StudentThree/team.html" class="node-link" tabindex="0">
+                        <rect x="490" y="280" width="120" height="55" rx="8" class="node-rect" fill="url(#mainGradient)"
+                            stroke="#3498db" stroke-width="2" />
+                        <text x="550" y="315" text-anchor="middle" class="node-text" fill="white" font-size="11">Team
+                            Page</text>
+                    </a>
+                </g>
+    
+                <!-- User Profile -->
+                <g class="node-group" id="profile-node">
+                    <a href="profile.html" class="node-link" tabindex="0">
+                        <rect x="650" y="280" width="120" height="55" rx="8" class="node-rect" fill="url(#mainGradient)"
+                            stroke="#3498db" stroke-width="2" />
+                        <text x="710" y="315" text-anchor="middle" class="node-text" fill="white" font-size="11">User
+                            Profile</text>
+                    </a>
+                </g>
+    
+                <!-- Sitemap -->
+                <g class="node-group" id="sitemap-node">
+                    <a href="sitemap.html" class="node-link" tabindex="0">
+                        <rect x="810" y="280" width="120" height="55" rx="8" class="node-rect" fill="#1abc9c"
+                            stroke="#1abc9c" stroke-width="2" />
+                        <text x="870" y="315" text-anchor="middle" class="node-text" fill="white" font-size="11"
+                            font-weight="bold">Sitemap</text>
+                    </a>
+                </g>
+    
+                <!-- Home to Main Pages -->
+                <line x1="560" y1="210" x2="220" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+                <line x1="580" y1="210" x2="390" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+                <line x1="600" y1="210" x2="550" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+                <line x1="620" y1="210" x2="710" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+                <line x1="640" y1="210" x2="870" y2="280" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+    
+                <!-- GALLERY - Repositioned to avoid overlap -->
+                <g class="node-group" id="gallery-node">
+                    <a href="../StudentOne/gallery.html" class="node-link" tabindex="0">
+                        <rect x="525" y="420" width="150" height="55" rx="8" class="node-rect" fill="#f39c12"
+                            stroke="#f39c12" stroke-width="2" />
+                        <text x="600" y="455" text-anchor="middle" class="node-text" fill="white" font-size="12"
+                            font-weight="bold">Gallery</text>
+                    </a>
+                </g>
+    
+                <!-- Home to Gallery -->
+                <line x1="615" y1="210" x2="615" y2="420" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"
+                    class="connection-line" />
+    
+                <!-- CONTENT PAGES (Linked from Gallery) - Repositioned lower -->
+                <!-- Student 1 Content -->
+                <g class="node-group" id="content1-node">
+                    <a href="../StudentOne/content_ST1.html" class="node-link" tabindex="0">
+                        <rect x="150" y="570" width="160" height="55" rx="8" class="node-rect" fill="url(#contentGradient)"
+                            stroke="#2ecc71" stroke-width="2" />
+                        <text x="230" y="605" text-anchor="middle" class="node-text" fill="white" font-size="10">Content -
+                            Student 1</text>
+                    </a>
+                </g>
+    
+                <!-- Student 2 Content -->
+                <g class="node-group" id="content2-node">
+                    <a href="../StudentTwo/content_ST2.html" class="node-link" tabindex="0">
+                        <rect x="350" y="570" width="160" height="55" rx="8" class="node-rect" fill="url(#contentGradient)"
+                            stroke="#2ecc71" stroke-width="2" />
+                        <text x="430" y="605" text-anchor="middle" class="node-text" fill="white" font-size="10">Content -
+                            Student 2</text>
+                    </a>
+                </g>
+    
+                <!-- Student 3 Content -->
+                <g class="node-group" id="content3-node">
+                    <a href="../StudentThree/content_ST3.html" class="node-link" tabindex="0">
+                        <rect x="550" y="570" width="160" height="55" rx="8" class="node-rect" fill="url(#contentGradient)"
+                            stroke="#2ecc71" stroke-width="2" />
+                        <text x="630" y="605" text-anchor="middle" class="node-text" fill="white" font-size="10">Content -
+                            Student 3</text>
+                    </a>
+                </g>
+    
+                <!-- Student 4 Content -->
+                <g class="node-group" id="content4-node">
+                    <a href="content_ST4.html" class="node-link" tabindex="0">
+                        <rect x="750" y="570" width="160" height="55" rx="8" class="node-rect" fill="url(#contentGradient)"
+                            stroke="#2ecc71" stroke-width="2" />
+                        <text x="830" y="605" text-anchor="middle" class="node-text" fill="white" font-size="10">Content -
+                            Student 4</text>
+                    </a>
+                </g>
+    
+                <!-- Gallery → Content Pages - Adjusted lines -->
+                <line x1="560" y1="475" x2="230" y2="570" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"
+                    class="connection-line" />
+                <line x1="580" y1="475" x2="430" y2="570" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"
+                    class="connection-line" />
+                <line x1="600" y1="475" x2="630" y2="570" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"
+                    class="connection-line" />
+                <line x1="620" y1="475" x2="830" y2="570" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"
+                    class="connection-line" />
+    
+                <!-- SUPPORT PAGES -->
+                <!-- Page Editor -->
+                <g class="node-group" id="pageEditor-node">
+                    <a href="pageEditor_ST4.html" class="node-link" tabindex="0">
+                        <rect x="400" y="720" width="130" height="50" rx="8" class="node-rect" fill="#95a5a6"
+                            stroke="#7f8c8d" stroke-width="2" />
+                        <text x="465" y="752" text-anchor="middle" class="node-text" fill="white" font-size="10">Page Editor
+                            (S4)</text>
+                    </a>
+                </g>
+    
+                <!-- Validation -->
+                <g class="node-group" id="validation-node">
+                    <a href="validation_ST4.html" class="node-link" tabindex="0">
+                        <rect x="570" y="720" width="130" height="50" rx="8" class="node-rect" fill="#95a5a6"
+                            stroke="#7f8c8d" stroke-width="2" />
+                        <text x="635" y="752" text-anchor="middle" class="node-text" fill="white" font-size="10">Validation
+                            (S4)</text>
+                    </a>
+                </g>
+    
+                <!-- Connection lines from content pages to support pages -->
+                <line x1="600" y1="625" x2="465" y2="720" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"
+                    class="connection-line" />
+                <line x1="600" y1="625" x2="635" y2="720" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"
+                    class="connection-line" />
+    
+                <!-- Legend -->
+                <g transform="translate(40, 870)">
+                    <rect x="0" y="0" width="20" height="20" fill="url(#splashGradient)" rx="3" />
+                    <text x="25" y="16" font-size="10" fill="#333">Splash Screen</text>
+    
+                    <rect x="130" y="0" width="20" height="20" fill="url(#homeGradient)" rx="3" />
+                    <text x="155" y="16" font-size="10" fill="#333">Home Page</text>
+    
+                    <rect x="260" y="0" width="20" height="20" fill="url(#mainGradient)" rx="3" />
+                    <text x="285" y="16" font-size="10" fill="#333">Main Pages</text>
+    
+                    <rect x="390" y="0" width="20" height="20" fill="#f39c12" rx="3" />
+                    <text x="415" y="16" font-size="10" fill="#333">Gallery</text>
+    
+                    <rect x="520" y="0" width="20" height="20" fill="url(#contentGradient)" rx="3" />
+                    <text x="545" y="16" font-size="10" fill="#333">Content Pages</text>
+    
+                    <rect x="670" y="0" width="20" height="20" fill="#95a5a6" rx="3" />
+                    <text x="695" y="16" font-size="10" fill="#333">Support Pages</text>
+                </g>
+            </svg>
+        </div>
     </main>
 
 
     <!-- FOOTER -->
-    <footer></footer>
+    <footer>
+        <div class="foot-container">
+            <h4>&copy; TWATS</h4>
+            <ul class="foot-link">
+                <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
+                <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
+            </ul>
+    
+        </div>
+    </footer>
+    </body>
+    
+    <a href="#" class="top-btn" id="top-btn">⬆</a>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundClip = "#2c3e50";
+        })
+    </script>
 </body>
 
 

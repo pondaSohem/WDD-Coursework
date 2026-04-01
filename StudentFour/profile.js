@@ -30,6 +30,7 @@ const fieldConfig = {
     "resource": "What resource can you offer to improve education access?",
 };
 
+// Update progress bar's colour and progress
 function updateProgressBar() {
     // get the number bit and then set it with the counter
     currentProgress.innerHTML = `Current Progress: ${completeCounter}/10`;
@@ -38,10 +39,12 @@ function updateProgressBar() {
     currentProgressBar.style.backgroundColor = `hsl(${completeCounter * 10}, 100%, 50%)`; // Update colour from red to green
 }
 
+// Used a lot later so made this a function
 function showSkipMessage() {
     alert("SKIPPED!\nYou may do this later");
 }
 
+// WIP
 function isValidUsername(username) {
     const checks = {
         hasUpper : false,
@@ -92,18 +95,19 @@ function isValidUsername(username) {
     return Object.values(checks).every(value => value === true) ? true : false;
 }
 
+// Function to enter the value || Also checks if something was already input before
 function enterValue(field) {
     const promptText = fieldConfig[field];
-    if (!promptText) return;
+    if (!promptText) return; // Exit if there is no existing prompt
 
     const existingValue = userData[field];
-    let message = promptText;
+    let message = promptText; // If there is already an existing value, the new message will be prompt
 
     if (existingValue && existingValue !== "") {
         message = `${promptText}\n\nEnter Value to Update:`
     }
 
-    const value = prompt(message, existingValue || defaultMessage);
+    const value = prompt(message, existingValue || defaultMessage); // If got existing value, display else display the defaultMessage
 
     if (value && value.trim() !== "" && value !== defaultMessage) {
         // Storing

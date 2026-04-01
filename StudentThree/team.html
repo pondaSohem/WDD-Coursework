@@ -4,71 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coursework </title>
-    <!-- Linking css -->
+    <title>Coursework</title>
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
     <link rel="stylesheet" href="teamPage.css">
 </head>
 
-
 <body>
 
-    <!-- HEADER -->
-    <header>
+<header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="../StudentOne/home.html">Home</a></li>
+            <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+            <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+            <li><a href="../StudentFour/profile.html">User Profile</a></li>
+            <li><a href="../StudentThree/feedback.html">Feedback</a></li>
+            <li class="active"><a href="../StudentThree/team.html">Team Page</a></li>
+            <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+            <img src="../assets/MUULA.png" height="50" width="50">
+        </ul>
+    </nav>
+</header>
 
-        <!-- NAVIGATION -->
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../StudentOne/home.html">Home</a></li>
-                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-                <li><a href="../StudentFour/profile.html">User Profile</a></li>
-                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
-                <li class="active"><a href="../StudentThree/team.html">Team Page</a></li>
-                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+<main>
+    <h1 class="team-heading">MEET THE TEAM</h1>
+    <div class="team-gallery">
 
-                <!-- LOGO -->
-                <img src="../assets/MUULA.png" height="50px" width="50px">
-            </ul>
-        </nav>
-    </header>
-
-
-    <!-- MAIN -->
-    <main>
-        <div class="team-gallery">
-        <a href="" class="image-card">
-            <img src="../assets/putercat.jfif" alt="Student-1 Sulav Maharjan">
-            <div class="overlay-text left-align"><div class="image-card_H1">Sulav Maharjan</div>Student 1</div>
+        <!-- CARD 1 -->
+        <a href="#" class="image-card">
+            <div class="image-card__img-wrap">
+                <img src="../assets/putercat.jfif" alt="Sulav Maharjan">
+                <div class="overlay-text left-align">
+                    <div class="image-card__name">SULAV</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>Sulav Maharjan</h3>
+                <p><strong>Role:</strong> Student 1</p>
+                <p><strong>Responsible for:</strong></p>
+                <p><ul>
+                    <li>Template</li>
+                    <li>Nav Bar</li>
+                    <li>Home Page</li>
+                    <li>Gallery</li>
+                    <li>Validation</li>
+                    <li>Page Editor</li>
+                </ul></p>
+            </div>
         </a>
-        <a href="" class="image-card">
-            <img src="../assets/dingus.jfif" alt="Student-2 Yugesh Maharjan">
-            <div class="overlay-text left-align"><div class="image-card_H1">Yugesh Maharjan</div>Student 2</div>
-        </a>
-        <a href="" class="image-card">
-            <img src="../assets/seebs.webp" alt="Student-3 Shreejal Manandhar">
-            <div class="overlay-text left-align"><div class="image-card_H1">Shreejal Manandhar</div>Student 3</div>  
-        </a>
-        <a href="" class="image-card">
-            <img src="../assets/bingus.jfif" alt="Student-4 Sohem Rai">
-            <div class="overlay-text left-align"><div class="image-card_H1">Sohem Rai</div>Student 4</div>
-        </a>
-        </div>
-    </main>
 
+        <!-- CARD 2 -->
+        <a href="#" class="image-card">
+            <div class="image-card__img-wrap">
+                <img src="../assets/dingus.jfif" alt="Yugesh Maharjan">
+                <div class="overlay-text left-align">
+                    <div class="image-card__name">YUGESH</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>Yugesh Maharjan</h3>
+                <p><strong>Role:</strong> Student 2</p>
+                <p><strong>Responsible for:</strong></p>
+                <p><ul>
+                    <li>Splash Screen</li>
+                    <li>Action Impact Simulator</li>
+                    <li>Validation</li>
+                    <li>Page Editor</li>
+                </ul></p>
+            </div>
+        </a>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="foot-container">
-            <h4>&copy; TWATS</h4>
-            <ul class="foot-link">
-                <li><a href="#PageEditor" class="footer-link"> Page Editor</a></li>
-                <li><a href="#Validation" class="footer-link">Validation</a></li>
-            </ul>
-            
-        </div>
-    </footer>
+        <!-- CARD 3 -->
+        <a href="#" class="image-card">
+            <div class="image-card__img-wrap">
+                <img src="../assets/seebs.webp" alt="Shreejal Manandhar">
+                <div class="overlay-text left-align">
+                    <div class="image-card__name">SHREEJAL</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>Shreejal Manandhar</h3>
+                <p><strong>Role:</strong> Student 3</p>
+                <p><strong>Responsible for:</strong></p>
+                <p><ul>
+                    <li>Feedback</li>
+                    <li>Team</li>
+                    <li>Validation</li>
+                    <li>Page Editor</li>
+                </ul></p>
+            </div>
+        </a>
+
+        <!-- CARD 4 -->
+        <a href="#" class="image-card">
+            <div class="image-card__img-wrap">
+                <img src="../assets/bingus.jfif" alt="Sohem Rai">
+                <div class="overlay-text left-align">
+                    <div class="image-card__name">SOHEM</div>
+                </div>
+            </div>
+            <div class="info-card">
+                <h3>Sohem Rai</h3>
+                <p><strong>Role:</strong> Student 4</p>
+                <p><strong>Responsible for:</strong></p>
+                <p><ul>
+                    <li>User Profile</li>
+                    <li>Sitemap</li>
+                    <li>Validation</li>
+                    <li>Page Editor</li>
+                </ul></p>
+            </div>
+        </a>
+
+    </div>
+</main>
+
+<footer>
+    <div class="foot-container">
+        <h4>&copy; TWATS</h4>
+        <ul class="foot-link">
+            <li><a href="#PageEditor">Page Editor</a></li>
+            <li><a href="#Validation">Validation</a></li>
+        </ul>
+    </div>
+</footer>
+
 </body>
-
-
 </html>

@@ -3,29 +3,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coursework</title>
+    <link rel="stylesheet" href="../GlobalTemplate/template.css">
+    <link rel="stylesheet" href="feedback.css">
 </head>
-<body>
+<body id="top">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../StudentOne/home.html">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li class="active"><a href="feedback.html">Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+                <li class="logo-img"><img src="../assets/MUULA.png" height="45" width="45" alt="SDG Logo"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>Feedback - SDG 4</h1>
+            <p>Join programmes, volunteer, and help achieve quality education for all.</p>
+        </div>
+
+        <!-- PROGRAMS SECTION WITH HORIZONTAL SCROLL -->
+        <div class="section">
+            <h2>PROGRAMMES & OPPORTUNITIES</h2>
+            <p>Browse initiatives below. Scroll sideways to see all available options →</p>
+
+            <div class="filter-bar">
+                <label for="sortDropdown">Sort by:</label>
+                <select id="sortDropdown" class="filter-select">
+                    <option>Most Popular</option>
+                    <option>Newest</option>
+                    <option>Student-Friendly</option>
+                </select>
+                <label for="typeDropdown">Type:</label>
+                <select id="typeDropdown" class="filter-select">
+                    <option>All Types</option>
+                    <option>Volunteering</option>
+                    <option>Campaign</option>
+                    <option>Community Project</option>
+                    <option>Student Action</option>
+                </select>
+            </div>
+
+            <!-- horizontal scroll container -->
+            <div class="cards-scroll">
+                <div class="prog-card">
+                    <div class="card-thumb">
+                        <img src="../assets/img1.jpg" alt="Teach & Reach programme" class="card-image">
+                    </div>
+                    <span class="card-tag">Volunteering</span>
+                    <h3>Teach & Reach</h3>
+                    <p>Volunteer as a literacy coach in under-resourced schools. Help children develop reading skills.</p>
+                    <a href="#" class="btn-card">Get Involved →</a>
+                </div>
+
+                <div class="prog-card">
+                    <div class="card-thumb">
+                        <img src="../assets/img2.avif" alt="Digital Bridges programme" class="card-image">
+                    </div>
+                    <span class="card-tag">Student Action</span>
+                    <h3>Digital Bridges</h3>
+                    <p>Student-led campaign donating refurbished laptops and providing digital skills training to rural communities.</p>
+                    <a href="#" class="btn-card">Join Campaign →</a>
+                </div>
+
+                <div class="prog-card">
+                    <div class="card-thumb">
+                        <img src="../assets/img3.jpg" alt="Scholarship Connect programme" class="card-image">
+                    </div>
+                    <span class="card-tag">Community Project</span>
+                    <h3>Scholarship Connect</h3>
+                    <p>Mentoring programme pairing university students with high school learners for scholarship applications.</p>
+                    <a href="#" class="btn-card">Learn More →</a>
+                </div>
+
+                <div class="prog-card">
+                    <div class="card-thumb">
+                        <img src="../assets/img4.jpg" alt="Multilingual Classrooms programme" class="card-image">
+                    </div>
+                    <span class="card-tag">Campaign</span>
+                    <h3>Multilingual Classrooms</h3>
+                    <p>Advocating for mother-tongue based multilingual education policies and creating free teaching resources.</p>
+                    <a href="#" class="btn-card">Support →</a>
+                </div>
+
+                <div class="prog-card">
+                    <div class="card-thumb">
+                        <img src="../assets/img5.jpg" alt="Girls in STEM programme" class="card-image">
+                    </div>
+                    <span class="card-tag">Volunteering</span>
+                    <h3>Girls in STEM</h3>
+                    <p>Run hands-on science workshops encouraging girls aged 10–16 to explore STEM careers.</p>
+                    <a href="#" class="btn-card">Get Involved →</a>
+                </div>
+
+                <div class="prog-card">
+                    <div class="card-thumb">
+                        <img src="../assets/img6.jpg" alt="Open Library Network programme" class="card-image">
+                    </div>
+                    <span class="card-tag">Community Project</span>
+                    <h3>Open Library Network</h3>
+                    <p>Building and stocking community mini-libraries in remote neighbourhoods to improve access to books.</p>
+                    <a href="#" class="btn-card">Learn More →</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- reviews section -->
+        <div class="section">
+            <h2>RATINGS & REVIEWS</h2>
+            <p>See what participants are saying about these programmes.</p>
+            <div class="reviews-wrapper">
+                <div class="rating-summary">
+                    <div class="big-rating">8.6</div>
+                    <div>out of 10</div>
+                    <div class="stars">★★★★⯪</div>
+                    <div>Excellent</div>
+                    <div style="font-size: 12px;">Based on 342 reviews</div>
+                </div>
+                <div class="reviews-list">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <h4>Truly life-changing experience</h4>
+                            <span class="review-rating-badge">9.5 / 10</span>
+                        </div>
+                        <p class="review-text">Turns out I might be good at teaching kids after all. The Teach & Reach programme gave me practical tools and amazing memories.</p>
+                        <a href="#" class="see-more">See more →</a>
+                        <div class="review-meta">
+                            <span>Priya K.</span>
+                            <span>|  3 November 2025</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <h4>Scholarship Connect gave me confidence</h4>
+                            <span class="review-rating-badge">9.0 / 10</span>
+                        </div>
+                        <p class="review-text">I had no idea half of these things existed. Glad I did join the program. My mentor was super helpful throughout.</p>
+                        <a href="#" class="see-more">See more →</a>
+                        <div class="review-meta">
+                            <span>Aisha L.</span>
+                            <span>|  28 September 2025</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <h4>Digital Bridges Filling Physical Gaps</h4>
+                            <span class="review-rating-badge">8.0 / 10</span>
+                        </div>
+                        <p class="review-text">I think I could've borrowed a few laptops myself but I'm glad the kids got them! Great initiative overall.</p>
+                        <a href="#" class="see-more">See more →</a>
+                        <div class="review-meta">
+                            <span>James M.</span>
+                            <span>|  17 October 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- feedback form -->
+        <div class="section">
+            <div class="form-box">
+                <h2>SHARE YOUR FEEDBACK</h2>
+                <p>Tell us about your experience. <span style="color:#e11d48;">*</span> means required.</p>
+
+                <form id="feedbackForm">
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                        
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Your full name">
+                            <div id="nameError" class="error-msg">Please enter your name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" id="email" class="form-control" placeholder="email@example.com">
+                            <div id="emailError" class="error-msg">Enter a valid email</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+44 7700 900000">
+                            <div id="phoneError" class="error-msg">Numbers and + only</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea id="address" class="form-control" rows="2" placeholder="Street, City, Postcode"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Feedback Details</legend>
+                        
+                        <div class="form-group">
+                            <label>Programme <span class="required">*</span></label>
+                            <select id="programmeSelect" class="form-control">
+                                <option value="">- Select a programme -</option>
+                                <option>Teach & Reach</option>
+                                <option>Digital Bridges</option>
+                                <option>Scholarship Connect</option>
+                                <option>Multilingual Classrooms</option>
+                                <option>Girls in STEM</option>
+                                <option>Open Library Network</option>
+                            </select>
+                            <div id="progError" class="error-msg">Select a programme</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Rating <span class="required">*</span></label>
+                            <select id="ratingSelect" class="form-control">
+                                <option value="">-- Select rating --</option>
+                                <option>10 - Outstanding</option>
+                                <option>9 - Excellent</option>
+                                <option>8 - Very Good</option>
+                                <option>7 - Good</option>
+                                <option>6 - Average</option>
+                                <option>5 - Below Average</option>
+                            </select>
+                            <div id="ratingError" class="error-msg">Select a rating</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Date of Participation <span class="required">*</span></label>
+                            <input type="date" id="participationDate" class="form-control">
+                            <div id="dateError" class="error-msg">Select a date</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Submission Timestamp</label>
+                            <input type="datetime-local" id="submissionTime" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Areas of Interest (Ctrl+Click to select multiple)</label>
+                            <select id="interests" class="form-control" multiple size="5">
+                                <option value="Literacy & Reading">Literacy & Reading</option>
+                                <option value="Digital Skills">Digital Skills</option>
+                                <option value="STEM Education">STEM Education</option>
+                                <option value="Scholarships">Scholarships</option>
+                                <option value="Language & Multilingualism">Language & Multilingualism</option>
+                                <option value="Libraries & Resources">Libraries & Resources</option>
+                                <option value="Mentoring & Coaching">Mentoring & Coaching</option>
+                            </select>
+                            <small style="color: #666; font-size: 11px; display: block; margin-top: 4px;">Hold Ctrl (Windows) or Cmd (Mac) to select multiple options</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" id="country" list="countryList" class="form-control" placeholder="Start typing...">
+                            <datalist id="countryList">
+                                <option>Nepal</option>
+                                <option>United Kingdom</option>
+                                <option>United States</option>
+                                <option>India</option>
+                                <option>Kenya</option>
+                                <option>Brazil</option>
+                                <option>South Africa</option>
+                                <option>Australia</option>
+                            </datalist>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Your Review <span class="required">*</span></label>
+                            <textarea id="reviewMessage" class="form-control" rows="4" maxlength="500" placeholder="Share your experience..."></textarea>
+                            <div id="charCounter" class="char-count">500 characters left</div>
+                            <div id="messageError" class="error-msg">Please write at least 20 characters</div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="button" id="clearBtn" class="btn-secondary">Clear</button>
+                        <button type="submit" class="btn-primary">Submit</button>
+                    </div>
+                    <div id="successMsg" class="confirmation-msg">✓ Thanks for your feedback!</div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+<footer>
+    <div class="foot-container">
+        <h4>&copy; AMAZE</h4>
+        <ul class="foot-link">
+            <li><a href="#PageEditor">Page Editor</a></li>
+            <li><a href="#Validation">Validation</a></li>
+        </ul>
+    </div>
+</footer>
+
+    <a href="#top" class="top-btn">⬆ Back to Top</a>
+
     <script>
-        function checkname(frm) {
-            if (frm.username.value.length < 8) {
-                alert("Username must be at least 8 characters long.");
-                frm.username.value=" ";
-                return;
-            }cd
-
-
-
-
-
-            
-            alert(frm.username.value);
+        // Scripts Using Javascript
+        
+        // Character counter for messagebox
+        let msgBox = document.getElementById('reviewMessage');
+        let counter = document.getElementById('charCounter');
+        
+        if (msgBox) {
+            msgBox.oninput = function() {
+                let left = 500 - this.value.length;
+                counter.innerHTML = left + ' characters left';
+                if (left < 20) {
+                    counter.style.color = 'red';
+                } else {
+                    counter.style.color = '#666';
+                }
+            }
+        }
+        
+        // form validation and submission
+        let form = document.getElementById('feedbackForm');
+        
+        if (form) {
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                
+                // get values
+                let name = document.getElementById('fullName').value.trim();
+                let email = document.getElementById('email').value.trim();
+                let phone = document.getElementById('phone').value.trim();
+                let programme = document.getElementById('programmeSelect').value;
+                let rating = document.getElementById('ratingSelect').value;
+                let date = document.getElementById('participationDate').value;
+                let message = document.getElementById('reviewMessage').value.trim();
+                
+                // hide all errors first
+                document.getElementById('nameError').classList.remove('show');
+                document.getElementById('emailError').classList.remove('show');
+                document.getElementById('phoneError').classList.remove('show');
+                document.getElementById('progError').classList.remove('show');
+                document.getElementById('ratingError').classList.remove('show');
+                document.getElementById('dateError').classList.remove('show');
+                document.getElementById('messageError').classList.remove('show');
+                
+                // remove red borders
+                let inputs = document.querySelectorAll('.form-control');
+                for (let i = 0; i < inputs.length; i++) {
+                    inputs[i].classList.remove('error-field');
+                }
+                
+                let isValid = true;
+                
+                // check name
+                if (name == "") {
+                    document.getElementById('nameError').classList.add('show');
+                    document.getElementById('fullName').classList.add('error-field');
+                    isValid = false;
+                }
+                
+                // check email (must have @ and .)
+                if (email == "" || !email.includes('@') || !email.includes('.')) {
+                    document.getElementById('emailError').classList.add('show');
+                    document.getElementById('email').classList.add('error-field');
+                    isValid = false;
+                }
+                
+                // check phone if filled (basic check)
+                if (phone != "") {
+                    let badChars = false;
+                    for (let i = 0; i < phone.length; i++) {
+                        let char = phone[i];
+                        if (!(char >= '0' && char <= '9') && char != '+' && char != '-' && char != ' ' && char != '(' && char != ')') {
+                            badChars = true;
+                            break;
+                        }
+                    }
+                    if (badChars || phone.length < 7) {
+                        document.getElementById('phoneError').classList.add('show');
+                        document.getElementById('phone').classList.add('error-field');
+                        isValid = false;
+                    }
+                }
+                
+                // check programme
+                if (programme == "") {
+                    document.getElementById('progError').classList.add('show');
+                    document.getElementById('programmeSelect').classList.add('error-field');
+                    isValid = false;
+                }
+                
+                // check rating
+                if (rating == "") {
+                    document.getElementById('ratingError').classList.add('show');
+                    document.getElementById('ratingSelect').classList.add('error-field');
+                    isValid = false;
+                }
+                
+                // check date
+                if (date == "") {
+                    document.getElementById('dateError').classList.add('show');
+                    document.getElementById('participationDate').classList.add('error-field');
+                    isValid = false;
+                }
+                
+                // check message (at least 20 chars)
+                if (message.length < 20) {
+                    document.getElementById('messageError').classList.add('show');
+                    document.getElementById('reviewMessage').classList.add('error-field');
+                    isValid = false;
+                }
+                
+                // if valid, show confirmation and reset
+                if (isValid) {
+                    let success = document.getElementById('successMsg');
+                    success.classList.add('show');
+                    
+                    // reset form
+                    form.reset();
+                    
+                    // reset character counter
+                    if (counter) {
+                        counter.innerHTML = '500 characters left';
+                        counter.style.color = '#666';
+                    }
+                    
+                    // set current time in datetime field
+                    let dtField = document.getElementById('submissionTime');
+                    if (dtField) {
+                        let now = new Date();
+                        let year = now.getFullYear();
+                        let month = String(now.getMonth() + 1).padStart(2, '0');
+                        let day = String(now.getDate()).padStart(2, '0');
+                        let hours = String(now.getHours()).padStart(2, '0');
+                        let minutes = String(now.getMinutes()).padStart(2, '0');
+                        dtField.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+                    }
+                    
+                    // scroll to message
+                    success.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // hide after 4 seconds
+                    setTimeout(function() {
+                        success.classList.remove('show');
+                    }, 4000);
+                }
+            }
+        }
+        
+        // clear button
+        let clearBtn = document.getElementById('clearBtn');
+        if (clearBtn) {
+            clearBtn.onclick = function() {
+                form.reset();
+                
+                // remove all errors
+                let errors = document.querySelectorAll('.error-msg');
+                for (let i = 0; i < errors.length; i++) {
+                    errors[i].classList.remove('show');
+                }
+                
+                let redInputs = document.querySelectorAll('.error-field');
+                for (let i = 0; i < redInputs.length; i++) {
+                    redInputs[i].classList.remove('error-field');
+                }
+                
+                // reset counter
+                if (counter) {
+                    counter.innerHTML = '500 characters left';
+                    counter.style.color = '#666';
+                }
+                
+                // set current time
+                let dtField = document.getElementById('submissionTime');
+                if (dtField) {
+                    let now = new Date();
+                    let year = now.getFullYear();
+                    let month = String(now.getMonth() + 1).padStart(2, '0');
+                    let day = String(now.getDate()).padStart(2, '0');
+                    let hours = String(now.getHours()).padStart(2, '0');
+                    let minutes = String(now.getMinutes()).padStart(2, '0');
+                    dtField.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+                }
+                
+                // hide success if visible
+                let successMsg = document.getElementById('successMsg');
+                if (successMsg) {
+                    successMsg.classList.remove('show');
+                }
+            }
+        }
+        
+        // set current time in datetime field on page load
+        let dtField = document.getElementById('submissionTime');
+        if (dtField) {
+            let now = new Date();
+            let year = now.getFullYear();
+            let month = String(now.getMonth() + 1).padStart(2, '0');
+            let day = String(now.getDate()).padStart(2, '0');
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            dtField.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+        }
+        
+        // simple back to top
+        let topLink = document.querySelector('.top-btn');
+        if (topLink) {
+            topLink.onclick = function(e) {
+                e.preventDefault();
+                window.scrollTo(0, 0);
+            }
         }
     </script>
-    <form>
-        <input type="text" name="username" placeholder="Username">
-        <button type="button" onclick="checkname(this.form)">Test</button>
-
-    </form>
 </body>
 </html>

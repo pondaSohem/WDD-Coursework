@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Content </title>
+    <!-- Linking css -->
+    <link rel="stylesheet" href="../GlobalTemplate/template.css">
 </head>
-<body>
-    
+
+
+<body id="top">
+
+    <!-- HEADER -->
+    <header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../StudentOne/home.html">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+
+                <!-- LOGO -->
+                <img src="../assets/MUULA.png" height="50px" width="50px">
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="foot-container">
+            <h4>&copy; TWATS</h4>
+            <ul class="foot-link">
+                <li><a href="#PageEditor" class="footer-link"> Page Editor</a></li>
+                <li><a href="#Validation" class="footer-link">Validation</a></li>
+            </ul>
+
+        </div>
+    </footer>
 </body>
+
+<a href="#top" class="top-btn" id="top-btn">⬆</a>
+<script>
+    const topButton = document.getElementById("top-btn");
+    topButton.addEventListener('mouseenter', () => {
+        topButton.innerHTML = "⬆ Back To Top";
+        topButton.style.backgroundColor = "#1abc9c";
+    })
+    topButton.addEventListener('mouseleave', () => {
+        topButton.innerHTML = "⬆";
+        topButton.style.backgroundClip = "#2c3e50";
+    })
+</script>
+
 </html>

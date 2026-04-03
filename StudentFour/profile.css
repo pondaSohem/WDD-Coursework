@@ -24,13 +24,18 @@
     width: 1%;
 }
 
+.progress-message {
+    overflow: hidden;
+    width: 100%;
+}
+
 .prompt-input-pd, .prompt-input-pref, .prompt-input-other {
     border-radius: var(--radius);
     font-size: 16px;
 }
 
 fieldset {
-    border: 3px solid var(--bd-colour);
+    border: 2px solid var(--bd-colour);
     border-radius: var(--radius);
     background-color: hsl(0, 0%, 100%);
 }
@@ -59,12 +64,12 @@ legend {
     color: var(--btn-active-colour);
 }
 
-.left-field {
+.left-field, .left {
     float: left;
     text-align: left;
 }
 
-.right-value {
+.right-value, .right {
     float: right;
     text-align: right;
 }

@@ -12,6 +12,7 @@ let userData = {
 // DOM Elements
 const currentProgressBar = document.getElementById("progress-bar");
 const currentProgress = document.getElementById("progress-message");
+const currentStatus = document.getElementById("profile-status");
 
 // Mapping of field IDs to their prompts
 const fieldConfig = {
@@ -37,6 +38,18 @@ function updateProgressBar() {
     // increasing the width of the bar
     currentProgressBar.style.width = `${completeCounter * 10}%`; // Update the progress
     currentProgressBar.style.backgroundColor = `hsl(${completeCounter * 10}, 100%, 50%)`; // Update colour from red to green
+}
+
+function updateProgressStatus() {
+    if (completeCounter < 4) {
+        currentStatus.innerHTML = "Profile Status: Poor";
+    } else if (completeCounter >= 4 && completeCounter <= 7) {
+        currentStatus.innerHTML = "Profile Status: Decent";
+    } else if (completeCounter > 7 && completeCounter <= 9) {
+        currentStatus.innerHTML = "Profile Status: Good";
+    } else if (completeCounter > 9) {
+        currentStatus.innerHTML = "Profile Status: Excellent";
+    }
 }
 
 // Used a lot later so made this a function
@@ -117,6 +130,7 @@ function enterValue(field) {
         if (!existingValue || existingValue === "") {
             completeCounter++;
             updateProgressBar();
+            updateProgressStatus()
         }
     } else if (value !== null && existingValue && existingValue !== "") {
         alert("Keeping original value!");

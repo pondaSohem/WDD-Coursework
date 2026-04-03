@@ -9,7 +9,7 @@ body {
 
 /* CARDS & CONTAINER */
 .card {
-            background-color:#a8a8a8;
+            background-color: hsl(0, 0%, 75%);
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 30px;
@@ -23,7 +23,7 @@ body {
         }
 
 .head-card{
-  background-color:#a8a8a8;
+  background-color:hsl(0, 0%, 75%);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 30px;
@@ -37,7 +37,7 @@ body {
 
 
 .container{
-    background-color: #c7c3c3;
+    background-color: hsl(0, 0%, 85%);
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;

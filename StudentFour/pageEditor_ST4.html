@@ -39,7 +39,7 @@
     <div class="header-spacer"></div>
 
     <section class="stud">
-        <h2>Sohem Rai, team name, Student Four</h2>
+        <h2>Sohem Rai, AMAZE, Student Four</h2>
     </section>
 
     <div class="container">
@@ -49,28 +49,37 @@
             <!-- Update those first three sections for the pages you were responsible to implement -->
 
             <section>
-                <h2 id="home">User Profile</h2>
+                <h2 id="profile">User Profile</h2>
                 <h3>Technical Description</h3>
-                <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the
-                    key tags and styling choices focusing on functionality and design without copying large code
-                    sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS
-                    properties used to create structure and styling.</p>
+                <p>
+                    The User Profile page is divided into 2 sections besides the <code class="html-c">&lt;header&gt;</code> and <code class="html-c">&lt;footer&gt;</code>. One of the sections being for the profile completion bar and the other for the actual profile display.
+                    Starting with the progress bar, I have used the <code class="css-c">.container</code> class from the global template. Within this container is one progress bar that starts from zero, using JavaScript. The script for functionality of everything in this page is linked to <code class="js-c">profile.js</code>.
+                    All of the style changes happens with JavaScript in this section, following as per the coursework description. The progress bar colour changes from red to green, showing progress from when its red for incomplete, and green for fully complete.
+                    Also depending on how many parts of the profile is complete, the width of the <code class="css-c">#progress-bar</code> (which is the progress bar container) expands with JavaScript DOM.
+                    Right below the progress bar there is a <code class="css-c">.progress-message</code> container which includes 2 of <code class="css-c">.left</code> and <code class="css-c">.right</code>. They include styling for sticking the <code class="css-c">#progress-message</code> to the left and <code class="css-c">#profile-status</code> to the right side of the screen.
+                    <code class="css-c">#progress-message</code> contains how many fields in the profile has been completed. This starts with 0. <code class="css-c">#profile-status</code> shows the condition of the user's profile. Depending on how many fields have been filled in, the profile status will dynamically update to show between Poor (0 - 3), Decent (4 - 7), Good (7 - 9), and Excellent (10).
+                    Then we move to the second section (<code class="html-c">&lt;div&gt;</code> without any attributes) which contains 3 sub sections; <code class="css-c">.prompt-input-pd</code>, <code class="css-c">prompt-input-pref</code>, <code class="css-c">prompt-input-other</code>.
+                    Each of those classes have two classes; <code class="css-c">.left-field</code> and <code class="css-c">.right-value</code>. Just like with the classes .left and .right mentioned before, the left sticks to the left and the right sticks to the right.
+                    The left side has the field; user reads this and finds out what this line is about. The right side has the value; this acts as the display for the field, also as a <code class="html-c">button</code> to update/change the value. Each value has its own <code class="html-c">button</code> tag with unique IDs because they will update/change with JavaScript.
+                </p>
 
                 <h3>Accessibility</h3>
-                <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                <p>
+                    The first edition of the prompt system used to look very different and had a very non-user-friendly system of working. The current one I have impletement was inspired by the one we have in our VLE Blackboard. As you click on the <code class="html-c">button</code> that says <code>Enter Here</code>, it prompts user what they want to enter there. If it already has a value, clicking on it again asks the user to change it. If the user inputs anything invalid or empty value, it skips it while also not updating the progress.
+                </p>
 
                 <h3>Link to the validation page</h3>
                 <!-- Update the path to link the Page Editor with the splash page -->
-                <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to
+                <p><a href="validation_ST4.html#profileVal">Include a link to the validation page</a>, use the marker to
                     jump to the corresponding section of the validation page.</p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                 <h3>Link to the page</h3>
-                <p><a href="../StudentTwo/splash.html">Include a link to the actual page you describe.</a></p>
+                <p><a href="profile.html">Include a link to the actual page you describe.</a></p>
             </section>
 
             <section>
-                <h2 id="gallery">SVG</h2>
+                <h2 id="sitemap">Sitemap</h2>
                 <h3>Technical Description</h3>
                 <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the
                     key tags and styling choices focusing on functionality and design without copying large code
@@ -82,13 +91,13 @@
 
                 <h3>Link to the validation page</h3>
                 <!-- Update the path to link the Page Editor with the splash page -->
-                <p><a href="validation_ST0.html#volunteerVal">Include a link to the validation page</a>, use the marker
+                <p><a href="validation_ST4.html#sitemapVal">Include a link to the validation page</a>, use the marker
                     to jump to the corresponding section of the validation page.</p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
 
                 <h3>Link to the page</h3>
-                <p><a href="volunteer.html">Include a link to the actual page you describe.</a></p>
+                <p><a href="sitemap.html">Include a link to the actual page you describe.</a></p>
             </section>
 
             <section>
@@ -104,13 +113,13 @@
 
                 <h3>Link to the validation page</h3>
                 <!-- Update the path to link the Page Editor with the splash page -->
-                <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to
+                <p><a href="validation_ST4.html#contentVal">Include a link to the validation page</a>, use the marker to
                     jump to the corresponding section of the validation page.</p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
 
                 <h3>Link to the page</h3>
-                <p><a href="content.html">Include a link to the actual page you describe.</a></p>
+                <p><a href="content_ST4.html">Include a link to the actual page you describe.</a></p>
             </section>
 
             <section>
@@ -230,7 +239,6 @@
                 </ul>
             </section>
 
-            <p class="top"><a href="#top">Go top</a></p>
         </main>
 
         <!-- Sidebar area -->
@@ -239,31 +247,11 @@
 
             <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 1</li>
-                <ul>
-                    <li><a href="../StudentOne/home.html">Home page </a></li>
-                    <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-                    <li><a href="../StudentOne/content_ST1.html">Content</a></li>
-                </ul>
-                <li>Student 2</li>
-                <ul>
-                    <li><a href="../StudentTwo/splash.html">Splash Screen</a></li>
-                    <li><a href="../StudentTwo/splash.html">Action Impact Simulator</a></li>
-                    <li><a href="../StudentTwo/content_ST2.html">Content</a></li>
-                </ul>
-
-                <li>Student 3</li>
-                <ul>
-                    <li><a href="../StudentThree/feedback.html">Feedback</a> </li>
-                    <li><a href="../StudentThree/team.html">Team</a></li>
-                    <li><a href="../StudentThree/content_ST3.html">Content</a></li>
-                </ul>
                 <li>Student 4</li>
                 <ul>
-                    <li><a href="profile.html">User Profile </a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
-                    <li><a href="content_ST4.html">Content</a></li>
+                    <li><a href="#profile">User Profile </a></li>
+                    <li><a href="#sitemap">Sitemap</a></li>
+                    <li><a href="#content">Content</a></li>
                 </ul>
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
@@ -275,7 +263,7 @@
 
     <footer>
         <div class="foot-container">
-            <h4>&copy; TWATS</h4>
+            <h4>&copy; AMAZE</h4>
             <ul class="foot-link">
                 <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
                 <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
@@ -283,6 +271,25 @@
     
         </div>
     </footer>
+
+    <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 </body>
 
 </html>

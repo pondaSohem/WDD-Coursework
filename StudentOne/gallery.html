@@ -6,144 +6,420 @@
     <title>Coursework - Gallery</title>
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
     <style>
-        
+        /* Simple Gallery Grid */
+        .gallery-parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-.gallery-parent {
-   display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    justify-content: center;
-}
+        /* Image Card Container - Fixed ratio 1000px by 800px (2:1 aspect ratio) */
+        .gallery-image-card {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            perspective: 1500px;
+            background: transparent;
+            width: 100%;
+            /* Fixed aspect ratio 1000:800 = 5:4 */
+            aspect-ratio: 1000 / 800;
+        }
 
-    /* Image card container */
-.gallery-image-card {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 10px;
-    text-decoration: none;
-    margin: 0 5px;
-}
+         .gallery-head{
+            margin-top: 100px;
+            margin-bottom: 10px;
+            background-color: #bee4ff;
+            color: #0D47A1;
+            padding: 15px;
+            border-radius: 10px;
+            
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* Overlay text - hidden by default */
-.overlay-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-    font-size: 18px;
-    font-weight: bold;
-}
+        /* Flip Inner Wrapper */
+        .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+            border-radius: 8px;
+        }
 
-.overlay-text span {
-    font-size: 14px;
-    font-weight: normal;
-    display: block;
-    margin-top: 5px;
-}
+        /* Flipped State */
+        .gallery-image-card.flipped .flip-inner {
+            transform: rotateY(180deg);
+        }
 
-/* Show text on hover */
-.gallery-image-card:hover .overlay-text {
-    transform: translateY(0);
-}
+        /* Front and Back Common - both have same fixed dimensions */
+        .flip-front,
+        .flip-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* Image styling */
-.gallery-image-card img {
-    height: 380px;
-    width: 380px;
-    display: block;
-    transition: transform 0.3s ease;
-    object-fit: cover;
-}
+        /* Front - Image Side */
+        .flip-front {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
 
-/* Zoom effect */
-.gallery-image-card:hover img {
-    transform: scale(1.04);
-}
+        .flip-front img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
 
+        /* Simple hover effect */
+        .gallery-image-card:not(.flipped):hover .flip-front img {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
 
+        /* Back - Simple Text Card - exactly same size as image */
+        .flip-back {
+            background: #ffffff;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            text-align: left;
+            color: #333333;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
 
+        /* Heading at the top */
+        .flip-back h3 {
+            font-size: 1.8rem;
+            margin: 0 0 16px 0;
+            font-weight: 600;
+            color: #2c3e50;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
 
+        /* Description text */
+        .flip-back .card-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+            color: #555555;
+            flex-grow: 1;
+        }
 
-        
-      
+        /* Simple extra detail */
+        .flip-back .extra-detail {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: #666666;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Overlay text on hover (simple version) */
+        .overlay-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background:linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            color: white;
+            text-align: center;
+            padding: 12px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-size: 16px;
+            font-weight: 500;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .overlay-text span {
+            font-size: 12px;
+            font-weight: normal;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Show text on hover */
+        .gallery-image-card:not(.flipped):hover .overlay-text {
+            transform: translateY(0);
+        }
+
+        /* Simple scrollbar for back side */
+        .flip-back::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .flip-back::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .flip-back::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        /* Responsive - maintain 2:1 aspect ratio on all screen sizes */
+        @media (max-width: 768px) {
+            .gallery-parent {
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .flip-back {
+                padding: 16px;
+            }
+
+            .flip-back h3 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .flip-back .card-description {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .flip-back h3 {
+                font-size: 1.2rem;
+            }
+
+            .flip-back .card-description {
+                font-size: 0.8rem;
+            }
+            
+            .flip-back {
+                padding: 12px;
+            }
+        }
+       
     </style>
 </head>
 
 <!-- HEADER -->
-    <header>
+<header>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul class="nav-menu">
+            <li class="active"><a href="../StudentOne/home.html">Home</a></li>
+            <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+            <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+            <li><a href="../StudentFour/profile.html">User Profile</a></li>
+            <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+            <li><a href="../StudentThree/team.html">Team Page</a></li>
+            <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
-        <!-- NAVIGATION -->
-         <nav>
-            <ul class="nav-menu">
-                <li class="active"><a href="#Home">Home</a></li>
-                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-                <li><a href="../StudentFour/profile.html">User Profile</a></li>
-                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
-                <li><a href="../StudentThree/team.html">Team Page</a></li>
-                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+            <!-- LOGO -->
+            <div class="logo-img">
+                <img src="../assets/MUULA.png" height="50px" width="50px">
+            </div>
+        </ul>
+    </nav>
+</header>
 
-                <!-- LOGO -->
-                 <div class="logo-img">
-                    <img src="../assets/MUULA.png" height="50px" width="50px">
-                 </div>
-                
-            </ul>
-        </nav>
-
-
-       
-    </header>
 <body>
-
+    <div class="gallery-head">
+        <h3>GALLERY</h3>
+    </div>
     <main>
+        <div class="gallery-parent">
+            <!-- Card 1 - Girls education -->
+            <div class="divG1">
+                <a href="javascript:void(0);" class="gallery-image-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="../assets/gallery 1 girls edu.jpg" alt="Girls Learnign in a class.">
+                            <div class="overlay-text"> Grils Education <br><span>Click for detail</span></div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Girls education</h3>
+                            <div class="card-description">
+                                Education and Learning is not a gender specific role. There is no rule that says only boys get ir deserve to be 
+                                educated. It is an importnat fact that the world has looked down on the necessity of education for girls. For years the wrold has 
+                                tried again and again to opress the female gender but it is our responsibility to not let that happen and the 
+                                very first step on that path is education.
+                            </div>
+                            <div class="extra-detail">Click again to flip back</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        
-<div class="gallery-parent">
-    <div class="divG1">
-        <a href="#" class="gallery-image-card">
-        <img src="../assets/putercat.jfif" alt="Student-1 Sulav">
-        <div class="overlay-text">Putercat <br><span>Image 1</span></div>
-    </a></div>
+            <!-- Card 2 - Quality Learning -->
+            <div class="divG2">
+                <a href="javascript:void(0);" class="gallery-image-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="../assets/gallery 2 class learn.jpg" alt="Children in class room ">
+                            <div class="overlay-text">Quality Learning <br><span>Click for detail</span></div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Quality Learning</h3>
+                            <div class="card-description">
+                            A learnign environment is one the most important aspect of a education. A classroom is not just 
+                            an enclosed space but a whole different world where a child likes a new life. A better environment leads to 
+                            a better learning. 
+                            </div>
+                            <div class="extra-detail">Click again to flip back</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-    <div class="divG2">
-        <a href="#" class="gallery-image-card">
-        <img src="../assets/dingus.jfif" alt="Student-2 Yugesh">
-        <div class="overlay-text">Dingus<br><span>Image 2</span></div>
-    </a>
-    </div>
+            <!-- Card 3 - Digital Learning -->
+            <div class="divG3">
+                <a href="javascript:void(0);" class="gallery-image-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="../assets/gallery 3 digital learn.jpg" alt="Children Learning on phones ">
+                            <div class="overlay-text">Digital Learning<br><span>Click for detail</span></div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Digital Learning</h3>
+                            <div class="card-description">
+                                In a digital age books and copies are not the only method of reading and learning. With various new changes in the world 
+                                and new method of learning is Digital education. The use of phones, laptops and TVs to teach children thorugh 
+                                audio and visual applications.  
+                            </div>
+                            <div class="extra-detail">Click again to flip back</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-    <div class="divG3">
-        <a href="#" class="gallery-image-card">
-        <img src="../assets/bingus.jfif" alt="Student-3 Sohem">
-        <div class="overlay-text">Bingus<br><span>Image 3</span></div>
-    </a>
-    </div>
-
-    <div class="divG4">
-         <a href="#" class="gallery-image-card">
-        <img src="../assets/spoingus - Copy.jfif" alt="Student-4 Shreejal">
-        <div class="overlay-text">Spoingus<br><span>Image 4</span></div>
-    </a>
-    </div>
-</div>
-    
-    
-<!-- GALLERY -->
-         
-    
-    
-    
-   
-    
+            <!-- Card 4 - Learning Barrier -->
+            <div class="divG4">
+                <a href="javascript:void(0);" class="gallery-image-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="../assets/galler 4 barrier.jpg" alt="Two kids walking to school">
+                            <div class="overlay-text">Learning Barrier <br><span>Click for detail</span></div>
+                        </div>
+                        <div class="flip-back">
+                            <h3>Learning Barrier</h3>
+                            <div class="card-description">
+                                Many children wish to learn but there stands many barriers infront of them. Many like in remote areas 
+                                with no proper roads to schools. Many can not afford to pay for schooling. Many are put into child labour and have to 
+                                work rather than study. But all carry the wish and dreaming of studying and becoming someone better. 
+                            </div>
+                            <div class="extra-detail">Click again to flip back</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </main>
+
+    <footer></footer>
+
+    <script>
+        (function() {
+            // Ensure all images maintain the fixed 1000x500 ratio
+            function enforceFixedRatio() {
+                const cards = document.querySelectorAll('.gallery-image-card');
+                
+                cards.forEach(card => {
+                    // Force the fixed aspect ratio of 1000:500 (2:1)
+                    card.style.aspectRatio = '1000 / 800';
+                    
+                    const frontImg = card.querySelector('.flip-front img');
+                    if (frontImg) {
+                        // Ensure image covers the area properly
+                        frontImg.style.objectFit = 'cover';
+                        frontImg.style.width = '100%';
+                        frontImg.style.height = '100%';
+                    }
+                });
+            }
+            
+            // Set fixed ratio on load
+            window.addEventListener('load', function() {
+                enforceFixedRatio();
+            });
+            
+            // Also handle window resize
+            window.addEventListener('resize', function() {
+                enforceFixedRatio();
+            });
+            
+            // Select all image cards
+            const cards = document.querySelectorAll('.gallery-image-card');
+            
+            // Function to handle click event: toggle the 'flipped' class
+            function handleCardClick(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                this.classList.toggle('flipped');
+            }
+            
+            // Attach click event listener to each card
+            if (cards.length > 0) {
+                cards.forEach(card => {
+                    card.removeEventListener('click', handleCardClick);
+                    card.addEventListener('click', handleCardClick);
+                    
+                    // Keyboard accessibility
+                    card.setAttribute('tabindex', '0');
+                    card.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            this.classList.toggle('flipped');
+                        }
+                    });
+                });
+            }
+            
+            // Error handling for missing images
+            const allImages = document.querySelectorAll('.flip-front img');
+            allImages.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.objectFit = 'contain';
+                    this.style.backgroundColor = '#f0f0f0';
+                    this.alt = "Image not found";
+                });
+            });
+            
+            console.log('✅ Simple Flip Cards Ready — Fixed ratio 1000px x 500px (2:1 aspect ratio)');
+            console.log('✅ Click any image to flip to text card, click again to flip back');
+        })();
+    </script>
+<footer>
+        <div class="foot-container">
+            <h4>&copy; AMAZE</h4>
+            <ul class="foot-link">
+                <li><a href="../StudentOne/pageEditor_ST1.html" class="footer-link"> Page Editor</a></li>
+                <li><a href="../StudentOne/validation_ST1.html" class="footer-link">Validation</a></li>
+            </ul>
+    
+        </div>
+    </footer>
 </body>
+
 </html>

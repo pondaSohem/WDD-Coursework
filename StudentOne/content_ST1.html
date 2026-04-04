@@ -4,8 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../GlobalTemplate/template.css">
+
+
 </head>
-<body>
+<style>
+    .grid-content1 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: Auto;
+    gap: 8px;
+}
     
+.divC0 {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+.divC1 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+}
+
+.divC2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.divC3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+    grid-row-start: 1;
+}
+
+.divC4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-row-start: 4;
+}
+
+.divC5 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 4;
+}
+.cont-img{
+    
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    max-width: 100%;
+    height: 400px;
+}
+.cont-image-card {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+</style>
+
+
+<header>
+    <!-- NAVIGATION -->
+    <nav>
+        <ul class="nav-menu">
+            <li class="active"><a href="../StudentOne/home.html">Home</a></li>
+            <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+            <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+            <li><a href="../StudentFour/profile.html">User Profile</a></li>
+            <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+            <li><a href="../StudentThree/team.html">Team Page</a></li>
+            <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+
+            <!-- LOGO -->
+            <div class="logo-img">
+                <img src="../assets/MUULA.png" height="50px" width="50px">
+            </div>
+        </ul>
+    </nav>
+</header>
+<body>
+    <main>
+        
+<div class="grid-content1">
+    <div class="divC0">
+        <div class="head-card">
+            <h2>4.3</h2>
+        </div>
+    </div>
+
+
+    <div class="divC1">
+        <div class="container">
+            <div class="head-card"> <h3>What is the Goal></h3></div>
+
+            <div class ="cont-image-card"><img src ="../assets/C1.jpg" alt ="" class="cont-img"></div>
+
+            <div class ="card"><p>
+                Equal access to affordable education ensures that everyone, regardless of their background, 
+                has the opportunity to gain skills and knowledge through technical training, 
+                vocational programs, and higher education. 
+            </p></div>
+        </div>
+    </div>
+
+
+    <div class="divC2">
+        <div class="container">
+            <div class="head-card"> <h3>Why it matters </h3></div>
+
+            <div class ="cont-image-card"><img src ="../assets/C 2.jpg" alt ="" class="cont-img"></div>
+            
+            <div class ="card"><p>
+                <ul>
+                    <li>Reduces Unemployment</li>
+                    <li>Promotes Equality</li>
+                    <li>Builds skilled workforce</li>
+                </ul>
+            </p></div>
+        </div>
+    </div>
+
+
+    <div class="divC3">
+        <div class="container">
+            <div class="head-card"> <h3>Types of Education</h3></div>
+
+            <div class ="cont-image-card"><img src ="../assets/C 3.jpg" alt ="" class="cont-img"></div>
+            
+            <div class ="card"><p>
+                Educations is not just about books and copies they are of types based on how performative they are.<br>
+                Such as:<br>
+                <ul>
+                    <li>Technical Education (engineering, IT, etc.)</li>
+                    <li>Vocational Education (practical skills like carpentry, plumbing)</li>
+                    <li>Higher Education (universities, degrees)</li>
+                </ul>
+            </p></div>
+        </div>
+    </div>
+
+
+    <div class="divC4">
+        <div class="container">
+            <div class="head-card"> <h3>Barriers</h3></div>
+
+            <div class ="cont-image-card"><img src ="../assets/C 4.jpg" alt ="" class="cont-img"></div>
+            
+            <div class ="card"><p>
+            Many face challenges and can not over come it.The challenges one faces:<br>
+            <ul>
+                <li>High tuition fees</li>
+                <li>Lack of institutions in rural areas</li>
+                <li>Gender inequality</li>
+                <li>Limited scholarships</li>
+                <li>Digital divide</li>
+            </ul>  
+            </p></div>
+        </div>
+    </div>
+
+
+    <div class="divC5">
+        <div class="container">
+            <div class="head-card"> <h3>The way Forward</h3></div>
+
+            <div class ="cont-image-card"><img src ="../assets/C 5.jpg" alt ="" class="cont-img"></div>
+            
+            <div class ="card"><p>
+                With countless problems and challaenges in the way but united and 
+                together support for equal education and careful investment in the idea of education for all and ensure that no one ever has to 
+                question,"Why can one not be educated."
+            </p></div>
+        </div>
+    </div>
+
+
+</div>
+    
+
+    </main>
+
+    <footer>
+        <div class="foot-container">
+            <h4>&copy; TWATS</h4>
+            <ul class="foot-link">
+                <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
+                <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
+            </ul>
+    
+        </div>
+    </footer>
 </body>
 </html>

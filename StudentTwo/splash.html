@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Splash Example</title>
+    <link rel="stylesheet" href="splash.css">
     <style>
-        body{
-            background-color: rgb(85, 140, 207);
-            font-family: Arial, Helvetica, sans-serif;
+        #splash {
+            transition: opacity 0.4s ease;
         }
-
-        h1{
-            text-align: center;
+        #splash.fade-out {
+            opacity: 0;
         }
         p {
            position: absolute;
@@ -43,19 +40,47 @@
     background-color: #1abc9c;
     transform: scale(1.1);
 }
-
-
     </style>
-
-    
 </head>
 <body>
-    <div>
-        <h1><bold>Quality Education</bold></h1>
+
+    <!-- Splash Screen -->
+    <div id="splash">
+        <h1 class="logo"><bold>Quality Education</bold></h1>
         <br>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p id="para">Quality education means providing all learners with effective teaching, safe environments, and relevant skills that go beyond basic literacy. It focuses on equitable access, measurable learning outcomes, and fostering critical thinking and lifelong learning. Ultimately, it empowers individuals to break poverty cycles, drive economic growth, and build peaceful, sustainable societies.</p>
         <br>
-        <a class= "skipbutton" href ="../StudentOne/home.html">skip</a>
+        <a class="skipbutton" href="../StudentOne/home.html">skip</a>
+        <h3 id="countdown">3</h3>
     </div>
+
+
+    <script>
+        let count = 3;
+        const countdown = document.getElementById('countdown');
+        const splash = document.getElementById('splash');
+
+        function redirectWithFade() {
+            clearInterval(timer);
+            splash.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = '../StudentOne/home.html'; // Change this to your target page
+            }, 400); // Matches the CSS transition duration
+        }
+
+        const timer = setInterval(() => {
+            count--;
+            countdown.textContent = count;
+
+            if (count <= 0) {
+                redirectWithFade();
+            }
+        }, 1000);
+
+        document.querySelector('.skipbutton').addEventListener('click', (e) => {
+            e.preventDefault();
+            redirectWithFade();
+        });
+    </script>
 </body>
 </html>

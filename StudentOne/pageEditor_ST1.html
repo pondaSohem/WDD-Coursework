@@ -6,35 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Editor Student - Sulav Maharjan</title>
 
-    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+     <link rel="stylesheet" href="../StudentOne/pageEditor_validator.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="../GlobalTemplate/template.css"> <!-- Link to the global template CSS -->
 
 </head>
 <body>
     
     <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
 
-    <header>
+   <header>
+
         <!-- NAVIGATION -->
-        <nav>
+         <nav>
             <ul class="nav-menu">
                 <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li class="active"><a href="../StudentOne/gallery.html">Gallery</a></li>
                 <li><a href="../StudentFour/profile.html">User Profile</a></li>
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
-    
+
                 <!-- LOGO -->
-                <div class="logo-img">
-                    <img src="../assets/MUULA.png" height="50px" width="50px">
-                </div>
+                <li class = "logo-item"> 
+                    <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50" width="50" alt="logo">
+                 </div>
+                 </li>
+                
             </ul>
         </nav>
+
+
+       
     </header>
 
     <section class="stud">
-        <h2>Sulav Maharjan, AMAZE, Student - 1</h2>
+        <h2>Sulav Maharjan, AMAZE, student - 1</h2>
     </section>
 
     <div class="container">
@@ -69,24 +78,31 @@
                         </p> 
                         <br>
                         <p>Then i moved into making cards and containers for each of the sections and specially the Scroll able card container for the content gallery. The home page makes use of various HTML and CSS to make it functional. The Key HTML tags used are  </p>
+                        <p>For the styling i used CSS to create a responsive layout using (display: grid) to create a (.parent) that provides the whole grid a structure and divides it so that i can add the different cards in specific order  and ensure the page looks good on all devices.</p>
+                        
                     
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <p>To ensure accessibility, I implemented semantic HTML tags, made the button vibrant colors and well labeled, provided alternative text for images, and ensured sufficient color contrast for readability.</p>
                     
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                     <h3>Link to the page</h3>
-                        <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="home.html">Include a link to the actual page you describe.</a></p>
             </section>
 
             <section>
                 <h2 id="gallery">Gallery Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <p>
+                        For the gallery page I first divded the page into four sections below the the navigation bar to accomodate four image cards using (div) which allowed me to style those 
+                        sections seperatly. For the images I used the (img src="") tag to insert photos which was then styled to fit the image containers.
+                        For additional styling i added a (hover) function to add a CSS styled gradient that pop up when a cursor was on top and show the basic image Description and a small suggestion to "click" the image for more information.
+                        and coming to the addition of javascript it was used to allow for the intercation with the image to where it flips when clicked to show a card which would hold additiona text.
+                               </p> 
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <p>To make the gallery page more accessible , i made the images more descriptive and made it the button with a clear label and sufficient color contrast.</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#volunteerVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
@@ -114,7 +130,13 @@
 
             <section>
                 <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
+                    <p>
+
+                        This coursework made cross through various challenges and one of such challenge was the use of Git to share and 
+                        connect everyones work in the group to a single paltform so it worked seamlessly. Yet there were difficulties in setting it up and using it. 
+                        Going into the webpage itself the process of creating a global template that does not collide with other codes and styling was a difficult task.
+                        Actively having to adapt to new changes and adding components was a difficult process. The most difficult aspect being javascript and its intergration to the webapge.
+                    </p> 
             </section>
 
             <section>
@@ -237,25 +259,7 @@
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#content">Content</a></li>
                     </ul>
-                <li>Student 2</li>
-                <ul> 
-                    <li><a href="#">Splash Screen</a></li>
-                    <li><a href="#">Action Impact Simulator</a></li>
-                    <li><a href="#">Content</a></li>
-                </ul>
-                    
-                <li>Student 3</li>
-                    <ul>
-                        <li><a href="#">Feedback</a> </li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Content</a></li>
-                    </ul>
-                <li>Student 4</li>
-                    <ul>
-                        <li><a href="#">User Profile </a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Content</a></li>
-                    </ul>
+                
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
                 <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
@@ -265,7 +269,14 @@
     </div>
 
     <footer>
-        <p>Replace this footer with your teams' website footer</p>
+        <div class="foot-container">
+            <h4>&copy; AMAZE</h4>
+            <ul class="foot-link">
+                <li><a href="pageEditor_ST1.html" class="footer-link"> Page Editor</a></li>
+                <li><a href="validation_ST1.html" class="footer-link">Validation</a></li>
+            </ul>
+    
+        </div>
     </footer>
 </body>
 </html>

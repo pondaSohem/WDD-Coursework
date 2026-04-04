@@ -6,6 +6,105 @@
     <title>Coursework - Home </title>
     <!-- Linking css -->
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
+    <link href="https://fonts.cdnfonts.com/css/norwester" rel="stylesheet">
+<style>
+    .parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+}
+
+    
+
+.div2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.div3 {
+    grid-row: span 2 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+    .face-container{
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    background-image: url('../assets/poor.jpg');
+    background-size: cover;
+    background-position: center;  /* This centers your image */
+    background-repeat: no-repeat;
+    padding: 25px;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: flex;
+    /* align-items: left; */
+    justify-content: left;
+    color: white;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    position: relative;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.7);;
+
+}
+
+
+   
+.face-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, 
+                rgba(0, 156, 217, 1),   /* Dark blue on left */
+                rgba(30, 144, 255, 0.4), /* Lighter blue in middle */
+                rgba(135, 206, 235, 0)); /* Transparent on right */
+    border-radius: 5px;
+}
+.face-card-overlay h1 {
+    padding: 20px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Norwester', sans-serif;
+    font-size: 40px;
+}
+.face-card-overlay h2 {
+    padding: 20px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Norwester', sans-serif;
+    font-size: 30px;
+}
+.face-card-overlay p {
+    padding: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 15px;
+    
+}
+.home-img{
+    
+    display: block;
+    margin: 0 auto;
+  width: 600px;
+  height: 400px;
+}
+.cont-page-head{
+    background-color:#d2d0d0;
+            padding: 5px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1.5px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-family:'Norwester', sans-serif;
+            font-size: 20px;
+}
+
+</style>
 </head>
 
 
@@ -42,94 +141,87 @@
 
     <!-- MAIN -->
     <main>
-         <!-- GALLERY -->
-         <div class="scroll-container">
-    <a href="#" class="image-card">
-        <img src="../assets/putercat.jfif" alt="Student-1 Sulav">
-        <div class="overlay-text">Putercat <br><span>Image 1</span></div>
-    </a>
-    <a href="#" class="image-card">
-        <img src="../assets/dingus.jfif" alt="Student-2 Yugesh">
-        <div class="overlay-text">Dingus<br><span>Image 2</span></div>
-    </a>
-    <a href="#" class="image-card">
-        <img src="../assets/bingus.jfif" alt="Student-3 Sohem">
-        <div class="overlay-text">Bingus<br><span>Image 3</span></div>
-    </a>
-    <a href="#" class="image-card">
-        <img src="../assets/spoingus - Copy.jfif" alt="Student-4 Shreejal">
-        <div class="overlay-text">Spoingus<br><span>Image 4</span></div>
-    </a>
-</div>
 
-
-         <!-- Student-1 -->
-         <img src=""> 
-
-         <!-- Student-2 -->
-         <img src="">
-
-         <!-- Student-3 -->
-         <img src="">
-
-         <!-- Student-4 -->
-         <img src="">
-
+<!-- HOME PAGE FACE -->
+ <section class="face-container">
+    <div class="face-card-overlay">
+        <p>United Nations Sustainable Development Goal.<br> Learning and Education the unreached .</p>
         
+        <h1>QUALITY EDUCATION</h1>
+        <h2>Building a Better Future, One Goal at a Time </h2>
+
+        <p>Take action today — change starts here<br>
+Explore. Learn. Contribute. </p>
+
+    </div>
+
+ </section>
 
 
-    <section class="container">
-        <div class="head-card"> <h3> TEST BOX</h3></div>
+
+         <section class="container">
+        <div class="head-card"> <h3> What is a SDG goal</h3></div>
 
         <div class="card ">
-            <p>Once upon a time there was a lovely princess. But she had an enchantment upon her of a fearful
-sort, which could only be broken by Love's first kiss. She was locked away in a castle guarded by a
-terrible fire breathing dragon. Many brave knights had attempted to free her from this dreadful
-prison, but none prevailed. She waited in the dragon's keep in the highest room of the tallest tower
-for her true love and true love's first kiss. Like that's ever going to happen. What a loony. Shrek
-Beware Stay out I think he's in here. All right. Lets get it! Hold on. Do you know what that thing can
-do to you? Yeah. He'll groan into your bones for his brains. Well actually that would be a giant. Now
-Ogres, huh, they are much worse. They'll make a soup from your freshly peeled skin. They'll chew
-your livers, squeeze the jelly from your eyes. Actually, it's quite good on toast. Back, back beast,
-back! I warned you! Right. This is the part, where you run away. Yeah! And stay out. Wanted.
-Fairytale creatures. Right, this one is full. Take it away. Give me that. Your fine days are over. -25
-pieces of silver for the witch. Next. -Come on. Sit down there! And be quiet! This cage is so small.
-You wouldn't turn me in. I'll never be stubborn again. I can change. Please, give me another chance.
-Oh, shut up! Next. What do we got? This little wooden puppet. I'm not a puppet, I'm a real boy. Five
-shillings for the possessed toy. Take it away. No! Please, don't let them do it! Next. What do you
-got? Well, I've got a talking donkey! Right. Well that's good for ten schillings, if you can prove it. Oh,
-go ahead fella. Well? He's just a li..., just a little nervous. He's really quite a chatterbox. You
-boneheaded donkey! That's it. I have heard enough. Guards! No, no, he talks, he does! I can talk. I
-love to talk. I've talked to... Get her out of my sight! -No, no, I swear! Hey, I can fly. -He can fly! -He
-can fly! He can talk! -That's right, fool! Now I'm a flying, talking donkey! You might have seen house
-fly, maybe even a superfly. But I bet you ain't never seen a donkey fly! Seize him! Get him! This way!
-Hurry! You there. Ogre. -I. By the order of lord Farquaad. I am authorized to place you both under
-arrest. And transport you to designated resettlement facility. Oh really? You and what army? Can I
-say something to you? Listen, you were really, really something, back there. Incredible. Are you
-talking to... ...me? Yes, I was talking to you. Can I just tell you that you were really great back there
-with those guards. They thought that was all over there. And then you showed up and BAM. There
-was tripping on over themselves like babes in the woods. That really made me feel good to see that.
-Oh, that's great. Really. Man, it's good to be free. Now, why don't you go celebrate your freedom
-with your own friends? But I... I don't have any friends. And I'm not going out there by myself. Hey
-wait a minute. I have a great idea... I'll stick with you. You and me in green fighting machine.</p>
+            <p>Quality Education is one of the 17 Sustainable Development Goals established by the United Nations to create a better and more sustainable future for all. It focuses on ensuring inclusive and equitable education while promoting lifelong learning opportunities for everyone, regardless of their background.
+
+            Education is a powerful tool that empowers individuals, strengthens communities, and 
+            drives social and economic development. By improving access to quality education, 
+                we can help build a world where everyone has the opportunity to reach their full potential.</p>
         </div>
 
     </section>
 
+         <!-- GALLERY -->
+         <div class="scroll-container">
+            <div class ="cont-page-head"><h3>Visit our Content pages</h3></div>
+            
+    <a href="../StudentThree/content_ST3.html" class="image-card">
+        <img src="../assets/FreeEducation.jpg" alt="Free Education board">
+        <div class="overlay-text">Free Education For all <br><span> Student-3</span></div>
+    </a>
+    <a href="../StudentTwo/content_ST2.html" class="image-card">
+        <img src="../assets/EarlyEducation.jpg" alt="Baby with book">
+        <div class="overlay-text">Equality in Early Education <br><span> Student-2</span></div>
+    </a>
+    <a href="../StudentOne/content_ST1.html" class="image-card">
+        <img src="../assets/AccessibleEducation.jpg" alt="Cild Studying">
+        <div class="overlay-text">Accssible Affordable Education <br><span> Student-1</span></div>
+    </a>
+    <a href="../StudentFour/content_ST4.html" class="image-card">
+        <img src="../assets/InclusiveEducation.jpg" alt="Inclusive Education">
+        <div class="overlay-text">Inclusive Education <br><span>Student-4</span></div>
+    </a>
+</div>
+
+
+
+   <!-- INFO SECTION -->
    <section>
     <div class="parent">
     <div class="div1">
         <div class="container">
-            <div class="head-card"> <h3>Card 1</h3></div>
-            <div class ="card"></div>
+            <div class="head-card"> <h3>Why Quality Education Matters</h3></div>
+            <div class ="card"><p>
+                Education is the foundation of progress. It plays a crucial role in reducing poverty, improving health, promoting gender equality, and fostering peaceful societies. When individuals are educated, they gain the knowledge and skills
+                needed to make informed decisions and contribute positively to their communities.
+                Access to quality education opens doors to better job opportunities and economic growth. It also helps break the cycle of poverty by enabling future generations to live healthier and more stable lives. Simply put, education is not just a basic human 
+                right—it is the key to unlocking a brighter future for everyone.
+            </p></div>
         </div>
     </div>
 
 
     <div class="div2">
         <div class="container">
-            <div class="head-card"> <h3>Card 2</h3></div>
-            <div class ="card"></div>
+            <div class="head-card"> <h3>Challenges and Barriers</h3></div>
+            <div class ="card">
+                <p>
+                    Despite its importance, millions of children and adults around the world still lack access to quality education. Many face barriers such as poverty, lack of infrastructure, gender discrimination, and limited access to technology.
+                    In some regions, children are forced to work instead of attending school, while others live too far from educational facilities. The digital divide has also made it harder for students in underserved communities to access online learning resources. 
+                    These challenges continue to prevent equal opportunities for all.
+                </p>
+            </div>
         </div>
         
 </div>
@@ -137,9 +229,13 @@ wait a minute. I have a great idea... I'll stick with you. You and me in green f
 
     <div class="div3">
         <div class="container">
-            <div class="head-card"><h3>Card 3</h3></div>
-            <div class ="card"></div>
-        </div></div>
+            <div class="head-card"><h3>Solutions and How You Can Help</h3></div>
+            <div class ="card"><img src="../assets/HomeImage2.jpg" class = "home-img" alt="People sitting together"></div>
+            <div class ="card">Achieving quality education for all requires collective effort. Governments, organizations, and individuals must work together to improve access to schools, train teachers, and invest in educational resources and technology.
+                <br>You can also play a role in making a difference. Supporting educational initiatives, raising awareness, or volunteering your time can help bring change to communities in need. Every small action contributes to a larger impact.
+                <br>Together, we can create a world where education is accessible to everyone and no one is left behind.</div>
+        </div>
+    </div>
 </div>
 
    </section>
@@ -152,13 +248,13 @@ wait a minute. I have a great idea... I'll stick with you. You and me in green f
 
     <!-- FOOTER -->
     <footer>
-         <div class="foot-container">
-            <h4>&copy; TWATS</h4>
+        <div class="foot-container">
+            <h4>&copy; AMAZE</h4>
             <ul class="foot-link">
                 <li><a href="pageEditor_ST1.html#home" class="footer-link"> Page Editor</a></li>
                 <li><a href="validation_ST1.html#homeVal" class="footer-link">Validation</a></li>
             </ul>
-            
+    
         </div>
     </footer>
     <div class="back-top">

@@ -30,23 +30,23 @@
             <!-- Update the content of the following sections with the information that corresponds to the pages you implemented  -->
 
             <section>
-                <h2 id="splashVal">Home Page validation report</h2>
+                <h2 id="profileVal">User Profile Page validation report</h2>
                 <p>Include a short reflection on the validation report for the pages you implemented.</p>
                 <img src="validationSnapshots/validation_splash.png">
 
                 <h3>Back to Page Editor page</h3>
-                <p><a href="pageEditor_ST0.html#splash">Include a link back to the corresponding section of the Page
+                <p><a href="pageEditor_ST4.html#profile">Include a link back to the corresponding section of the Page
                         Editor.</a></p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
             </section>
 
             <section>
-                <h2 id="volunteerVal">Gallery Page validation report</h2>
+                <h2 id="sitemapVal">Sitemap Page validation report</h2>
                 <p>Include a short reflection on the validation report for the pages you implemented.</p>
                 <img src="validationSnapshots/validation_splash.png">
 
                 <h3>Back to Page Editor page</h3>
-                <p><a href="pageEditor_ST0.html#volunteer">Include a link back to the corresponding section of the Page
+                <p><a href="pageEditor_ST4.html#sitemap">Include a link back to the corresponding section of the Page
                         Editor.</a></p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
             </section></a></p>
@@ -57,13 +57,10 @@
                 <img src="validationSnapshots/validation_splash.png">
 
                 <h3>Back to Page Editor page</h3>
-                <p><a href="pageEditor_ST0.html#content">Include a link back to the corresponding section of the Page
+                <p><a href="pageEditor_ST4.html#content">Include a link back to the corresponding section of the Page
                         Editor.</a></p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
             </section></a></p>
-
-
-            <p class="top"><a href="#top">Go top</a></p>
         </main>
 
         <!-- Sidebar area -->
@@ -87,15 +84,24 @@
         </aside>
     </div>
         
-    <footer>
-        <div class="foot-container">
-            <h4>&copy; TWATS</h4>
-            <ul class="foot-link">
-                <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
-                <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
-            </ul>
-        </div>
-    </footer>
+    <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 </body>
         
 </html>

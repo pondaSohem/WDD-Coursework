@@ -9,7 +9,7 @@ body {
 
 /* CARDS & CONTAINER */
 .card {
-            background-color:#a8a8a8;
+            background-color: hsl(0, 0%, 75%);
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 30px;
@@ -23,7 +23,7 @@ body {
         }
 
 .head-card{
-  background-color:#a8a8a8;
+  background-color:hsl(0, 0%, 75%);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 30px;
@@ -37,7 +37,7 @@ body {
 
 
 .container{
-    background-color: #c7c3c3;
+    background-color: hsl(0, 0%, 85%);
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -73,9 +73,10 @@ header{
   padding: 0; /* Removes default padding */
   margin: 0; /* Removes default margin */
   display: flex; /* Arranges list items in a row */
-  justify-content: space-around; /*Distributes items evenly with space around them*/
   justify-content: flex-start;
   min-width: max-content;
+  align-items: center;
+
 }
 
 .nav-menu li {
@@ -94,10 +95,14 @@ header{
 }
 
 .logo-img {
-  margin-left: auto;
   flex-shrink: 0;
-  padding: 0 10px;
+  padding: 0 10px;}
+
+
+.logo-item {
+  margin-left: auto;
 }
+  
 
 nav li:hover {
    background-color: #0186bb;

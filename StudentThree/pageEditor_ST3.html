@@ -1,11 +1,292 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page Editor Student - Shreejal Manandhar</title>
+
+    <link rel="stylesheet" href="../StudentFour/pageEditor_validator.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="../GlobalTemplate/template.css"> <!-- Link to the global template CSS -->
+
 </head>
 <body>
+
+    <header>
+        <!-- NAVIGATION -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../StudentOne/home.html">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
     
+                <!-- LOGO -->
+                <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50px" width="50px">
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="stud">
+        <h2>Shreejal Manandhar | &copy; AMAZE | Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="feedback">Feedback Page</h2>
+    
+                <h3>Technical Description</h3>
+                <p>The feedback page uses basic HTML and CSS to create a functional layout. Key HTML tags 
+                    include <strong>&lt;header&gt;</strong> for the navigation bar, <strong>&lt;main&gt;</strong> 
+                    for main content, <strong>&lt;section&gt;</strong> to separate programmes, reviews, and form 
+                    areas. <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong> group related 
+                    form fields. <strong>&lt;input type="email"&gt;</strong>, <strong>&lt;input type="date"&gt;</strong>, 
+                    and <strong>&lt;textarea maxlength="500"&gt;</strong> provide built-in validation and character 
+                    limits. <strong>&lt;select multiple&gt;</strong> allows multi-selection for interests, 
+                    and <strong>&lt;datalist&gt;</strong> gives searchable country suggestions.</p>
+    
+                <p>Key CSS properties: <strong>position: fixed</strong> keeps the header visible while scrolling. 
+                    <strong>display: flex</strong> with <strong>overflow-x: auto</strong> creates horizontal scrolling cards. 
+                    <strong>filter: grayscale(100%)</strong> makes images black and white, changing to <strong>grayscale(0%)</strong> 
+                    on hover for interactive effect. <strong>transform: translateY(-3px)</strong> and <strong>box-shadow</strong> 
+                    add hover lift.</p>
+    
+                <p>JavaScript is used minimally for three specific tasks. First, a <strong>live character counter</strong> updates 
+                    in real-time as the user types in the review textarea, showing remaining characters and changing color when 
+                    under 20 characters. Second, <strong>form validation</strong> checks all required fields on submit, displays 
+                    custom error messages next to invalid fields, and highlights them with red borders. Third, a 
+                    <strong>confirmation message</strong> appears upon successful validation, then auto-hides after 4 seconds.</p>
+    
+            <h3>Accessibility</h3>
+                <p>All images include descriptive <strong>alt</strong> text. Form fields use <strong>&lt;label&gt;</strong> tags properly associated with inputs. <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong> group form sections logically. Error messages appear near relevant fields with visible color contrast. The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, <strong>&lt;main&gt;</strong>, and <strong>&lt;footer&gt;</strong> for screen reader navigation. A "Back to Top" button provides easy keyboard navigation.</p>
+    
+            <h3>Link to the validation page</h3>
+                <p><a href="validation_ST0.html#splashVal">Validation Page</a></p>
+    
+            <h3>Link to the page</h3>
+                <p><a href="feedback.html">Feedback Page</a></p>
+            
+            </section>
+
+
+            <section>
+                <h2 id="team">Team Page</h2>
+    
+                    <h3>Technical Description</h3>
+                        <p>The team page displays four student profiles using a card-based layout. 
+                            Key HTML tags include <strong>&lt;header&gt;</strong> for navigation, 
+                            <strong>&lt;main&gt;</strong> for content, and <strong>&lt;footer&gt;</strong> 
+                            for page footer. Each team member is represented using an <strong>&lt;a&gt;</strong> 
+                            tag wrapped around an <strong>&lt;img&gt;</strong> and a 
+                            <strong>&lt;div class="info-card"&gt;</strong>. Unordered lists 
+                            <strong>&lt;ul&gt;</strong> and <strong>&lt;li&gt;</strong> display each 
+                            member's responsibilities.</p>
+    
+                        <p>Key CSS properties: <strong>display: grid</strong> or <strong>flex</strong> 
+                            arranges cards in a responsive gallery. <strong>position: relative</strong> on 
+                            image containers and <strong>position: absolute</strong> on overlay text 
+                            creates hover effects. <strong>transform: translateY(100%)</strong> hides 
+                            overlay text initially, changing to <strong>translateY(0)</strong> on hover 
+                            to reveal names. <strong>transition</strong> provides smooth animation. 
+                            <strong>object-fit: cover</strong> ensures images fill their containers 
+                            properly. <strong>box-shadow</strong> and <strong>border-radius</strong> 
+                            add visual polish to cards.</p>
+    
+                        <p>JavaScript is not used on this page. All interactivity comes from CSS hover 
+                            effects only. The image overlay that reveals student names on hover, the 
+                            subtle zoom effect on images, and the card shadows are all achieved with 
+                            pure CSS. No form validation, dynamic content loading, or event handling 
+                            is implemented.</p>
+    
+                    <h3>Accessibility</h3>
+                        <p>All images include descriptive <strong>alt</strong> text with student names. 
+                            The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, 
+                            <strong>&lt;main&gt;</strong>, <strong>&lt;footer&gt;</strong>, and 
+                            <strong>&lt;ul&gt;</strong> for proper document structure. The active 
+                            page link is highlighted in the navigation bar. Heading hierarchy starts 
+                            with <strong>&lt;h1&gt;</strong> for the main title, then <strong>&lt;h3&gt;</strong> 
+                            for student names inside cards. The entire card is clickable as an 
+                            <strong>&lt;a&gt;</strong> tag, making it keyboard accessible. Color 
+                            contrast meets readability standards.</p>
+    
+                    <h3>Link to the validation page</h3>
+                        <p><a href="validation_ST0.html#teamVal">Validation Page</a></p>
+    
+                    <h3>Link to the page</h3>
+                        <p><a href="team.html">Team Page</a></p>
+            </section>
+            
+            <section>
+                <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+
+                    <h3>Accessibility</h3>
+                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+
+                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
+                        <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                        
+                    <h3>Link to the page</h3>
+                        <p><a href="content.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                    <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+
+                    
+            </section>
+
+            <section>
+                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
+                    Requirements:
+                        <ul> 
+                            <li>A minimum of six (6) group meetings must be recorded.</li>
+                            <li>Each student must provide their own account of the meetings.</li>
+                            <li>The log must focus on individual contribution, not just group activity.</li>
+                        </ul>
+                        <p>Feel free to follow the example table structure below:</p>
+
+                        <table >
+    
+                            <thead>
+                                <tr>
+                                    <th colspan="6">Group Meetings and Contribution Log</th>
+                                </tr>
+                                <tr>
+                                    <th>Meeting</th>
+                                    <th>Date &amp; Time</th>
+                                    <th>Format</th>
+                                    <th>Objective</th>
+                                    <th>Attended</th>
+                                    <th>Your Individual Contribution</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>3 Feb 2026</td>
+                                    <td>Face-to-face</td>
+                                    <td>Agree SDG and assign roles</td>
+                                    <td>Yes</td>
+                                    <td>I agreed to take responsibility for the Home Page and template.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>2</td>
+                                    <td>17 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Review Home Page design</td>
+                                    <td>Yes</td>
+                                    <td>I suggested the colour palette and card-based layout.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>3</td>
+                                    <td>03 Mar 2026</td>
+                                    <td>Hybrid</td>
+                                    <td>Progress review</td>
+                                    <td>No</td>
+                                    <td>I reviewed meeting notes and followed up with tasks.</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>4</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>5</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                        
+                                <tr>
+                                    <td>6</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                        
+                            </tbody>
+                        
+                        </table>
+                    
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                    <ul class="ref">
+                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
+                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                    </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+
+                <li>Student 3</li>
+                    <ul>
+                        <li><a href="feedback.html">Feedback</a> </li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="content.html">Content</a></li>
+                    </ul>
+
+
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+<footer>
+    <div class="foot-container">
+        <h4>&copy; AMAZE</h4>
+        <ul class="foot-link">
+            <li><a href="#PageEditor">Page Editor</a></li>
+            <li><a href="#Validation">Validation</a></li>
+        </ul>
+    </div>
+</footer>
+
 </body>
 </html>

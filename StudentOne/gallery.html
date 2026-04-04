@@ -222,29 +222,36 @@
        
     </style>
 </head>
+<body id ="Top">
 
 <!-- HEADER -->
-<header>
-    <!-- NAVIGATION -->
-    <nav>
-        <ul class="nav-menu">
-            <li class="active"><a href="../StudentOne/home.html">Home</a></li>
-            <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-            <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-            <li><a href="../StudentFour/profile.html">User Profile</a></li>
-            <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
-            <li><a href="../StudentThree/team.html">Team Page</a></li>
-            <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+ <header>
 
-            <!-- LOGO -->
-            <div class="logo-img">
-                <img src="../assets/MUULA.png" height="50px" width="50px">
-            </div>
-        </ul>
-    </nav>
-</header>
+        <!-- NAVIGATION -->
+         <nav>
+            <ul class="nav-menu">
+                <li ><a href="../StudentOne/home.html">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li class="active"><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
-<body>
+                <!-- LOGO -->
+                <li> <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50" width="50" alt="logo">
+                 </div>
+                 </li>
+                
+            </ul>
+        </nav>
+
+
+       
+    </header>
+
+
     <div class="gallery-head">
         <h3>GALLERY</h3>
     </div>
@@ -255,7 +262,7 @@
                 <a href="javascript:void(0);" class="gallery-image-card">
                     <div class="flip-inner">
                         <div class="flip-front">
-                            <img src="../assets/gallery 1 girls edu.jpg" alt="Girls Learnign in a class.">
+                            <img src="../assets/gallery1girlsedu.jpg" alt="Girls Learnign in a class.">
                             <div class="overlay-text"> Grils Education <br><span>Click for detail</span></div>
                         </div>
                         <div class="flip-back">
@@ -277,7 +284,7 @@
                 <a href="javascript:void(0);" class="gallery-image-card">
                     <div class="flip-inner">
                         <div class="flip-front">
-                            <img src="../assets/gallery 2 class learn.jpg" alt="Children in class room ">
+                            <img src="../assets/gallery2classlearn.jpg" alt="Children in class room ">
                             <div class="overlay-text">Quality Learning <br><span>Click for detail</span></div>
                         </div>
                         <div class="flip-back">
@@ -298,7 +305,7 @@
                 <a href="javascript:void(0);" class="gallery-image-card">
                     <div class="flip-inner">
                         <div class="flip-front">
-                            <img src="../assets/gallery 3 digital learn.jpg" alt="Children Learning on phones ">
+                            <img src="../assets/gallery3digitallearn.jpg" alt="Children Learning on phones ">
                             <div class="overlay-text">Digital Learning<br><span>Click for detail</span></div>
                         </div>
                         <div class="flip-back">
@@ -319,7 +326,7 @@
                 <a href="javascript:void(0);" class="gallery-image-card">
                     <div class="flip-inner">
                         <div class="flip-front">
-                            <img src="../assets/galler 4 barrier.jpg" alt="Two kids walking to school">
+                            <img src="../assets/galler4barrier.jpg" alt="Two kids walking to school">
                             <div class="overlay-text">Learning Barrier <br><span>Click for detail</span></div>
                         </div>
                         <div class="flip-back">
@@ -337,7 +344,6 @@
         </div>
     </main>
 
-    <footer></footer>
 
     <script>
         (function() {
@@ -420,6 +426,23 @@
     
         </div>
     </footer>
+    <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 </body>
 
 </html>

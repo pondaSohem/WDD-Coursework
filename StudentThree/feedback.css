@@ -1,0 +1,405 @@
+        /* page styles */
+        .hero {
+            background: linear-gradient(135deg, #0077b6, #009cd9);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            color: #1e3a5f;
+        }
+
+        /* cards - HORIZONTAL SCROLL */
+        .filter-bar {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-bar label {
+            font-weight: bold;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        /* horizontal scroll container */
+        .cards-scroll {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            scroll-behavior: smooth;
+        }
+
+        /* make each card have a fixed width and proper text handling */
+        .prog-card {
+            flex: 0 0 auto;
+            width: 280px;
+            min-width: 280px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 18px;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .prog-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .card-thumb {
+            height: 140px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .prog-card:hover .card-image {
+            filter: grayscale(0%);
+        }
+
+        .card-tag {
+            background: #e0f2fe;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #0369a1;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .prog-card h3 {
+            margin: 10px 0 8px 0;
+            font-size: 1.1rem;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .prog-card p {
+            color: #555;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            flex-grow: 1;
+        }
+
+        .btn-card {
+            display: inline-block;
+            background: #009cd9;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            text-align: center;
+            align-self: flex-start;
+            white-space: nowrap;
+        }
+
+        .btn-card:hover {
+            background: #0077aa;
+        }
+
+        /* scrollbar styling */
+        .cards-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .cards-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .cards-scroll::-webkit-scrollbar-thumb {
+            background: #00445f;
+            border-radius: 10px;
+        }
+
+        .cards-scroll::-webkit-scrollbar-thumb:hover {
+            background: #aa0000;
+        }
+
+        /* reviews */
+        .reviews-wrapper {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .rating-summary {
+            background: linear-gradient(135deg, #009cd9, #0077aa);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 16px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .rating-summary .big-rating {
+            font-size: 52px;
+            font-weight: bold;
+        }
+
+        .rating-summary .stars {
+            font-size: 22px;
+            margin: 8px 0;
+        }
+
+        .reviews-list {
+            flex: 1;
+        }
+
+        .review-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 18px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .review-header h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .review-rating-badge {
+            background: #e0f2fe;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .review-text {
+            color: #444;
+            font-size: 0.85rem;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        .see-more {
+            color: #009cd9;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .see-more:hover {
+            text-decoration: underline;
+        }
+
+        .review-meta {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: #777;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* form */
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 12px;
+            color: #009cd9;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .required {
+            color: #e11d48;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        /* style for multi-select to make it more usable */
+        select[multiple] {
+            height: auto;
+            min-height: 100px;
+        }
+        
+        select[multiple] option {
+            padding: 8px;
+            cursor: pointer;
+        }
+        
+        select[multiple] option:hover {
+            background-color: #e0f2fe;
+        }
+
+        .error-field {
+            border-color: #e11d48;
+            background-color: #fff5f5;
+        }
+
+        .error-msg {
+            color: #e11d48;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .error-msg.show {
+            display: block;
+        }
+
+        .char-count {
+            font-size: 12px;
+            text-align: right;
+            margin-top: 5px;
+            color: #666;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background: #009cd9;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #0077aa;
+        }
+
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #ccc;
+        }
+
+        .confirmation-msg {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        .confirmation-msg.show {
+            display: block;
+        }
+
+        hr.divider {
+            margin: 0 20px;
+            border-top: 2px solid #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-wrapper {
+                flex-direction: column;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+            .prog-card {
+                width: 260px;
+                min-width: 260px;
+            }
+            .form-box {
+                padding: 20px;
+            }
+            fieldset {
+                padding: 15px;
+            }
+        }

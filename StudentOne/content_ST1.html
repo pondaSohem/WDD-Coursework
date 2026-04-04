@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coursework - ContentPageST1</title>
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
 
 
-</head>
+
 <style>
     .grid-content1 {
     display: grid;
@@ -72,27 +72,34 @@
 }
 </style>
 
-
+</head>
+<body id ="Top">
 <header>
-    <!-- NAVIGATION -->
-    <nav>
-        <ul class="nav-menu">
-            <li class="active"><a href="../StudentOne/home.html">Home</a></li>
-            <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-            <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-            <li><a href="../StudentFour/profile.html">User Profile</a></li>
-            <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
-            <li><a href="../StudentThree/team.html">Team Page</a></li>
-            <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
-            <!-- LOGO -->
-            <div class="logo-img">
-                <img src="../assets/MUULA.png" height="50px" width="50px">
-            </div>
-        </ul>
-    </nav>
-</header>
-<body>
+        <!-- NAVIGATION -->
+         <nav>
+            <ul class="nav-menu">
+                <li class="active"><a href="#Home">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+
+                <!-- LOGO -->
+                <li> <div class="logo-img">
+                    <img src="../assets/MUULA.png" height="50" width="50" alt="logo">
+                 </div>
+                 </li>
+                
+            </ul>
+        </nav>
+
+
+       
+    </header>
+
     <main>
         
 <div class="grid-content1">
@@ -122,15 +129,16 @@
         <div class="container">
             <div class="head-card"> <h3>Why it matters </h3></div>
 
-            <div class ="cont-image-card"><img src ="../assets/C 2.jpg" alt ="" class="cont-img"></div>
+            <div class ="cont-image-card"><img src ="../assets/C2.jpg" alt ="" class="cont-img"></div>
             
-            <div class ="card"><p>
+            <div class ="card">
+                
                 <ul>
                     <li>Reduces Unemployment</li>
                     <li>Promotes Equality</li>
                     <li>Builds skilled workforce</li>
                 </ul>
-            </p></div>
+            </div>
         </div>
     </div>
 
@@ -139,17 +147,17 @@
         <div class="container">
             <div class="head-card"> <h3>Types of Education</h3></div>
 
-            <div class ="cont-image-card"><img src ="../assets/C 3.jpg" alt ="" class="cont-img"></div>
+            <div class ="cont-image-card"><img src ="../assets/C3.jpg" alt ="" class="cont-img"></div>
             
             <div class ="card"><p>
-                Educations is not just about books and copies they are of types based on how performative they are.<br>
+                Educations is not just about books and copies they are of types based on how performative they are.<br></p>
                 Such as:<br>
                 <ul>
                     <li>Technical Education (engineering, IT, etc.)</li>
                     <li>Vocational Education (practical skills like carpentry, plumbing)</li>
                     <li>Higher Education (universities, degrees)</li>
                 </ul>
-            </p></div>
+            </div>
         </div>
     </div>
 
@@ -158,10 +166,10 @@
         <div class="container">
             <div class="head-card"> <h3>Barriers</h3></div>
 
-            <div class ="cont-image-card"><img src ="../assets/C 4.jpg" alt ="" class="cont-img"></div>
+            <div class ="cont-image-card"><img src ="../assets/C4.jpg" alt ="" class="cont-img"></div>
             
             <div class ="card"><p>
-            Many face challenges and can not over come it.The challenges one faces:<br>
+            Many face challenges and can not over come it.The challenges one faces:<br></p>
             <ul>
                 <li>High tuition fees</li>
                 <li>Lack of institutions in rural areas</li>
@@ -169,7 +177,7 @@
                 <li>Limited scholarships</li>
                 <li>Digital divide</li>
             </ul>  
-            </p></div>
+            </div>
         </div>
     </div>
 
@@ -178,7 +186,7 @@
         <div class="container">
             <div class="head-card"> <h3>The way Forward</h3></div>
 
-            <div class ="cont-image-card"><img src ="../assets/C 5.jpg" alt ="" class="cont-img"></div>
+            <div class ="cont-image-card"><img src ="../assets/C5.jpg" alt ="" class="cont-img"></div>
             
             <div class ="card"><p>
                 With countless problems and challaenges in the way but united and 
@@ -204,5 +212,22 @@
     
         </div>
     </footer>
+    <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 </body>
 </html>

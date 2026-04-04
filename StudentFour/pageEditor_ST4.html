@@ -60,15 +60,19 @@
                     Right below the progress bar there is a <code class="css-c">.progress-message</code> container which includes 2 of <code class="css-c">.left</code> and <code class="css-c">.right</code>. They include styling for sticking the <code class="css-c">#progress-message</code> to the left and <code class="css-c">#profile-status</code> to the right side of the screen.
                     <code class="css-c">#progress-message</code> contains how many fields in the profile has been completed. This starts with 0. <code class="css-c">#profile-status</code> shows the condition of the user's profile. Depending on how many fields have been filled in, the profile status will dynamically update to show between Poor (0 - 3), Decent (4 - 7), Good (7 - 9), and Excellent (10).
                     <br>
-                    Then we move to the second section (<code class="html-c">&lt;div&gt;</code> without any attributes) which contains 3 sub sections; <code class="css-c">.prompt-input-pd</code>, <code class="css-c">prompt-input-pref</code>, <code class="css-c">prompt-input-other</code>.
+                    Then we move to the second section (<code class="html-c">&lt;div&gt;</code> without any attributes) which contains 3 sub sections; <code class="css-c">.prompt-input-pd</code>, <code class="css-c">prompt-input-pref</code>, <code class="css-c">prompt-input-other</code>. These sub sections are encapsulated within a <code class="html-c">&lt;fieldset&gt;</code> with <code class="css-c">border: 2px solid var(--bd-colour)</code> to clearly differentiate the sub sections.
                     Each of those classes have two classes; <code class="css-c">.left-field</code> and <code class="css-c">.right-value</code>. Just like with the classes .left and .right mentioned before, the left sticks to the left and the right sticks to the right.
                     The left side has the field; user reads this and finds out what this line is about. The right side has the value; this acts as the display for the field, also as a <code class="html-c">button</code> to update/change the value. Each value has its own <code class="html-c">button</code> tag with unique IDs because they will update/change with JavaScript.
+                    Rather than using the normal <code class="html-c">&lt;input&gt;</code> method that HTML has to take in user input, I used the JavaScript <code class="js-c">prompt()</code> to take it user inputs just like how it has asked in the coursework description.
                 </p>
 
                 <h3>Accessibility</h3>
                 <p>
                     The prgoress bar is a very friendly user-friendly system to show user what their progress is without reading the numbers, because the colour changes with each field value completion.
+                    The use of <code class="html-c">fieldset</code> and <code class="html-c">legend</code> creates logical groupings that screen readers can announce, helping users understand the structure of the profile form.
                     The first edition of the prompt system used to look very different and had a very non-user-friendly system of working. The current one I have impletement was inspired by the one we have in our VLE Blackboard. As you click on the <code class="html-c">button</code> that says <code>Enter Here</code>, it prompts user what they want to enter there. If it already has a value, clicking on it again asks the user to change it. If the user inputs anything invalid or empty value, it skips it while also not updating the progress.
+                    Users will also be able to see if they are on the buttons with the <code class="css-c">:hover</code> pseudoclass with a colour change and a little scaling effect.
+                    Each prompts for getting value are also clearly displayed.
                 </p>
 
                 <h3>Link to the validation page</h3>
@@ -97,7 +101,11 @@
 
                 <h3>Accessibility</h3>
                 <p>
-                    I have added a legend below the SVG which shows what colour nodes lead to what kind of pages.
+                    In the nodes, added the <code class="html-c">tabindex="0"</code> attribute to make everything keyboard-focusable. I also have added the <code class="css-c">:hover</code> and <code class="css-c">:focus</code> pseudoclass on some classes so that it changes to show user they have a cursor on it or have selected something. Everything is responsive in the Sitemap.
+                    I have also added a legend below the SVG which shows what colour nodes lead to what kind of pages.
+                    Each <code class="html-c">&lt;a&gt;</code> tag also contains descriptive text content, ensuring screen readers can announce the destination of each link. 
+                    There also is another <code class="css-c">:focus</code> pseudoclass on the <code class="css-c">.node-rect</code> so the user knows which one they selected. 
+                    Since the sitemap is active in the sitemap itself, the colour for the <code class="css-c">#sitemap-node</code> is different compared to others.
                 </p>
 
                 <h3>Link to the validation page</h3>
@@ -158,7 +166,7 @@
             </section>
 
             <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
                 <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p>
                 Requirements:
                 <ul>

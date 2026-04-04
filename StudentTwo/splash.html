@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="splash.css">
     <style>
         #splash {
-            transition: opacity 0.8s ease;
+            transition: opacity 0.4s ease;
         }
         #splash.fade-out {
             opacity: 0;
@@ -18,7 +18,7 @@
     <div id="splash">
         <h1 class="logo"><bold>Quality Education</bold></h1>
         <br>
-        <p id="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p id="para">Quality education means providing all learners with effective teaching, safe environments, and relevant skills that go beyond basic literacy. It focuses on equitable access, measurable learning outcomes, and fostering critical thinking and lifelong learning. Ultimately, it empowers individuals to break poverty cycles, drive economic growth, and build peaceful, sustainable societies.</p>
         <br>
         <a class="skipbutton" href="../StudentOne/home.html">skip</a>
         <h3 id="countdown">3</h3>
@@ -35,7 +35,7 @@
             splash.classList.add('fade-out');
             setTimeout(() => {
                 window.location.href = '../StudentOne/home.html'; // Change this to your target page
-            }, 800); // Matches the CSS transition duration
+            }, 400); // Matches the CSS transition duration
         }
 
         const timer = setInterval(() => {

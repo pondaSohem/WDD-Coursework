@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial;
+    background: #000;
 }
 
 /* Splash screen */
@@ -61,11 +62,7 @@ body {
     pointer-events: none;
 }
 
-/* Main content hidden first */
-#content {
-    display: none;
-    padding: 20px;
-}
+
 
 /* Animation */
 @keyframes fadeIn {

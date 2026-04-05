@@ -97,7 +97,28 @@
 </p>
     
             <h3>Accessibility</h3>
-                <p>All images include descriptive <strong>alt</strong> text. Form fields use <strong>&lt;label&gt;</strong> tags properly associated with inputs. <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong> group form sections logically. Error messages appear near relevant fields with visible color contrast. The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, <strong>&lt;main&gt;</strong>, and <strong>&lt;footer&gt;</strong> for screen reader navigation. A "Back to Top" button provides easy keyboard navigation.</p>
+<p>
+    The circular countdown loader provides a visual representation of time remaining without 
+    requiring the user to read numbers alone, as the shrinking stroke of 
+    <code class="css-c">.circle-progress</code> gives an immediate visual cue of how much time 
+    is left before redirect.
+    The countdown number inside <code class="css-c">#countdown</code> acts as a text alternative 
+    for users who may not perceive the animated SVG stroke, ensuring the remaining time is always 
+    readable as plain text.
+    The skip button using class <code class="css-c">.skipbutton</code> gives users full control 
+    to bypass the auto-redirect at any point, which is especially important for users who may need 
+    more time to read the introductory paragraph before being redirected.
+    Users can clearly see when they are hovering over the skip button through the 
+    <code class="css-c">:hover</code> pseudo-element, which changes the background colour to 
+    <code class="css-c">#1abc9c</code> and applies a <code class="css-c">transform: scale(1.1)</code> 
+    effect, providing clear visual feedback.
+    The <code class="css-c">#para</code> description paragraph gives context about the purpose 
+    of the website before the user is taken to the home page, ensuring all users including those 
+    using screen readers understand the site's intent from the very first screen.
+    The fade-out transition applied through the <code class="css-c">.fade-out</code> class uses 
+    a gradual <code class="css-c">opacity</code> change rather than an abrupt page switch, reducing 
+    visual disruption for users sensitive to sudden screen changes.
+</p>
     
             <h3>Link to the validation page</h3>
                 <p><a href="validation_ST2.html#splashVal">Validation Page</a></p>
@@ -109,44 +130,81 @@
 
 
             <section>
-                <h2 id="ais">Action Impact Simulator Page</h2>
-    
-                    <h3>Technical Description</h3>
-                        <p>The team page displays four student profiles using a card-based layout. 
-                            Key HTML tags include <strong>&lt;header&gt;</strong> for navigation, 
-                            <strong>&lt;main&gt;</strong> for content, and <strong>&lt;footer&gt;</strong> 
-                            for page footer. Each team member is represented using an <strong>&lt;a&gt;</strong> 
-                            tag wrapped around an <strong>&lt;img&gt;</strong> and a 
-                            <strong>&lt;div class="info-card"&gt;</strong>. Unordered lists 
-                            <strong>&lt;ul&gt;</strong> and <strong>&lt;li&gt;</strong> display each 
-                            member's responsibilities.</p>
-    
-                        <p>Key CSS properties: <strong>display: grid</strong> or <strong>flex</strong> 
-                            arranges cards in a responsive gallery. <strong>position: relative</strong> on 
-                            image containers and <strong>position: absolute</strong> on overlay text 
-                            creates hover effects. <strong>transform: translateY(100%)</strong> hides 
-                            overlay text initially, changing to <strong>translateY(0)</strong> on hover 
-                            to reveal names. <strong>transition</strong> provides smooth animation. 
-                            <strong>object-fit: cover</strong> ensures images fill their containers 
-                            properly. <strong>box-shadow</strong> and <strong>border-radius</strong> 
-                            add visual polish to cards.</p>
-    
-                        <p>JavaScript is not used on this page. All interactivity comes from CSS hover 
-                            effects only. The image overlay that reveals student names on hover, the 
-                            subtle zoom effect on images, and the card shadows are all achieved with 
-                            pure CSS. No form validation, dynamic content loading, or event handling 
-                            is implemented.</p>
-    
-                    <h3>Accessibility</h3>
-                        <p>All images include descriptive <strong>alt</strong> text with student names. 
-                            The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, 
-                            <strong>&lt;main&gt;</strong>, <strong>&lt;footer&gt;</strong>, and 
-                            <strong>&lt;ul&gt;</strong> for proper document structure. The active 
-                            page link is highlighted in the navigation bar. Heading hierarchy starts 
-                            with <strong>&lt;h1&gt;</strong> for the main title, then <strong>&lt;h3&gt;</strong> 
-                            for student names inside cards. The entire card is clickable as an 
-                            <strong>&lt;a&gt;</strong> tag, making it keyboard accessible. Color 
-                            contrast meets readability standards.</p>
+                <h3>Technical Description</h3>
+<p>
+    The Action Impact Simulator page is structured around two main visible sections: a 
+    <code class="css-c">.feedback</code> panel at the top and a <code class="css-c">.cards-grid</code> 
+    below it, both wrapped inside a <code class="css-c">.wrapper</code> div that constrains the 
+    content to a <code class="css-c">max-width: 1140px</code> and centres it with 
+    <code class="css-c">margin: 0 auto</code>. Above the wrapper sits a 
+    <code class="css-c">.hero</code> banner using 
+    <code class="css-c">background: linear-gradient(135deg, #0077b6, #009cd9)</code> to introduce 
+    the page with a full-width coloured header.
+    <br>
+    The <code class="css-c">.cards-grid</code> uses 
+    <code class="css-c">display: grid</code> with 
+    <code class="css-c">grid-template-columns: repeat(auto-fill, minmax(270px, 1fr))</code> to 
+    create a fully responsive card layout that reflows automatically based on viewport width. 
+    Each of the seven action cards is a <code class="html-c">&lt;div&gt;</code> with class 
+    <code class="css-c">.action-card</code>, using <code class="html-c">role="button"</code> and 
+    <code class="html-c">tabindex="0"</code> so they behave as interactive elements without using 
+    an actual <code class="html-c">&lt;button&gt;</code> tag. Each card holds a 
+    <code class="css-c">.card-img</code> div containing an <code class="html-c">&lt;img&gt;</code>, 
+    a <code class="css-c">.tick</code> div for the selection checkmark, and a 
+    <code class="css-c">.card-body</code> with a heading, description paragraph, and a 
+    <code class="css-c">.badge</code> showing the point value.
+    <br>
+    Each card stores its point value in a <code class="html-c">data-points</code> attribute. 
+    JavaScript reads this with <code class="js-c">getAttribute('data-points')</code> inside the 
+    <code class="js-c">toggleCard()</code> function. Clicking a card adds or removes the 
+    <code class="css-c">.selected</code> class, adds or subtracts its points from 
+    <code class="js-c">totalPoints</code>, and calls <code class="js-c">updateUI()</code>. 
+    Cards are also keyboard operable via <code class="js-c">handleKeydown()</code>, which 
+    triggers <code class="js-c">toggleCard()</code> on <code class="js-c">Enter</code> or 
+    <code class="js-c">Space</code> keypress using <code class="js-c">event.preventDefault()</code> 
+    to stop the page from scrolling.
+    <br>
+    The <code class="css-c">.feedback</code> panel contains the results area 
+    <code class="css-c">#results</code>, which is hidden with 
+    <code class="css-c">display: none</code> until at least one card is selected. Once active, 
+    <code class="js-c">updateUI()</code> updates <code class="css-c">#score-num</code> with the 
+    current total, sets the <code class="css-c">#level-pill</code> class to either 
+    <code class="css-c">.low</code>, <code class="css-c">.medium</code>, or 
+    <code class="css-c">.high</code> depending on the score thresholds (0–6, 7–13, 14+), fills 
+    <code class="css-c">#summary-msg</code> with a message from the <code class="js-c">MSGS</code> 
+    object, and animates the <code class="css-c">.prog-fill</code> bar by setting its 
+    <code class="css-c">width</code> as a percentage of the maximum 25 points. The fill colour 
+    also dynamically changes between orange, yellow, and blue depending on the level.
+</p>
+
+<h3>Accessibility</h3>
+<p>
+    Each <code class="css-c">.action-card</code> is given <code class="html-c">role="button"</code> 
+    and <code class="html-c">tabindex="0"</code> so that keyboard users can tab to and activate 
+    every card without needing a mouse. The <code class="js-c">handleKeydown()</code> function 
+    ensures pressing <code class="js-c">Enter</code> or <code class="js-c">Space</code> triggers 
+    selection, matching expected keyboard behaviour for interactive elements.
+    Each card also carries an <code class="html-c">aria-label</code> describing both the action 
+    name and its point value, and an <code class="html-c">aria-pressed</code> attribute that 
+    updates between <code class="js-c">"true"</code> and <code class="js-c">"false"</code> via 
+    <code class="js-c">card.setAttribute('aria-pressed', ...)</code> inside 
+    <code class="js-c">toggleCard()</code>, so screen readers can announce whether a card is 
+    selected or not.
+    The <code class="css-c">.feedback</code> panel uses <code class="html-c">aria-live="polite"</code> 
+    so that when the score, level pill, progress bar, and summary message update dynamically, 
+    assistive technologies announce the changes without interrupting the user.
+    The <code class="css-c">.tick</code> checkmark element carries 
+    <code class="html-c">aria-hidden="true"</code> since it is purely decorative and its 
+    information is already conveyed through <code class="html-c">aria-pressed</code>. Similarly, 
+    the decorative SVG icon in the feedback heading uses <code class="html-c">aria-hidden="true"</code>.
+    All card images include descriptive <code class="html-c">alt</code> text explaining the 
+    educational action shown, and each also has an <code class="html-c">onerror</code> fallback 
+    to a placeholder image, ensuring the card remains visually complete even if the asset fails 
+    to load. The back to top button includes an <code class="html-c">aria-label="Back to top"</code> 
+    and its hover state expands the label text to 
+    <code class="js-c">"↑ Back To Top"</code> via <code class="js-c">innerHTML</code>, providing 
+    a clear action description for all users.
+</p>
     
                     <h3>Link to the validation page</h3>
                         <p><a href="validation_ST2.html#aisVal">Validation Page</a></p>
@@ -158,66 +216,90 @@
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>This content page uses basic HTML and CSS to present information about UN Sustainable 
-                            Development Goal Target 4.1. Key HTML tags include <strong>&lt;header&gt;</strong> 
-                            for the navigation bar, and an internal nav bar for easier navigation between different 
-                            sections of the content page. The nav bar and the internal nav bar is created using a 
-                            <strong>&lt;nav&gt;</strong> with an unordered list 
-                            <strong>&lt;ul&gt;</strong> for menu links, and <strong>&lt;main&gt;</strong> to 
-                            contain the primary page content. <strong>&lt;div class="head-card"&gt;</strong> 
-                            introduces the topic with a main heading <strong>&lt;h1&gt;</strong> and paragraph 
-                            <strong>&lt;p&gt;</strong>. <strong>&lt;div class="container"&gt;</strong> and 
-                            <strong>&lt;div class="card"&gt;</strong> provide structural containers for different 
-                            content sections, with the card class typically offering visual separation through 
-                            background styling defined in the global template CSS. <strong>&lt;img&gt;</strong> 
-                            tags embed educational photographs with <strong>alt</strong> attributes for accessibility 
-                            and inline styles controlling width, float positioning, border radius, and margins to 
-                            create wrapped text layouts.</p>
+<p>
+    The Content Page covers SDG Target 4.2, focusing on quality early childhood development 
+    and pre-primary education. The page is structured entirely within a 
+    <code class="html-c">&lt;main&gt;</code> tag and divided into several distinct 
+    <code class="html-c">&lt;div&gt;</code> sections, each with a dedicated class that 
+    controls its own layout and styling via the external <code class="css-c">content_ST2.css</code> 
+    stylesheet.
+    <br>
+    The page opens with a <code class="css-c">.top1</code> div containing an 
+    <code class="html-c">&lt;h1&gt;</code> for the main title and an 
+    <code class="html-c">&lt;h2&gt;</code> with class <code class="css-c">.h3</code> for the 
+    target description subtitle. This is followed by a <code class="css-c">.container</code> 
+    div which holds a full-width <code class="html-c">&lt;img&gt;</code> styled inline with 
+    <code class="css-c">width: 100%</code>, <code class="css-c">border-radius: 8px</code>, 
+    and <code class="css-c">max-height: 300px</code> alongside introductory paragraphs 
+    explaining Target 4.2.
+    <br>
+    The <code class="css-c">.stats-section</code> presents four key statistics using a 
+    <code class="css-c">.stats-grid</code> containing four <code class="css-c">.stat-card</code> 
+    elements. Each card holds a <code class="css-c">.stat-num</code> for the figure and a 
+    <code class="css-c">.stat-label</code> for the description, presenting data visually 
+    rather than as plain text paragraphs.
+    <br>
+    The <code class="css-c">.key-elements-section</code> uses a side-by-side layout with 
+    an <code class="html-c">&lt;img&gt;</code> of class <code class="css-c">.key-elements-img</code> 
+    alongside a <code class="css-c">.key-elements-content</code> div. Inside it, a 
+    <code class="html-c">&lt;ul&gt;</code> with class <code class="css-c">.key-elements-list</code> 
+    presents six principles of Target 4.2 using <code class="html-c">&lt;li&gt;</code> items 
+    with <code class="html-c">&lt;strong&gt;</code> tags to bold each principle name.
+    <br>
+    The <code class="css-c">.related-targets-section</code> uses a <code class="css-c">.targets-grid</code> 
+    to display six related SDG 4 targets as <code class="css-c">.target-item</code> cards, 
+    each with an <code class="html-c">&lt;h3&gt;</code> and a <code class="html-c">&lt;p&gt;</code>. 
+    The <code class="css-c">.challenges-section</code> splits into a 
+    <code class="css-c">.challenges-left</code> div containing text and an inline bar chart, 
+    and a <code class="css-c">.challenges-img</code> image floated to the right. The bar chart 
+    is built entirely in HTML and CSS using <code class="css-c">.chart-container</code>, 
+    <code class="css-c">.bar-row</code>, <code class="css-c">.bar-track</code>, and 
+    <code class="css-c">.bar-fill</code> elements, with each bar's width hardcoded as an inline 
+    <code class="css-c">style="width: X%"</code> attribute representing the severity percentage.
+    <br>
+    The <code class="css-c">.success-section</code> uses a <code class="css-c">.success-grid</code> 
+    to display five country case studies as <code class="css-c">.success-item</code> cards. 
+    The <code class="css-c">.road-ahead-section</code> mirrors the key elements layout with 
+    a <code class="css-c">.road-ahead-img</code> beside <code class="css-c">.road-ahead-content</code>. 
+    The <code class="css-c">.help-section</code> lists six actionable steps using 
+    <code class="css-c">.help-item</code> divs, each featuring an 
+    <code class="css-c">.action-badge</code> span alongside a paragraph. The page closes with 
+    a <code class="css-c">.deadline-banner</code> for the 2030 deadline and a 
+    <code class="css-c">.resources-section</code> listing further reading as a 
+    <code class="html-c">&lt;ul&gt;</code> with class <code class="css-c">.resources-list</code>. 
+    The back to top button uses <code class="js-c">mouseenter</code> and 
+    <code class="js-c">mouseleave</code> event listeners to expand the label to 
+    <code class="js-c">"↑ Back To Top"</code> and change its background to 
+    <code class="css-c">#1abc9c</code> on hover.
+</p>
 
-                        <p>The page organizes information into four logical sections: overview, key elements, challenges, 
-                            and progress. Each section combines images with text to reinforce learning. In the key elements 
-                            card, an unordered list <strong>&lt;ul&gt;</strong> with list items <strong>&lt;li&gt;</strong> 
-                            presents the five core principles of Target 4.1 including free education, equitable access, 
-                            and quality learning. This list structure helps screen reader users understand the relationship 
-                            between items and allows keyboard navigation through each point individually. The challenges and 
-                            progress sections use floated images with text wrapping, achieved through inline CSS properties 
-                            <strong>float: left</strong> or <strong>float: right</strong>, <strong>margin-right</strong>, and 
-                            <strong>margin-left</strong>. These properties create a magazine style reading flow where images 
-                            sit beside their accompanying paragraphs rather than forcing vertical scrolling through large 
-                            image blocks.</p>
-
-                        <p>The footer contains <strong>&lt;div class="foot-container"&gt;</strong> with a copyright heading 
-                            <strong>&lt;h4&gt;</strong> and an unordered list <strong>&lt;ul&gt;</strong> of footer links 
-                            including the page editor and validation pages. The back to top button uses a <strong>&lt;div 
-                            class="back-top"&gt;</strong> wrapper containing an anchor <strong>&lt;a href="#"&gt;</strong> 
-                            with an arrow symbol. JavaScript event listeners for <strong>mouseenter</strong> and 
-                            <strong>mouseleave</strong> dynamically change the button inner HTML and background color, 
-                            expanding the text from a simple arrow to "Back To Top" on hover. This progressive enhancement 
-                            improves usability without requiring additional page loads. The button remains fixed during 
-                            scrolling, ensuring it is always accessible regardless of how far down the page the user has 
-                            navigated.</p>
-
-                    <h3>Accessibility</h3>
-                       <p>This content page prioritizes accessibility through semantic HTML and thoughtful interactive design. 
-                        The use of <strong>&lt;header&gt;</strong>, <strong>&lt;nav&gt;</strong>, <strong>&lt;main&gt;</strong>, 
-                        and <strong>&lt;footer&gt;</strong> creates clear document landmarks that screen reader users can 
-                        navigate efficiently. The navigation menu structured as an unordered list <strong>&lt;ul&gt;</strong> 
-                        announces the number of available links, helping users understand the page structure before investing 
-                        time in exploration. Every image includes a descriptive <strong>alt</strong> attribute, such as 
-                        "Children in a classroom" and "Young girl studying", which conveys the educational context rather 
-                        than merely describing visual characteristics. This ensures blind users receive the same informational 
-                        value as sighted users when learning about Target 4.1.</p>
-
-                        <p>The back to top button includes JavaScript that expands its text on hover or focus, changing from 
-                            an arrow symbol to the descriptive phrase "Back To Top". This transformation benefits users with 
-                            cognitive disabilities who benefit from explicit action labels and users with motor impairments 
-                            who benefit from the enlarged click target area. The button maintains a consistent dark background 
-                            that contrasts sufficiently with the light page content, ensuring it remains visible regardless of 
-                            scroll position. The viewport meta tag <strong>width=device-width, initial-scale=1.0</strong> 
-                            prevents automatic zoom out on mobile devices and allows users with low vision to pinch zoom 
-                            without breaking the layout. When users zoom to 200 percent, the use of percentage based widths 
-                            and responsive design principles ensures text reflows naturally within its container rather than 
-                            disappearing off screen or requiring horizontal scrolling.</p>
+<h3>Accessibility</h3>
+<p>
+    The page follows a clear heading hierarchy: <code class="html-c">&lt;h1&gt;</code> for 
+    the page title, <code class="html-c">&lt;h2&gt;</code> for each major section heading, 
+    and <code class="html-c">&lt;h3&gt;</code> for subsection titles within the 
+    <code class="css-c">.related-targets-section</code> and 
+    <code class="css-c">.success-section</code> cards, giving screen readers a logical 
+    document structure to navigate.
+    All four images on the page include descriptive <code class="html-c">alt</code> attributes 
+    such as <code>"Children in a classroom"</code>, <code>"Children learning"</code>, 
+    <code>"Child reading"</code>, and <code>"Teacher in classroom"</code>, conveying the 
+    educational context to screen reader users rather than simply describing visual appearance.
+    The bar chart in the <code class="css-c">.challenges-section</code> includes percentage 
+    values as visible text inside each <code class="css-c">.bar-fill</code> element, ensuring 
+    the data is readable as plain text and not conveyed by visual width alone.
+    The <code class="css-c">.key-elements-list</code> uses a semantic 
+    <code class="html-c">&lt;ul&gt;</code> with <code class="html-c">&lt;li&gt;</code> items, 
+    allowing screen readers to announce the number of list items and letting keyboard users 
+    navigate through each principle individually. The same applies to the 
+    <code class="css-c">.resources-list</code> at the bottom of the page.
+    The back to top button expands its label text to <code>"↑ Back To Top"</code> on hover 
+    via <code class="js-c">innerHTML</code>, providing a clear action description for users 
+    who may not recognise the arrow symbol alone. The <code class="html-c">&lt;main&gt;</code>, 
+    <code class="html-c">&lt;header&gt;</code>, <code class="html-c">&lt;nav&gt;</code>, and 
+    <code class="html-c">&lt;footer&gt;</code> semantic elements create clear landmarks that 
+    assistive technologies use to help users jump between page regions efficiently.
+</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST2.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
@@ -227,35 +309,18 @@
             </section>
 
             <section>
-                <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>
-                        <h3>Challenges Encountered :</h3>
-                        <ul>
-                            <li>Steep Learning Curve in Understanding Github, and the concept of Pushing and Pulling</li>
-                            <li>Had A Difficult time comprehending and integrating Javascript into feedback html pages</li>
-                            <li>Had Conflicting Push-Pull Issues on Github with other team members</li>
-                            <li>Had Difficulty Getting the Gradient and transition right on cards of the Team and Feedback Page(s)</li>
-                            <li>Had Difficulty writing "&lt;" and "&gt;" tags correctly in the form of text earlier in the Page Editor</li>
-                            <li>Finding the right balance between functionality and aesthetics</li>
-                            <li>Difficulty aligning different elements of the page into an aesthetically pleasing layout</li>
-                            <li>Difficulty getting the html to pass through validation</li>
-                            <li>Difficulty in hosting the webpage</li>
-                        </ul>
-                    </p> 
-                    <p>
-                        <h3>How I Resolved These Challenges :</h3>
-                        <ul>
-                            <li>Watched multiple tutorials on Github and practiced pushing and pulling to get the hang of it</li>
-                            <li>Watched multiple tutorials on Javascript and referred to documentation to understand how to implement it into the feedback page</li>
-                            <li>Communicated with team members to resolve conflicting push-pull issues on Github</li>
-                            <li>Experimented with different gradient and transition settings, and referred to online resources for guidance</li>
-                            <li>Practiced writing "&lt;" and "&gt;" tags correctly in the form of text, and referred to documentation for guidance</li>
-                            <li>Experimented with different design elements and layouts, and sought feedback from team members to find the right balance between functionality and aesthetics</li>
-                            <li>Used CSS Grid and Flexbox to align different elements of the page into an aesthetically pleasing layout</li>
-                            <li>Individually debugged parts of the erroneous code, partly with the assistance of Generative AI</li>
-                        </ul>
-                    </p>
-            </section>
+    <h2 id="challenge">Challenges and Lessons Learned</h2>
+    <p>
+        <ul>
+            <li>Learning GitHub for collaboration. Before this coursework I had very little experience with pushing and pulling, and ran into several merge conflicts with team members. I now understand branching and communication around commits much better.</li>
+            <li>Integrating JavaScript into the feedback page. I had not worked with DOM manipulation or form validation before, and the live character counter and error messaging took several attempts to get working correctly. Watching tutorials and reading MDN documentation helped me work through it.</li>
+            <li>Building the circular SVG countdown on the splash page. Calculating the correct <code class="js-c">strokeDashoffset</code> values using the circumference formula took trial and error before the animation synced properly with the countdown timer.</li>
+            <li>Getting the AIS card selection logic right. Managing the <code class="css-c">.selected</code> state, point addition and subtraction, and keeping the progress bar and level pill in sync required careful structuring of the <code class="js-c">toggleCard()</code> and <code class="js-c">updateUI()</code> functions.</li>
+            <li>Passing HTML validation. Several errors came from incorrect nesting, missing <code class="html-c">alt</code> attributes, and using <code class="html-c">&lt;p&gt;</code> tags inside other block elements. I debugged these individually using the W3C validator.</li>
+            <li>Aligning layouts across different screen sizes. Getting the card grids, side-by-side image and text sections, and stat cards to respond correctly at smaller viewports required repeated testing and adjustments to the CSS grid and flexbox properties.</li>
+        </ul>
+    </p>
+</section>
 
             <section>
                 <h2 id="compliance"> Compliance</h2>
@@ -289,7 +354,7 @@
                                     <td>Online</td>
                                     <td>Group Meetings and Contribution Log	</td>
                                     <td>Yes</td>
-                                    <td>Took the role of Student three and subsequent responsiblitiies.</td>
+                                    <td>Took the role of Student two and subsequent responsiblitiies.</td>
                                 </tr>
                         
                                 <tr>
@@ -298,7 +363,7 @@
                                     <td>Online</td>
                                     <td>Review Home Page design</td>
                                     <td>Yes</td>
-                                    <td>Assisted in selecting colour theme for the overall project and in choosing CSS elements.</td>
+                                    <td>Assisted in selecting colour theme for the overall project and choosing the images.</td>
                                 </tr>
                         
                                 <tr>
@@ -307,7 +372,7 @@
                                     <td>Face-To-Face</td>
                                     <td>Progress review</td>
                                     <td>Yes</td>
-                                    <td>Presented progress I had made so far, gave tips to team members regarding issues faced.</td>
+                                    <td>Presented progress I had made so far, gave the tips and showed what have we done.</td>
                                 </tr>
                         
                                 <tr>
@@ -316,7 +381,7 @@
                                     <td>Online</td>
                                     <td>Progress Review And Fatal Error Resolving</td>
                                     <td>Yes</td>
-                                    <td>Presented progress I had made so far, gave tips to team members regarding issues faced</td>
+                                    <td>Presented progress I had made so far, discussed about the errors we faced.</td>
                                 </tr>
                         
                                 <tr>
@@ -325,7 +390,7 @@
                                     <td>Online</td>
                                     <td>Matching Template Designs And Overall Aesthetics</td>
                                     <td>Yes</td>
-                                    <td>Made and reviewed suggestions on changes that could be made to each other's html pages</td>
+                                    <td>Made and reviewed suggestions on changes that could be made to each other's html pages and learned how to push and pull in github</td>
                                 </tr>
                         
                                 <tr>

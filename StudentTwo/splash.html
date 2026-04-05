@@ -49,9 +49,20 @@
         <h1 class="logo"><bold>Quality Education</bold></h1>
         <br>
         <p id="para">Quality education means providing all learners with effective teaching, safe environments, and relevant skills that go beyond basic literacy. It focuses on equitable access, measurable learning outcomes, and fostering critical thinking and lifelong learning. Ultimately, it empowers individuals to break poverty cycles, drive economic growth, and build peaceful, sustainable societies.</p>
-        <br>
+        
+        <!-- Circular Loader with countdown inside -->
+        <div class="circle-container">
+            <svg class="circle-svg" viewBox="0 0 100 100">
+                <!-- Background circle -->
+                <circle class="circle-bg" cx="50" cy="50" r="40"/>
+                <!-- Progress circle -->
+                <circle class="circle-progress" id="circleProgress" cx="50" cy="50" r="40"/>
+            </svg>
+            <!-- Countdown number in the center -->
+            <span id="countdown">3</span>
+        </div>
+
         <a class="skipbutton" href="../StudentOne/home.html">skip</a>
-        <h3 id="countdown">3</h3>
     </div>
 
 
@@ -59,18 +70,29 @@
         let count = 3;
         const countdown = document.getElementById('countdown');
         const splash = document.getElementById('splash');
+        const circle = document.getElementById('circleProgress');
+
+        // Circle circumference = 2 * PI * radius = 2 * 3.14159 * 40 ≈ 251.2
+        const circumference = 2 * Math.PI * 40;
+        circle.style.strokeDasharray = circumference;
+        circle.style.strokeDashoffset = 0; // starts full
 
         function redirectWithFade() {
             clearInterval(timer);
             splash.classList.add('fade-out');
             setTimeout(() => {
-                window.location.href = '../StudentOne/home.html'; // Change this to your target page
-            }, 400); // Matches the CSS transition duration
+                window.location.href = '../StudentOne/home.html';
+            }, 800);
         }
 
+        // Update circle progress every second
         const timer = setInterval(() => {
             count--;
             countdown.textContent = count;
+
+            // Shrink the circle stroke as time passes
+            const progress = count / 3; // 3 is total seconds
+            circle.style.strokeDashoffset = circumference * (1 - progress);
 
             if (count <= 0) {
                 redirectWithFade();

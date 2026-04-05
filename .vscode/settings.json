@@ -1,5 +1,9 @@
 {
   "liveServer.settings.port": 5502,
   "liveServer.settings.CustomBrowser": null,
+<<<<<<< HEAD
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "chrome",
+=======
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": null,
+>>>>>>> 156f51d9bceaab98795cf95dcdc4ddb1989a35fa
 }

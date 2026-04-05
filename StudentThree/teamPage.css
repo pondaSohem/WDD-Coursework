@@ -1,6 +1,6 @@
 /* Make the body take full viewport height and use flexbox */
 body {
-  min-height: 160vh;
+  min-height: 170vh;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -92,7 +92,7 @@ main {
 }
 
 .team-gallery .image-card:hover .info-card {
-  max-height: 200px;
+  max-height: 260px;
   padding: 1rem;
 }
 

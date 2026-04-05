@@ -8,14 +8,14 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
+      "url": "http://localhost:5502",
       "webRoot": "${workspaceFolder}"
     },
     {
       "type": "chrome",
-      "name": "http://127.0.0.1:3000/StudentOne/home.html",
+      "name": "http://127.0.0.1:5502/StudentOne/home.html",
       "request": "launch",
-      "url": "http://127.0.0.1:3000/StudentOne/home.html"
+      "url": "http://127.0.0.1:5502/StudentOne/home.html"
     }
   ]
 }

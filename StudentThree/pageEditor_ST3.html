@@ -75,7 +75,7 @@
                 <p>All images include descriptive <strong>alt</strong> text. Form fields use <strong>&lt;label&gt;</strong> tags properly associated with inputs. <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong> group form sections logically. Error messages appear near relevant fields with visible color contrast. The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, <strong>&lt;main&gt;</strong>, and <strong>&lt;footer&gt;</strong> for screen reader navigation. A "Back to Top" button provides easy keyboard navigation.</p>
     
             <h3>Link to the validation page</h3>
-                <p><a href="validation_ST0.html#splashVal">Validation Page</a></p>
+                <p><a href="validation_ST3.html#feedback">Validation Page</a></p>
     
             <h3>Link to the page</h3>
                 <p><a href="feedback.html">Feedback Page</a></p>
@@ -124,7 +124,7 @@
                             contrast meets readability standards.</p>
     
                     <h3>Link to the validation page</h3>
-                        <p><a href="validation_ST0.html#teamVal">Validation Page</a></p>
+                        <p><a href="validation_ST3.html#team">Validation Page</a></p>
     
                     <h3>Link to the page</h3>
                         <p><a href="team.html">Team Page</a></p>
@@ -195,7 +195,7 @@
                             disappearing off screen or requiring horizontal scrolling.</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST3.html#content">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                     <h3>Link to the page</h3>
                         <p><a href="../StudentThree/content_ST3.html">Content Page - Student 3</a></p>
@@ -327,7 +327,24 @@
                     </ul>
             </section>
 
-            <p class="top"><a href="#top">Go top</a></p>
+ <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
         </main>
 
         <!-- Sidebar area -->
@@ -375,7 +392,7 @@
             <h4>Quick Links</h4>
             <ul class="foot-link">
                 <li><a href="pageEditor_ST3.html">Page Editor</a></li>
-                <li><a href="#Validation">Validation</a></li>
+                <li><a href="validation_ST3.html">Validation</a></li>
             </ul>
         </div>
     </div>
@@ -386,23 +403,7 @@
     <br>
 </footer>
 
-      <div class="back-top">
-        <a href="#" class="top-btn" id="top-btn">⬆</a>
-    </div>
-    <script>
-        const topButton = document.getElementById("top-btn");
-        topButton.addEventListener('mouseenter', () => {
-            topButton.innerHTML = "⬆ Back To Top";
-            topButton.style.backgroundColor = "#1abc9c";
-            topButton.style.padding = "12px 18px"; // Consistent Padding;
-            topButton.style.widows = "auto";
-        })
-        topButton.addEventListener('mouseleave', () => {
-            topButton.innerHTML = "⬆";
-            topButton.style.backgroundColor = "#2c3e50";
-            topButton.style.padding = "12px 18px"; // Consistent Padding;
-        })
-    </script>
+     
 
 </body>
 

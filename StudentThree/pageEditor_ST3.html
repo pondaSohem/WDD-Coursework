@@ -13,8 +13,9 @@
 <body>
 
     <header>
+
         <!-- NAVIGATION -->
-        <nav>
+         <nav>
             <ul class="nav-menu">
                 <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
@@ -23,13 +24,16 @@
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
-    
+
                 <!-- LOGO -->
-                <div class="logo-img">
-                    <img src="../assets/AMAZE.png" height="50px" width="50px">
-                </div>
+                <li class = "logo-item"> 
+                    <div class="logo-img">
+                    <img src="../assets/AMAZE.png" height="50" width="50" alt="logo">
+                 </div>
+                 </li>
+                
             </ul>
-        </nav>
+        </nav>  
     </header>
 
     <section class="stud">
@@ -129,16 +133,70 @@
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <p>This content page uses basic HTML and CSS to present information about UN Sustainable 
+                            Development Goal Target 4.1. Key HTML tags include <strong>&lt;header&gt;</strong> 
+                            for the navigation bar, <strong>&lt;nav&gt;</strong> with an unordered list 
+                            <strong>&lt;ul&gt;</strong> for menu links, and <strong>&lt;main&gt;</strong> to 
+                            contain the primary page content. <strong>&lt;div class="head-card"&gt;</strong> 
+                            introduces the topic with a main heading <strong>&lt;h1&gt;</strong> and paragraph 
+                            <strong>&lt;p&gt;</strong>. <strong>&lt;div class="container"&gt;</strong> and 
+                            <strong>&lt;div class="card"&gt;</strong> provide structural containers for different 
+                            content sections, with the card class typically offering visual separation through 
+                            background styling defined in the global template CSS. <strong>&lt;img&gt;</strong> 
+                            tags embed educational photographs with <strong>alt</strong> attributes for accessibility 
+                            and inline styles controlling width, float positioning, border radius, and margins to 
+                            create wrapped text layouts.</p>
+
+                        <p>The page organizes information into four logical sections: overview, key elements, challenges, 
+                            and progress. Each section combines images with text to reinforce learning. In the key elements 
+                            card, an unordered list <strong>&lt;ul&gt;</strong> with list items <strong>&lt;li&gt;</strong> 
+                            presents the five core principles of Target 4.1 including free education, equitable access, 
+                            and quality learning. This list structure helps screen reader users understand the relationship 
+                            between items and allows keyboard navigation through each point individually. The challenges and 
+                            progress sections use floated images with text wrapping, achieved through inline CSS properties 
+                            <strong>float: left</strong> or <strong>float: right</strong>, <strong>margin-right</strong>, and 
+                            <strong>margin-left</strong>. These properties create a magazine style reading flow where images 
+                            sit beside their accompanying paragraphs rather than forcing vertical scrolling through large 
+                            image blocks.</p>
+
+                        <p>The footer contains <strong>&lt;div class="foot-container"&gt;</strong> with a copyright heading 
+                            <strong>&lt;h4&gt;</strong> and an unordered list <strong>&lt;ul&gt;</strong> of footer links 
+                            including the page editor and validation pages. The back to top button uses a <strong>&lt;div 
+                            class="back-top"&gt;</strong> wrapper containing an anchor <strong>&lt;a href="#"&gt;</strong> 
+                            with an arrow symbol. JavaScript event listeners for <strong>mouseenter</strong> and 
+                            <strong>mouseleave</strong> dynamically change the button inner HTML and background color, 
+                            expanding the text from a simple arrow to "Back To Top" on hover. This progressive enhancement 
+                            improves usability without requiring additional page loads. The button remains fixed during 
+                            scrolling, ensuring it is always accessible regardless of how far down the page the user has 
+                            navigated.</p>
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                       <p>This content page prioritizes accessibility through semantic HTML and thoughtful interactive design. 
+                        The use of <strong>&lt;header&gt;</strong>, <strong>&lt;nav&gt;</strong>, <strong>&lt;main&gt;</strong>, 
+                        and <strong>&lt;footer&gt;</strong> creates clear document landmarks that screen reader users can 
+                        navigate efficiently. The navigation menu structured as an unordered list <strong>&lt;ul&gt;</strong> 
+                        announces the number of available links, helping users understand the page structure before investing 
+                        time in exploration. Every image includes a descriptive <strong>alt</strong> attribute, such as 
+                        "Children in a classroom" and "Young girl studying", which conveys the educational context rather 
+                        than merely describing visual characteristics. This ensures blind users receive the same informational 
+                        value as sighted users when learning about Target 4.1.</p>
+
+                        <p>The back to top button includes JavaScript that expands its text on hover or focus, changing from 
+                            an arrow symbol to the descriptive phrase "Back To Top". This transformation benefits users with 
+                            cognitive disabilities who benefit from explicit action labels and users with motor impairments 
+                            who benefit from the enlarged click target area. The button maintains a consistent dark background 
+                            that contrasts sufficiently with the light page content, ensuring it remains visible regardless of 
+                            scroll position. The viewport meta tag <strong>width=device-width, initial-scale=1.0</strong> 
+                            prevents automatic zoom out on mobile devices and allows users with low vision to pinch zoom 
+                            without breaking the layout. When users zoom to 200 percent, the use of percentage based widths 
+                            and responsive design principles ensures text reflows naturally within its container rather than 
+                            disappearing off screen or requiring horizontal scrolling.</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                     <h3>Link to the page</h3>
-                        <p><a href="content.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="../StudentThree/content_ST3.html">Content Page - Student 3</a></p>
             </section>
 
             <section>

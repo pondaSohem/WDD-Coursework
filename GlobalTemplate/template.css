@@ -189,7 +189,6 @@ main{
 /* footer */
 footer{
    background-color:#009cd9;
-    /* position: fixed;Makes the Navigatioon bar stay fixed to the top of the page */
     margin: 0%;
     padding: 0%;
     width: 100%;
@@ -426,4 +425,4 @@ footer{
     transform: scale(1.04);
 }
 
-/* MISTER WATER WAS HERE - CODE FOR THE TEAM GALLERY */
+

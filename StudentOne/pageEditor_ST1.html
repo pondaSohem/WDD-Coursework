@@ -42,7 +42,7 @@
     </header>
 
     <section class="stud">
-        <h2>Sulav Maharjan, AMAZE, student - 1</h2>
+        <h2>Sulav Maharjan, AMAZE, Student - 1</h2>
     </section>
 
     <div class="container">
@@ -54,34 +54,13 @@
             <section>
                 <h2 id="home">Home page</h2>
                     <h3>Technical Description</h3>
-                        <p> For the the home page i first started by dividing the page into sections as 
-                            <ul>
-                            <li>Header</li>
-                            <ul>
-                                <li>Navigation Bar</li>
-                                <li>Logo</li>
-                            </ul>
+                        <p>The Home Page is developed using HTML5 and CSS3 to create a responsive and user-friendly interface. The document begins with the <code>&lt;!DOCTYPE html&gt;</code> declaration and uses the <code>&lt;html lang="en"&gt;</code> element to ensure proper rendering, accessibility, and SEO. The <code>&lt;head&gt;</code> section includes meta tags for character encoding and responsiveness, along with links to external stylesheets and fonts for consistent design.</p>
 
-                            <li>Main Content</li>
-                            <ul>
-                                <li>Face Section</li>
-                                <li>Scroll Gallery</li>
-                                <li>Featured Content</li>
-                            </ul>
+                        <p>The page structure is organized using semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code>. The navigation bar is built using a list of links and styled with Flexbox, while being fixed at the top of the page for easy access. Content is divided into sections and containers using <code>&lt;div&gt;</code> elements for layout and styling.</p>
 
-                            <li>Footer</li>
-                            <ul>
-                                <li>Page Editor link</li>
-                                <li>Validation Page Link</li>
-                            </ul>
-                        </p> 
-                        <br>
-                        <p>Then i moved into making cards and containers for each of the sections and specially the Scroll able card container for the content gallery. The home page makes use of various HTML and CSS to make it functional. The Key HTML tags used are  </p>
-                        <p>For the styling i used CSS to create a responsive layout using (display: grid) to create a (.parent) that provides the whole grid a structure and divides it so that i can add the different cards in specific order  and ensure the page looks good on all devices.
-                            following that i used (display: flex) to create a scrollable gallery section and to make the content cards align in a row and be scrollable horizontally. For the styling of the cards i used (box-shadow) to give them a 3D effect and (border-radius) to make the corners rounded. 
-                            I also used (hover) function to add a CSS styled gradient that pop up when a cursor was on top and show the basic image Description and a small text showing which Students content page it leads to. For the addition of javascript it was used to allow for the intercation with the scroll gallery to where it scrolls left and right when the buttons are clicked.
-                            The other use of javascript was the back to top button which was made to appear when the user scrolls down and when clicked it takes the user back to the top of the page with it being styled using javascript to be a vibrant color and have a hover effect to make it more interactive.
-                        </p>
+                        <p>CSS is used to design reusable components such as cards and containers with consistent colors, spacing, and shadows. Layout techniques like Flexbox and Grid help organize content, while hover effects, transitions, and overlays enhance interactivity. Images include <code>alt</code> attributes for accessibility, and a horizontal scrolling gallery is implemented for visual content display.</p>
+
+                        <p>A footer section provides additional links and information, and a “Back to Top” button is included using fixed positioning and simple JavaScript for interactivity. Overall, the page combines semantic HTML and modern CSS techniques to create a structured, accessible, and visually engaging homepage.</p>
                         
                     
                     <h3>Accessibility</h3>
@@ -99,12 +78,15 @@
             <section>
                 <h2 id="gallery">Gallery Page</h2>
                     <h3>Technical Description</h3>
-                        <p>
-                        For the gallery page I first divded the page into four sections below the the navigation bar to accomodate four image cards using (div) which allowed me to style those 
-                        sections seperatly. For the images I used the (img src="") tag to insert photos which was then styled to fit the image containers.
-                        For additional styling i added a (hover) function to add a CSS styled gradient that pop up when a cursor was on top and show the basic image Description and a small suggestion to "click" the image for more information.
-                        and coming to the addition of javascript it was used to allow for the intercation with the image to where it flips when clicked to show a card which would hold additiona text.
-                               </p> 
+                       <p>The Gallery Page is developed using HTML5, CSS3, and JavaScript to create an interactive and responsive image display. The page uses standard HTML structure with semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> to improve accessibility and organization. A navigation bar is included at the top using a list of links, styled with CSS and fixed positioning for easy access.</p>
+
+                        <p>The main gallery layout is created using CSS Grid, which arranges the images into a structured two-column layout. Each image is placed inside a <code>&lt;div&gt;</code> container with the class <code>.gallery-image-card</code>, maintaining a consistent aspect ratio for uniform appearance across different screen sizes.</p>
+
+                        <p>Each gallery item uses a flip-card design, where the front side displays an image and the back side shows descriptive text. This effect is achieved using CSS properties such as <code>transform</code>, <code>perspective</code>, and <code>backface-visibility</code>. Hover effects and overlay text are also applied using transitions to enhance user interaction.</p>
+
+                        <p>JavaScript is used to add interactivity by allowing users to click on each card to flip between the image and its description. Event listeners are implemented for both mouse clicks and keyboard inputs to improve accessibility. Additional scripts ensure consistent image sizing and handle errors if images fail to load.</p>
+
+        <p>Overall, the page combines structured HTML, modern CSS techniques, and JavaScript functionality to create an engaging and user-friendly gallery that visually represents key aspects of quality education.</p>
 
                     <h3>Accessibility</h3>
                         <p>To make the gallery page more accessible , I made the images the button itself so it is easier to switch to the text and provide a clear label for each image along with a line to click back to view the image.</p>
@@ -120,11 +102,15 @@
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p> To implement the content page, I used a combination of HTML and CSS to create a structured layout that is both visually appealing and easy to navigate. The page is designed to be responsive, ensuring that it looks good on all devices.
-                            To start of i used (Header) Tags to create a clear hierarchy of information, making it easier for users to understand the content. I also used (div) tags to create sections for different types of content, such as text, images, and videos.
-                            For styling, I used CSS to create a clean and modern design. I chose a color palette that is visually appealing and easy on the eyes, and I used typography to create a clear and readable layout. I also used CSS to create a responsive design, ensuring that the page looks good on all devices.
-                            I again us the .grid and .flex display properties to create a structured layout that is both visually appealing and easy to navigate. I used the img src tag to insert images and styled them to fit the content sections. I also used CSS to create a hover effect on the images. Overall, the combination of HTML and CSS allowed me to create a content page that is both functional and visually appealing.
-                        </p>
+                        <p>This content page is developed using HTML5 and CSS3 to present structured information about SDG 4: Accessible and Affordable Education. The page uses semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> to improve accessibility and organization. A navigation bar is included at the top for easy access to other pages.</p>
+
+                        <p>The main layout is created using CSS Grid (<code>display: grid</code>), which organizes content into multiple sections using defined grid columns and rows. Each section is placed using specific grid classes (e.g., <code>.divC1</code>, <code>.divC2</code>) to control positioning and structure.</p>
+
+                        <p>Content is grouped using reusable containers such as <code>.container</code>, <code>.card</code>, and <code>.head-card</code>, which provide consistent styling including spacing, colors, and shadows. Images are added using the <code>&lt;img&gt;</code> tag and styled to be responsive using width and max-width properties.</p>
+
+                        <p>Lists (<code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>) are used to present key points clearly, improving readability. CSS is also used to style image cards and maintain layout consistency across different screen sizes.</p>
+
+                        <p>A footer section provides navigation links and additional information, while a “Back to Top” button is implemented using fixed positioning and JavaScript for basic interactivity. Overall, the page combines structured HTML and CSS Grid layout to present educational content in a clear, organized, and responsive manner.</p>
 
                     <h3>Accessibility</h3>
                         <p>To make this page more accessible I used the div tags along with grid to create an open layout that allows the data to be spread around and visually apealing. </p>
@@ -145,6 +131,7 @@
                         connect everyones work in the group to a single paltform so it worked seamlessly. Yet there were difficulties in setting it up and using it. 
                         Going into the webpage itself the process of creating a global template that does not collide with other codes and styling was a difficult task.
                         Actively having to adapt to new changes and adding components was a difficult process. The most difficult aspect being javascript and its intergration to the webapge.
+                        Overall the process made me think out of the box and learn new things and adapt to changes and work with a team to create a functional webpage.
                     </p> 
             </section>
 
@@ -166,80 +153,80 @@
                         </ul>
                         <p>Feel free to follow the example table structure below:</p>
 
-                        <table >
-    
-                            <thead>
-                                <tr>
-                                    <th colspan="6">Group Meetings and Contribution Log</th>
-                                </tr>
-                                <tr>
-                                    <th>Meeting</th>
-                                    <th>Date &amp; Time</th>
-                                    <th>Format</th>
-                                    <th>Objective</th>
-                                    <th>Attended</th>
-                                    <th>Your Individual Contribution</th>
-                                </tr>
-                            </thead>
-                        
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>3 Feb 2026</td>
-                                    <td>Face-to-face</td>
-                                    <td>Agree SDG and assign roles</td>
-                                    <td>Yes</td>
-                                    <td>I agreed to take responsibility for the Home Page and template.</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>2</td>
-                                    <td>17 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Review Home Page design</td>
-                                    <td>Yes</td>
-                                    <td>I suggested the colour palette and card-based layout.</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>3</td>
-                                    <td>03 Mar 2026</td>
-                                    <td>Hybrid</td>
-                                    <td>Progress review</td>
-                                    <td>No</td>
-                                    <td>I reviewed meeting notes and followed up with tasks.</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>4</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>5</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>6</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                        
-                            </tbody>
-                        
-                        </table>
+                        <table>
+
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>28 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Role assignment and Design Conception </td>
+                            <td>Yes</td>
+                            <td>Took on the role of student - 1 for making the Home Page,Gallery and template.</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>15 March 2026</td>
+                            <td>Online</td>
+                            <td>Home Page design and color palette</td>
+                            <td>Yes</td>
+                            <td>Designed a basic layout and selected a color palette in canva for viualization.</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>27 Mar 2026</td>
+                            <td>Face-To-Face</td>
+                            <td>Progress review</td>
+                            <td>Yes</td>
+                            <td>Looked into the basic structure of the Home Page.</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>1 April 2026</td>
+                            <td>Online</td>
+                            <td>Progress Review and Fatal Error Resolving</td>
+                            <td>Yes</td>
+                            <td>Fixing errors with pushing and pulling via Git.</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>3 April 2026</td>
+                            <td>Face-To-Face</td>
+                            <td>Matching Template Designs and Overall Aesthetics</td>
+                            <td>Yes</td>
+                            <td>Color matched the posted pages along with correcting links to each others pages.</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>4 April 2026</td>
+                            <td>Face-To-Face</td>
+                            <td>Final Checklist for Submission</td>
+                            <td>Yes</td>
+                            <td>Recheck page content and formatting</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
                     
             </section>
 
@@ -249,6 +236,20 @@
                     <ul class="ref">
                         <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
                         <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                        <li>Unsplash (n.d.) <i>A group of children sitting on steps in front of a building.</i> Available at: <a href="https://unsplash.com/photos/e1GHAnjzGgI" target="_blank">https://unsplash.com/photos/e1GHAnjzGgI</a> (Last accessed: 29 Feb 2026).</li>
+                        <li>Unsplash (n.d.) <i>Girl sitting on chair.</i> Available at: <a href="https://unsplash.com/photos/yR0QwMbMjT8" target="_blank">https://unsplash.com/photos/yR0QwMbMjT8</a> (Last accessed: 1 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Group of toddlers in school with teacher teaching.</i> Available at: <a href="https://unsplash.com/photos/FQ1L770x6l8" target="_blank">https://unsplash.com/photos/FQ1L770x6l8</a> (Last accessed: 1 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Students in uniform using smartphones in classroom.</i> Available at: <a href="https://unsplash.com/photos/C0ntobAcyzY" target="_blank">https://unsplash.com/photos/C0ntobAcyzY</a> (Last accessed: 1 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Man in black jacket carrying backpack walking on street.</i> Available at: <a href="https://unsplash.com/photos/_Xlcw84K7Tg" target="_blank">https://unsplash.com/photos/_Xlcw84K7Tg</a> (Last accessed:1 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Person holding a sign that says “Education for All.”</i> Available at: <a href="https://unsplash.com/photos/wgS7Iz0Chtg" target="_blank">https://unsplash.com/photos/wgS7Iz0Chtg</a> (Last accessed: 3 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Baby laying on the floor next to a book.</i> Available at: <a href="https://unsplash.com/photos/7MVE8vTCWIc" target="_blank">https://unsplash.com/photos/7MVE8vTCWIc</a> (Last accessed: 3 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Young boy sitting at a table with a book and pencil.</i> Available at: <a href="https://unsplash.com/photos/BQ3ryrV9Zh4" target="_blank">https://unsplash.com/photos/BQ3ryrV9Zh4</a> (Last accessed: 3 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Man and woman sitting on chairs.</i> Available at: <a href="https://unsplash.com/photos/zFSo6bnZJTw" target="_blank">https://unsplash.com/photos/zFSo6bnZJTw</a> (Last accessed: 3 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>A group of children sitting in a line outdoors.</i> Available at: <a href="https://unsplash.com/photos/wog7pvO66WM" target="_blank">https://unsplash.com/photos/wog7pvO66WM</a> (Last accessed: 4 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Young boy wearing safety vest and holding a tool.</i> Available at: <a href="https://unsplash.com/photos/kF_unAgcCWs" target="_blank">https://unsplash.com/photos/kF_unAgcCWs</a> (Last accessed: 4 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Man working on a machine in a factory.</i> Available at: <a href="https://unsplash.com/photos/0R8RfNpIKms" target="_blank">https://unsplash.com/photos/0R8RfNpIKms</a> (Last accessed: 4 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Child standing in flooded camp with tents behind.</i> Available at: <a href="https://unsplash.com/photos/Y8HeSh359v4" target="_blank">https://unsplash.com/photos/Y8HeSh359v4</a> (Last accessed: 4 Apr 2026).</li>
+                        <li>Unsplash (n.d.) <i>Children in white school uniform.</i> Available at: <a href="https://unsplash.com/photos/cloQlpJ2RBU" target="_blank">https://unsplash.com/photos/cloQlpJ2RBU</a> (Last accessed: 4 Apr 2026).</li>
                     </ul>
             </section>
 
@@ -264,9 +265,9 @@
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
                 <li>Student 1</li>
                 <ul>
-                        <li><a href="#home">Home page </a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#content">Content</a></li>
+                        <li><a href="home.html">Home page </a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="content.html">Content</a></li>
                     </ul>
                 
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>

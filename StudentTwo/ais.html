@@ -1,11 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Action Impact Simulator</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #1a90c4;
+      --blue-dark:  #1278a8;
+      --blue-light: #e8f4fa;
+      --blue-mid:   #d0eaf5;
+      --teal:       #0fa89e;
+      --white:      #ffffff;
+      --grey-bg:    #f0f4f8;
+      --grey-light: #e2eaf0;
+      --grey-text:  #6b7a8d;
+      --dark:       #1a2a3a;
+      --card-bg:    #ffffff;
+      --shadow:     0 2px 12px rgba(26,144,196,0.10);
+      --shadow-lg:  0 8px 32px rgba(26,144,196,0.18);
+    }
+
+    /* header */
+header{
+    background-color:#009cd9;
+    position: fixed;/* Makes the Navigatioon bar stay fixed to the top of the page */
+    margin: 0%;
+    margin-top: auto;
+    padding: 0%;
+    top: 0%;
+    width: 100%;
+    z-index: 1000; /*This keeps the nav bar on top */
+    overflow-x: auto;
+    white-space: nowrap;
+
+}
+/* Navigation Bar */
+.nav-menu {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+  display: flex; /* Arranges list items in a row */
+  justify-content: space-around; /*Distributes items evenly with space around them*/
+  justify-content: flex-start;
+  min-width: max-content;
+}
+
+.nav-menu li {
+  padding: 5px; /* Adds space around each list item */
+  flex-shrink: 0;
+  gap: 0;
+  
+}
+
+.nav-menu a {
+  text-decoration: none; /* Removes underlines from links */
+  line-height: 50px; /* Makes the text float in the centre of the container */
+  color: whitesmoke;
+  font-weight: bolder;
+  padding: 0 10px;
+}
+
+.logo-img {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 0 10px;
+}
+
+nav li:hover {
+   background-color: #0186bb;
+}
+        
+nav a:active {
+  font-weight: bold;
+}
+
+.active {
+  background-color: #0186bb;
+}
+
+    body {
+      padding-top: 30px; /* Add this line */
+      font-family: Helvetica, sans-serif;
+      background: var(--grey-bg);
+      color: var(--dark);
+      min-height: 100vh;
+    }
+
+    /* ---- HERO BANNER ---- */
+ .hero {
+        margin-top: 30px; /* Add this line */
+        background: linear-gradient(135deg, #0077b6, #009cd9);
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+        }
+
+      .hero-chip {
+        margin-top: 10px; /* Add this line */
+        display: inline-block;
+        background: rgba(255,255,255,0.2);
+        border: 1px solid rgba(255,255,255,0.35);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 5px 16px;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+      }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+
+    /* ---- MAIN WRAPPER ---- */
+    .wrapper {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    /* ---- SECTION HEADING ---- */
+    .section-heading {
+      font-family: Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.88rem;
+      color: var(--grey-text);
+      margin-bottom: 1.6rem;
+    }
+
+    /* ---- CARDS GRID ---- */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- ACTION CARD ---- */
+    .action-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--grey-light);
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.22s, box-shadow 0.22s;
+      position: relative;
+      user-select: none;
+    }
+
+    .action-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--blue);
+    }
+
+    .action-card:focus {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    .action-card.selected {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,144,196,0.2), var(--shadow-lg);
+      background: var(--blue-light);
+    }
+
+    /* Tick badge */
+    .tick {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 30px; height: 30px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: scale(0.4);
+      transition: opacity 0.2s, transform 0.22s;
+      z-index: 5;
+    }
+
+    .action-card.selected .tick {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Card image */
+    .card-img {
+      height: 155px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(15%);
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .action-card:hover .card-img img { transform: scale(1.05); filter: grayscale(0%); }
+    .action-card.selected .card-img img { filter: grayscale(0%); }
+
+    .card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(26,144,196,0.15) 100%);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .action-card.selected .card-img::after { opacity: 1; }
+
+    /* Card body */
+    .card-body {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+
+    .card-body h3 {
+      font-family: Helvetica, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.35rem;
+    }
+
+    .card-body p {
+      font-size: 0.8rem;
+      color: var(--grey-text);
+      line-height: 1.6;
+      margin-bottom: 0.85rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--blue-light);
+      border: 1px solid var(--blue-mid);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    /* ---- FEEDBACK PANEL ---- */
+    .feedback {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 2rem;
+      border: 2px solid var(--grey-light);
+      box-shadow: var(--shadow);
+    }
+
+    .feedback h2 {
+      font-family: Helvetica, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hint {
+      text-align: center;
+      color: #aab4c0;
+      font-size: 0.88rem;
+      padding: 0.5rem 0 1rem;
+    }
+
+    /* Score row */
+    .score-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .score-circle {
+      width: 84px; height: 84px;
+      border-radius: 50%;
+      border: 5px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--blue-light);
+      transition: border-color 0.4s;
+    }
+
+    .score-circle .num {
+      font-family: Helvetica, sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.62rem;
+      color: var(--grey-text);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .level-pill {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-family: Helvetica, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .level-pill.low    { background: #fff3e0; color: #c45e00; border: 2px solid #ffc97a; }
+    .level-pill.medium { background: #fffbe6; color: #a07800; border: 2px solid #ffe57f; }
+    .level-pill.high   { background: var(--blue-light); color: var(--blue-dark); border: 2px solid var(--blue-mid); }
+
+    /* Progress bar */
+    .prog-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.79rem;
+      color: var(--grey-text);
+      margin-bottom: 6px;
+      font-family: Helvetica, sans-serif;
+      font-weight: 500;
+    }
+
+    .prog-track {
+      height: 10px;
+      background: var(--grey-light);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.3rem;
+    }
+
+    .prog-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: var(--blue);
+      width: 0%;
+      transition: width 0.6s cubic-bezier(0.4,0,0.2,1), background 0.4s;
+    }
+
+    /* Summary message */
+    .summary {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: #334;
+      padding: 0.9rem 1.1rem;
+      border-left: 4px solid var(--blue);
+      background: var(--blue-light);
+      border-radius: 0 8px 8px 0;
+      transition: background 0.4s, border-color 0.4s;
+    }
+
+    /* ---- DIVIDER ---- */
+    .divider {
+      height: 1px;
+      background: var(--grey-light);
+      margin: 0 0 2rem 0;
+    }
+
+    @media (max-width: 640px) {
+      .score-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
-    
+  <!-- HEADER -->
+    <header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../StudentOne/home.html">Home</a></li>
+                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <li><a href="../StudentThree/team.html">Team Page</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+
+                <!-- LOGO -->
+                <img src="../assets/AMAZE.png" height="50px" width="50px">
+            </ul>
+        </nav>
+    </header>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-chip">SDG 4 — Quality Education</div>
+    <h1>Action Impact Simulator</h1>
+    <p>Select the actions you take in daily life to support quality education. See how your choices add up!</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="wrapper">
+
+    <!-- Feedback Panel -->
+    <div class="feedback" aria-live="polite">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" stroke="#1a90c4" stroke-width="2"/>
+          <path d="M8 12l3 3 5-5" stroke="#1a90c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Your Impact Summary
+      </h2>
+
+      <p class="hint" id="hint">Select one or more actions above to see your impact score.</p>
+
+      <div id="results" style="display:none;">
+        <div class="score-row">
+          <div class="score-circle">
+            <span class="num" id="score-num">0</span>
+            <span class="lbl">points</span>
+          </div>
+          <div>
+            <div style="font-size:0.78rem;color:#9aa;margin-bottom:6px;font-family:Helvetica,sans-serif;font-weight:500;">Impact level</div>
+            <div class="level-pill" id="level-pill"></div>
+          </div>
+        </div>
+
+        <div class="prog-label">
+          <span>Progress toward High Impact</span>
+          <span id="prog-pct">0%</span>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill" id="prog-fill"></div>
+        </div>
+
+        <div class="summary" id="summary-msg"></div>
+      </div>
+    </div>
+    <br>
+    <p class="section-heading">Choose Your Actions</p>
+    <p class="section-sub">Select one or more actions below to calculate your impact score.</p>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="3" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Read educational articles, 3 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/Person reading educational content on a laptop.jpg" alt="Person reading educational content on a laptop"/>
+        </div>
+        <div class="card-body">
+          <h3>Read Educational Articles</h3>
+          <p>Spend 20 minutes daily reading credible content — news, research, or learning blogs — to broaden your knowledge.</p>
+          <span class="badge"><span class="badge-dot"></span>3 Impact Points</span>
+        </div>
+      </article>
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="5" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Volunteer as a peer tutor, 5 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/Student tutoring a peer at a table.jpg" alt="Student tutoring a peer at a table"/>
+        </div>
+        <div class="card-body">
+          <h3>Volunteer as a Peer Tutor</h3>
+          <p>Help a classmate or younger student understand a subject. Peer tutoring improves outcomes for both people involved.</p>
+          <span class="badge"><span class="badge-dot"></span>5 Impact Points</span>
+        </div>
+      </article>
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="4" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Donate books or stationery, 4 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/Stack of colourful books being donated.jpg" alt="Stack of colourful books being donated"/>
+        </div>
+        <div class="card-body">
+          <h3>Donate Books or Stationery</h3>
+          <p>Donate books, pens, or notebooks to local schools or charity drives that support underprivileged learners.</p>
+          <span class="badge"><span class="badge-dot"></span>4 Impact Points</span>
+        </div>
+      </article>
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="2" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Complete a free online course, 2 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/Person attending an online course on a laptop at home.jpg" alt="Person attending an online course on a laptop at home"/>
+        </div>
+        <div class="card-body">
+          <h3>Complete a Free Online Course</h3>
+          <p>Platforms like Coursera, edX, and Khan Academy offer free courses. Self-education is a direct SDG 4 action.</p>
+          <span class="badge"><span class="badge-dot"></span>2 Impact Points</span>
+        </div>
+      </article>
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="5" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Fundraise for an education charity, 5 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/Group of students organising a fundraising event.jpg" alt="Group of students organising a fundraising event"/>
+        </div>
+        <div class="card-body">
+          <h3>Fundraise for an Education Charity</h3>
+          <p>Organise or join a sponsored event or online campaign to raise funds for education in underserved areas.</p>
+          <span class="badge"><span class="badge-dot"></span>5 Impact Points</span>
+        </div>
+      </article>
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="3" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Advocate on social media, 3 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/social.jpg" alt="Person posting about education on social media"/>
+        </div>
+        <div class="card-body">
+          <h3>Advocate on Social Media</h3>
+          <p>Share facts and campaigns about education inequality. Awareness is the first step toward systemic change.</p>
+          <span class="badge"><span class="badge-dot"></span>3 Impact Points</span>
+        </div>
+      </article>
+
+      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
+        data-points="4" onclick="toggle(this)" onkeydown="keyNav(event,this)"
+        aria-label="Join a study group, 4 points">
+        <div class="tick" aria-hidden="true">✓</div>
+        <div class="card-img">
+          <img src="../assets/Students sitting together in a collaborative study group.jpg" alt="Students sitting together in a collaborative study group"/>
+        </div>
+        <div class="card-body">
+          <h3>Join a Study Group</h3>
+          <p>Collaborative learning deepens understanding and builds community. Everyone's progress improves together.</p>
+          <span class="badge"><span class="badge-dot"></span>4 Impact Points</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <script>
+    const MSGS = {
+      low:    "You're taking the first steps! Every small action counts. Try selecting more activities to increase your impact on SDG 4.",
+      medium: "Great effort! You're making a meaningful contribution to quality education. A few more actions could push you into the High Impact zone!",
+      high:   "Outstanding! You are a champion of Quality Education. Your commitment to SDG 4 is truly inspiring — keep it up!"
+    };
+
+    let total = 0;
+
+    function toggle(card) {
+      const pts = parseInt(card.dataset.points, 10);
+      if (card.classList.contains('selected')) {
+        card.classList.remove('selected');
+        card.setAttribute('aria-checked', 'false');
+        total -= pts;
+      } else {
+        card.classList.add('selected');
+        card.setAttribute('aria-checked', 'true');
+        total += pts;
+      }
+      render();
+    }
+
+    function keyNav(e, card) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(card); }
+    }
+
+    function render() {
+      const hint    = document.getElementById('hint');
+      const results = document.getElementById('results');
+
+      if (total === 0) {
+        hint.style.display    = 'block';
+        results.style.display = 'none';
+        return;
+      }
+
+      hint.style.display    = 'none';
+      results.style.display = 'block';
+
+      document.getElementById('score-num').textContent = total;
+
+      let level, label;
+      if      (total <= 6)  { level = 'low';    label = '🌱 Low Impact'; }
+      else if (total <= 13) { level = 'medium'; label = '🌿 Medium Impact'; }
+      else                  { level = 'high';   label = '🌳 High Impact'; }
+
+      const pill = document.getElementById('level-pill');
+      pill.textContent = label;
+      pill.className   = 'level-pill ' + level;
+
+      document.getElementById('summary-msg').textContent = MSGS[level];
+
+      const pct  = Math.min(Math.round((total / 25) * 100), 100);
+      const fill = document.getElementById('prog-fill');
+      fill.style.width      = pct + '%';
+      fill.style.background = level === 'low' ? '#f59a30' : level === 'medium' ? '#f5c842' : '#1a90c4';
+      document.getElementById('prog-pct').textContent = pct + '%';
+    }
+  </script>
 </body>
 </html>

@@ -18,7 +18,7 @@ body {
 
     transition: opacity 1s ease;
 
-    background-image: url('edu.jpeg'); /* Change to your image path */
+    background-image: url('../assets/edu.jpeg'); /* Change to your image path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

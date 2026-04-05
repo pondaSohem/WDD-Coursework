@@ -192,28 +192,87 @@ main{
 }
 
 /* footer */
-footer{
-   background-color:#009cd9;
-    margin: 0%;
-    padding: 0%;
+footer {
+    background-color: #009cd9;
+    margin-top: 50px;
+    padding: 30px 20px 15px 20px;
     width: 100%;
+    color: white;
 }
-
-/* Card Container */
 
 .foot-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px;
 }
+
+.foot-section {
+    flex: 1;
+    min-width: 160px;
+}
+
+.foot-section h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.foot-tagline {
+    font-size: 12px;
+    opacity: 0.85;
+    margin-top: 8px;
+}
+
+.college-id-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.college-id-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 
 .foot-link {
-  list-style: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-link {
-  
-  font-weight: bolder;
-  color: black;
+.foot-link li {
+    margin-bottom: 8px;
+}
+
+.foot-link a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 13px;
+    text-align: right;
+}
+
+.foot-link a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.foot-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 15px;
+}
+
+.foot-bottom p {
+    margin: 0;
 }
 
 /* BACK TO TOP */

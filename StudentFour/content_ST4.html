@@ -30,7 +30,7 @@
                 <!-- LOGO -->
                 <li class="logo-item">
                     <div class="logo-img">
-                        <img src="../assets/AMAZE.png" height="50" width="50" alt="logo">
+                        <img src="../assets/AMAZE.png" alt="Website Logo Rocky" height="50" width="50">
                     </div>
                 </li>
             </ul>
@@ -279,26 +279,28 @@
     <!-- FOOTER -->
     <footer>
         <div class="foot-container">
-            <h4>&copy; TWATS</h4>
+            <h2>&copy; AMAZE</h2>
             <ul class="foot-link">
                 <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
                 <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
             </ul>
         </div>
     </footer>
-</body>
 
-<a href="#" class="top-btn" id="top-btn">⬆</a>
-<script>
-    const topButton = document.getElementById("top-btn");
-    topButton.addEventListener('mouseenter', () => {
-        topButton.innerHTML = "⬆ Back To Top";
-        topButton.style.backgroundColor = "#1abc9c";
-    })
-    topButton.addEventListener('mouseleave', () => {
-        topButton.innerHTML = "⬆";
-        topButton.style.backgroundClip = "#2c3e50";
-    })
-</script>
+    <div class="back-to">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundClip = "#2c3e50";
+        })
+    </script>
+</body>
 
 </html>

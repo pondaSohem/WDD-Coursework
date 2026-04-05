@@ -124,13 +124,35 @@
             <section>
                 <h2 id="content">Content Page</h2>
                 <h3>Technical Description</h3>
-                <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the
-                    key tags and styling choices focusing on functionality and design without copying large code
-                    sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS
-                    properties used to create structure and styling.</p>
+                <p>
+                    The Content Page contains the detailed information about two specific targets under UN Sustainable Development Goal 4 (Quality Education); Target 4.4 (Skills for Success) and Target 4.5 (Eliminating Discrimination in Education).
+                    Following the shared template structure, I placed the content within the <code class="html-c">&lt;main&gt;</code> section of the page. The entire content is wrapped in <code class="css-c">.content-container</code>, which centres the content with a maximum width of <code class="css-c">1200px</code> using <code class="css-c">margin: 0 auto;</code>.
+                    The page begins with a <code class="css-c">.title-wrapper</code> containing a <code class="html-c">&lt;h1&gt;</code> heading and a descriptive subtitle. I chose to style the <code class="html-c">&lt;h1&gt;</code> using the <code class="css-c">.head-card</code> class from the global template to maintain similar vibe with the overall website.
+                    I implemented an internal navigation menu using the <code class="css-c">.internal-nav</code> container which includes:
+                    <ul>
+                        <li>Target 4.4: Skills for Sucess</li>
+                        <li>Target 4.5: Ending Discrimination</li>
+                        <li>Take Action Today</li>
+                    </ul>
+                    Each link uses the <code class="html-c">href</code> attribute to jump to each section, as each section contains unique IDs. These are styled like buttons.
+                    Below the navigation menu, I included a <code class="css-c">.stats-grid</code> containing four <code class="css-c">.stat-card</code> elements. Presenting these as cards rather than plain text because numbers stand out more effectively when visually separated. The cards use <code class="css-c">display: grid</code> with <code class="css-c">grid-template-columns: repeat(4, 1fr)</code>, creating four equal-width columns.
+                    <br>
+                    The main content is divided into three sections, each wrapped in a <code class="html-c">&lt;section&gt;</code> tag with a unique id for internal linking following this hierarchy:
+                    <ul>
+                        <li><code class="html-c">&lt;h1&gt;</code> for page title</li>
+                        <li><code class="html-c">&lt;h2&gt;</code> for each major section</li>
+                        <li><code class="html-c">&lt;h3&gt;</code> for each subsection in the major section</li>
+                    </ul>
+                    The page includes five images spread across both targets, meeting the coursework requirement of at least four images. Images are organised using <code class="css-c">.image-grid</code> with <code class="css-c">display: grid</code> and <code class="css-c">grid-template-columns: repeat(2, 1fr)</code>, placing two images side by side. Each image is contained within a .content-image div, which includes the <code class="html-c">&lt;img&gt;</code> tag and an <code class="css-c">.image-caption</code> for descriptive text. All images include meaningful alt text that describes the content for screen reader users.
+                    <br>
+                    Throughout the page, I included <code class="css-c">.quote</code> elements to highlight important statements.
+                    The practical actions sections use <code class="html-c">&lt;ul&gt;</code> with the <code class="css-c">.action-list</code> class. I removed default bullet points and added custom checkmark bullets using the <code class="css-c">:before</code> pseudo-element.
+                </p>
 
                 <h3>Accessibility</h3>
-                <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                <p>
+                    There internal navigation so that the user can jump to what they want to see. I have also used semantic heading, i.e. from <code class="html-c">&lt;h1&gt;</code> to <code class="html-c">&lt;h3&gt;</code> to provide document structure, along with descriptive <code class="html-c">alt</code> attribute for screen readers. There is also sufficient colour contrast between texts and background.
+                </p>
 
                 <h3>Link to the validation page</h3>
                 <!-- Update the path to link the Page Editor with the splash page -->
@@ -158,13 +180,14 @@
 
             <section>
                 <h2 id="compliance"> Compliance</h2>
-                <p>Discuss how the pages you have created are compliant with Janet regulations governing web page
-                    publication. This includes demonstrating your understanding and application of these regulations. Be
-                    realistic and truthful. <a
-                        href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html"
-                        target="_blank">See the lecture notes for more details on compliance.</a></p>
-
-
+                <p>
+                    My pages comply with JANET regulations by containing only appropriate, non-offensive content related to SDG 4 (Quality
+                    Education). All external resources, including statistics from UNICEF and the Global Goals website, are properly cited in
+                    my References section. Every image includes descriptive alt text for accessibility, and the SVG sitemap supports
+                    keyboard navigation using <code class="html-c">tabindex="0"</code>. The User Profile page stores no user data persistently—all information exists
+                    only temporarily in JavaScript memory and is not sent to any server. All code and written content is my original work,
+                    following academic integrity principles.
+                </p>
             </section>
 
             <section>
@@ -199,27 +222,27 @@
                             <td>1</td>
                             <td>28 Feb 2026</td>
                             <td>Online</td>
-                            <td>Agree SDG and assign roles</td>
+                            <td>Coursework Briefing and Assign Roles</td>
                             <td>Yes</td>
-                            <td>I agreed to take responsibility for the Home Page and template.</td>
+                            <td>I agreed to take responsibility for the role of Student 4</td>
                         </tr>
 
                         <tr>
                             <td>2</td>
                             <td>15 March 2026</td>
                             <td>Online</td>
-                            <td>Review Home Page design</td>
+                            <td>Agree on SDG and Review Home Page design</td>
                             <td>Yes</td>
-                            <td>I suggested the colour palette and card-based layout.</td>
+                            <td>I suggested some colour palette and header layout.</td>
                         </tr>
 
                         <tr>
                             <td>3</td>
                             <td>27 Mar 2026</td>
                             <td>Face-To-Face</td>
-                            <td>Progress review</td>
+                            <td>Progress Review</td>
                             <td>Yes</td>
-                            <td>I reviewed meeting notes and followed up with tasks.</td>
+                            <td>I showed my progress on User Profile, taking in constructive critisims but also giving to fellow peers.</td>
                         </tr>
 
                         <tr>
@@ -228,7 +251,7 @@
                             <td>Online</td>
                             <td>Progress Review and Fatal Error Resolving</td>
                             <td>Yes</td>
-                            <td>&nbsp;</td>
+                            <td>Showed the new User Profile, also the newly created Sitemap. Helped a friend backup his content because of his laptop getting wet.</td>
                         </tr>
 
                         <tr>
@@ -237,7 +260,7 @@
                             <td>Face-To-Face</td>
                             <td>Matching Template Designs and Overall Aesthetics</td>
                             <td>Yes</td>
-                            <td>&nbsp;</td>
+                            <td>Suggest how we will organise everything in accordance with the Global Template and remind peers to update their links to jump to the correct pages.</td>
                         </tr>
 
                         <tr>
@@ -260,10 +283,16 @@
                 <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified
                     style). For example:<br><br>
                 <ul class="ref">
-                    <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last
-                        accessed: 11 Feb 2025).</li>
-                    <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc.
-                            Indianappolis.</i></li>
+                    <li>International Labour Organization (2020) <i>UN News.</i> Available at: <a href="https://news.un.org/en/story/2020/03/1059031">https://news.un.org/</a> (Last accessed: 04 April 2026).</li>
+                    <li>UNICEF USA (2025) <i>Fast Facts: 30 years of uneven progress for adolescent girls.</i> Available at: <a href="https://www.unicefusa.org/press/fast-facts-30-years-uneven-progress-adolescent-girls">https://www.unicefusa.org/</a> (Last accessed: 04 April 2026).</li>
+                    <li>UNICEF (2021) <i>Nearly 240 million children with disabilities around the world.</i> Available at: <a href="https://www.unicef.org.uk/press-releases/the-worlds-nearly-240-million-children-living-with-disabilities-are-being-denied-basic-rights-unicef/">https://www.unicef.org.uk/</a> (Last accessed: 04 April 2026).</li>
+                    <li>Dell Technologies & Institute For The Future (2025) <i>ET CFO.</i> Available at: <a href="https://cfo.economictimes.indiatimes.com/news/85-of-2030-jobs-yet-to-be-invented-amid-rapid-industry-transformation-dell-report/120375527">https://cfo.economictimes.indiatimes.com/</a> (Last accessed: 04 April 2026).</li>
+                    <li>Pexels Online Learning (2020) <i>pexels.</i> Available at: <a href="https://www.pexels.com/photo/multiracial-muslim-ladies-in-hijab-using-laptops-and-notebooks-6282028/">https://www.pexels.com/</a> (Last accessed: 04 April 2026).</li>
+                    <li>Pexels Skill Workshop (2024) <i>pexels.</i> Available at: <a href="https://www.pexels.com/photo/group-of-men-in-a-studio-with-tools-20853659/">https://www.pexels.com/</a> (Last accessed: 04 April 2026).</li>
+                    <li>Pexels Inclusive Classroom (2021) <i>pexels.</i> Available at: <a href="https://www.pexels.com/photo/people-brainstorming-at-a-meeting-7495610/">https://www.pexels.com/</a> (Last accessed: 04 April 2026).</li>
+                    <li>Pexels Girls Education (2023) <i>pexels.</i> Available at: <a href="https://www.pexels.com/photo/teacher-and-schoolgirls-sitting-by-tables-19064138/">https://www.pexels.com/</a> (Last accessed: 05 April 2026).</li>
+                    <li>Pexels Quality Education (2017) <i>pexels.</i> Available at: <a href="https://www.pexels.com/photo/crop-military-ethnic-females-stacking-hands-325135/">https://www.pexels.com/</a> (Last accessed: 05 April 2026).</li>
+                    <li>The Global Goals (2021) <i>The Global Goals.</i> Available at: <a href="https://globalgoals.org/goals/4-quality-education/">https://globalgoals.org/</a> (Last accessed: 03 April 2026).</li>
                 </ul>
             </section>
 

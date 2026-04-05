@@ -57,83 +57,88 @@ function showSkipMessage() {
     alert("SKIPPED!\nYou may do this later");
 }
 
-// WIP
 function isValidUsername(username) {
-    const checks = {
-        hasUpper : false,
-        hasLower : false,
-        hasSpecial : false,
-        hasNumber : false,
-        hasNoSpace : username.includes(' '),
+
+    if (username.length < 8) {
+        return false;
     }
-
-    // helper functions
-
-    const isUpper = (char) => {
-        return char === char.toUpperCase() && char !== char.toLowerCase();
+    
+    if (username.includes(' ')) {
+        return false;
     }
-
-    const isLower = (char) => {
-        return char === char.toLowerCase() && char !== char.toUpperCase();
-    }
-
-    const isDigit = (char) => {
-        return /^\d$/.test(char);
-    }
-
-    const special = [
-        '!', '@', '#', '$', '%', '*',
-    ];
-
+    
+    let hasUpper = false;
+    let hasLower = false;
+    let hasSpecial = false;
+    let hasNumber = false;
+    
+    const specialChars = ['!', '@', '#', '$', '%', '*'];
+    
     for (let i = 0; i < username.length; i++) {
-        let thisChar = username[i];
-        switch (thisChar) {
-            case isUpper(thisChar):
-                checks.hasUpper = true;
-                break;
-            case isLower(thisChar):
-                checks.hasLower = true;
-                break;
-            case special.includes(thisChar):
-                checks.hasSpecial = true;
-                break;
-            case isDigit(thisChar):
-                checks.hasNumber = true;
-                break;
-            default:
-                continue;
+        let char = username[i];
+
+        if (char >= 'A' && char <= 'Z') {
+            hasUpper = true;
+        }
+        else if (char >= 'a' && char <= 'z') {
+            hasLower = true;
+        }
+        else if (char >= '0' && char <= '9') {
+            hasNumber = true;
+        }
+        else if (specialChars.includes(char)) {
+            hasSpecial = true;
         }
     }
-    return Object.values(checks).every(value => value === true) ? true : false;
+    
+    return hasUpper && hasLower && hasSpecial && hasNumber;
 }
+
 
 // Function to enter the value || Also checks if something was already input before
 function enterValue(field) {
     const promptText = fieldConfig[field];
-    if (!promptText) return; // Exit if there is no existing prompt
+    if (!promptText) return;
 
     const existingValue = userData[field];
-    let message = promptText; // If there is already an existing value, the new message will be prompt
+    let message = promptText;
 
     if (existingValue && existingValue !== "") {
-        message = `${promptText}\n\nEnter Value to Update:`
+        message = `${promptText}\n\nCurrent Value: ${existingValue}\nEnter new value to update:`;
     }
 
-    const value = prompt(message, existingValue || defaultMessage); // If got existing value, display else display the defaultMessage
+    let value = prompt(message, existingValue || defaultMessage);
 
-    if (value && value.trim() !== "" && value !== defaultMessage) {
-        // Storing
-        userData[field] = value.trim();
-        // Updating Value and Progress Bar
-        document.getElementById(field).textContent = value.trim();
-        if (!existingValue || existingValue === "") {
-            completeCounter++;
-            updateProgressBar();
-            updateProgressStatus()
-        }
-    } else if (value !== null && existingValue && existingValue !== "") {
-        alert("Keeping original value!");
-    } else {
+    if (value === null) {
         showSkipMessage();
-    } 
+        return;
+    }
+
+    if (value.trim() === "" || value === defaultMessage) {
+        showSkipMessage();
+        return;
+    }
+
+    if (field === "username") {
+        if (!isValidUsername(value.trim())) {
+            alert("Invalid Username!\n\nUsername must meet ALL requirements:\n✓ At least 8 characters long\n✓ At least one uppercase letter (A-Z)\n✓ At least one lowercase letter (a-z)\n✓ At least one number (0-9)\n✓ At least one special character (! @ # $ % *)\n✗ No spaces allowed\n\nPlease try again.");
+            return;
+        }
+    }
+
+    const trimmedValue = value.trim();
+    userData[field] = trimmedValue;
+
+    const buttonElement = document.getElementById(field);
+    if (buttonElement) {
+        buttonElement.textContent = trimmedValue;
+    }
+
+    if (!existingValue || existingValue === "") {
+        completeCounter++;
+        updateProgressBar();
+        updateProgressStatus();
+    } else if (existingValue !== trimmedValue) {
+        alert("Value updated successfully!");
+    }
 }

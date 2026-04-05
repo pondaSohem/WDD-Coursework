@@ -312,7 +312,23 @@
     </div>
 </footer>
 
-    <a href="#top" class="top-btn">⬆ Back to Top</a>
+        <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
 
     <script>
         // Scripts Using Javascript

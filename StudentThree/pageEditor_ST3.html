@@ -137,14 +137,14 @@
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
-                        
                     <h3>Link to the page</h3>
                         <p><a href="content.html">Include a link to the actual page you describe.</a></p>
             </section>
 
             <section>
                 <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>Challenges Encountered :
+                    <p>
+                        <h3>Challenges Encountered :</h3>
                         <ul>
                             <li>Steep Learning Curve in Understanding Github, and the concept of Pushing and Pulling</li>
                             <li>Had A Difficult time comprehending and integrating Javascript into feedback html pages</li>
@@ -153,8 +153,22 @@
                             <li>Had Difficulty writing "&lt;" and "&gt;" tags correctly in the form of text earlier in the Page Editor</li>
                             <li>Finding the right balance between functionality and aesthetics</li>
                             <li>Difficulty aligning different elements of the page into an aesthetically pleasing layout</li>
+                            <li>Difficulty getting the html to pass through validation</li>
                         </ul>
                     </p> 
+                    <p>
+                        <h3>How I Resolved These Challenges :</h3>
+                        <ul>
+                            <li>Watched multiple tutorials on Github and practiced pushing and pulling to get the hang of it</li>
+                            <li>Watched multiple tutorials on Javascript and referred to documentation to understand how to implement it into the feedback page</li>
+                            <li>Communicated with team members to resolve conflicting push-pull issues on Github</li>
+                            <li>Experimented with different gradient and transition settings, and referred to online resources for guidance</li>
+                            <li>Practiced writing "&lt;" and "&gt;" tags correctly in the form of text, and referred to documentation for guidance</li>
+                            <li>Experimented with different design elements and layouts, and sought feedback from team members to find the right balance between functionality and aesthetics</li>
+                            <li>Used CSS Grid and Flexbox to align different elements of the page into an aesthetically pleasing layout</li>
+                            <li>Individually debugged parts of the erroneous code, partly with the assistance of Generative AI</li>
+                        </ul>
+                    </p>
             </section>
 
             <section>
@@ -289,5 +303,24 @@
     </div>
 </footer>
 
+      <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
+
 </body>
+
 </html>

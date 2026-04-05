@@ -104,6 +104,250 @@
             font-family:'Norwester', sans-serif;
             font-size: 20px;
 }
+/*  Content Gallery */
+
+.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  position: relative;
+  z-index: 1; /* Lower z-index so images stay behind nav */
+  margin-top: 70px; /* Add space for fixed header */
+
+}
+
+.scroll-container img {
+  padding: 10px;
+  height:400px;
+  width:400px;
+  margin-top: 4%;
+}
+
+/* HOVER */
+/* Gallery */
+.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container a {
+  display: inline-block;
+  overflow: visible;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.scroll-container img {
+  padding: 10px;
+  height: 400px;
+  width: 400px;
+  margin-top: 4%;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.scroll-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Higher than container but lower than header */
+
+}
+.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+   position: relative;
+    z-index: 1; /* Lower z-index so images stay behind nav */
+    margin-top: 70px; /* Add space for fixed header */
+
+}
+
+.scroll-container img {
+  padding: 10px;
+  height:400px;
+  width:400px;
+  margin-top: 4%;
+}
+
+/* HOVER */
+/* Gallery */
+.scroll-container {
+  background-color: #333;
+  /* overflow: auto; */
+  overflow-x: auto;      /* Only horizontal scroll */
+  overflow-y: hidden;    /* NO vertical scroll */
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.scroll-container a {
+  display: inline-block;
+  overflow: visible;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.scroll-container img {
+  padding: 10px;
+  height: 400px;
+  width: 400px;
+  margin-top: 4%;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.scroll-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Higher than container but lower than header */
+
+}
+/* TEXT POP UP */
+/* Image card container */
+.image-card {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Overlay text - hidden by default */
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    color: white;
+    text-align: center;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.overlay-text span {
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Show text on hover */
+.image-card:hover .overlay-text {
+    transform: translateY(0);
+}
+
+/* Image styling */
+.image-card img {
+    height: 380px;
+    width: 380px;
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+/* Zoom effect */
+.image-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* footer */
+footer{
+   background-color:#009cd9;
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+}
+
+
+.foot-container {
+  display: flex;
+  justify-content: center;
+}
+
+.foot-link {
+  list-style: none;
+}
+
+.footer-link {
+  
+  font-weight: bolder;
+  color: black;
+}
+
+/* BACK TO TOP */
+.top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 25px;
+}
+/* TEXT POP UP */
+/* Image card container */
+.image-card {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* Overlay text - hidden by default */
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.overlay-text span {
+    font-size: 14px;
+    font-weight: normal;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Show text on hover */
+.image-card:hover .overlay-text {
+    transform: translateY(0);
+}
+
+/* Image styling */
+.image-card img {
+    height: 380px;
+    width: 380px;
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+/* Zoom effect */
+.image-card:hover img {
+    transform: scale(1.04);
+}
 
 </style>
 </head>

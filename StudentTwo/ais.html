@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Action Impact Simulator</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Action Impact Simulator | SDG 4</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -25,111 +24,118 @@
     }
 
     /* header */
-header{
-    background-color:#009cd9;
-    position: fixed;/* Makes the Navigatioon bar stay fixed to the top of the page */
-    margin: 0%;
-    margin-top: auto;
-    padding: 0%;
-    top: 0%;
-    width: 100%;
-    z-index: 1000; /*This keeps the nav bar on top */
-    overflow-x: auto;
-    white-space: nowrap;
+    header {
+      background-color: #009cd9;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      overflow-x: auto;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-}
-/* Navigation Bar */
-.nav-menu {
-  list-style: none; /* Removes bullet points */
-  padding: 0; /* Removes default padding */
-  margin: 0; /* Removes default margin */
-  display: flex; /* Arranges list items in a row */
-  justify-content: space-around; /*Distributes items evenly with space around them*/
-  justify-content: flex-start;
-  min-width: max-content;
-}
+    /* Navigation Bar */
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-width: max-content;
+      padding: 0 20px;
+    }
 
-.nav-menu li {
-  padding: 5px; /* Adds space around each list item */
-  flex-shrink: 0;
-  gap: 0;
-  
-}
+    .nav-menu li {
+      padding: 0;
+      flex-shrink: 0;
+    }
 
-.nav-menu a {
-  text-decoration: none; /* Removes underlines from links */
-  line-height: 50px; /* Makes the text float in the centre of the container */
-  color: whitesmoke;
-  font-weight: bolder;
-  padding: 0 10px;
-}
+    .nav-menu a {
+      text-decoration: none;
+      line-height: 50px;
+      color: whitesmoke;
+      font-weight: bolder;
+      padding: 0 16px;
+      display: inline-block;
+      transition: background 0.2s;
+    }
 
-.logo-img {
-  margin-left: auto;
-  flex-shrink: 0;
-  padding: 0 10px;
-}
+    .logo-item {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
 
-nav li:hover {
-   background-color: #0186bb;
-}
-        
-nav a:active {
-  font-weight: bold;
-}
+    .logo-img {
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+    }
 
-.active {
-  background-color: #0186bb;
-}
+    .logo-img img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+
+    nav li:hover a {
+      background-color: #0186bb;
+    }
+
+    nav a:active {
+      font-weight: bold;
+    }
+
+    .active a {
+      background-color: #0186bb;
+    }
 
     body {
-      padding-top: 30px; /* Add this line */
-      font-family: Helvetica, sans-serif;
+      padding-top: 50px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       background: var(--grey-bg);
       color: var(--dark);
       min-height: 100vh;
     }
 
-    /* ---- HERO BANNER ---- */
- .hero {
-        margin-top: 30px; /* Add this line */
-        background: linear-gradient(135deg, #0077b6, #009cd9);
-        color: white;
-        padding: 50px 20px;
-        text-align: center;
-        }
+    /* Hero Banner */
+    .hero {
+      margin-top: 0;
+      background: linear-gradient(135deg, #0077b6, #009cd9);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
 
-      .hero-chip {
-        margin-top: 10px; /* Add this line */
-        display: inline-block;
-        background: rgba(255,255,255,0.2);
-        border: 1px solid rgba(255,255,255,0.35);
-        color: #fff;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        padding: 5px 16px;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-      }
+    .hero-chip {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
 
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
 
-
-    /* ---- MAIN WRAPPER ---- */
+    /* Main Wrapper */
     .wrapper {
       max-width: 1140px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem 3rem;
     }
 
-    /* ---- SECTION HEADING ---- */
+    /* Section Heading */
     .section-heading {
-      font-family: Helvetica, sans-serif;
+      font-family: 'Helvetica Neue', Helvetica, sans-serif;
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -144,7 +150,7 @@ nav a:active {
       margin-bottom: 1.6rem;
     }
 
-    /* ---- CARDS GRID ---- */
+    /* Cards Grid */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -152,7 +158,7 @@ nav a:active {
       margin-bottom: 2.5rem;
     }
 
-    /* ---- ACTION CARD ---- */
+    /* Action Card - using div with button-like role for better accessibility */
     .action-card {
       background: var(--card-bg);
       border-radius: 12px;
@@ -170,7 +176,7 @@ nav a:active {
       border-color: var(--blue);
     }
 
-    .action-card:focus {
+    .action-card:focus-visible {
       outline: 3px solid var(--blue);
       outline-offset: 3px;
     }
@@ -181,7 +187,6 @@ nav a:active {
       background: var(--blue-light);
     }
 
-    /* Tick badge */
     .tick {
       position: absolute;
       top: 10px; right: 10px;
@@ -205,7 +210,6 @@ nav a:active {
       transform: scale(1);
     }
 
-    /* Card image */
     .card-img {
       height: 155px;
       overflow: hidden;
@@ -223,24 +227,11 @@ nav a:active {
     .action-card:hover .card-img img { transform: scale(1.05); filter: grayscale(0%); }
     .action-card.selected .card-img img { filter: grayscale(0%); }
 
-    .card-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 50%, rgba(26,144,196,0.15) 100%);
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    .action-card.selected .card-img::after { opacity: 1; }
-
-    /* Card body */
     .card-body {
       padding: 1rem 1.1rem 1.2rem;
     }
 
     .card-body h3 {
-      font-family: Helvetica, sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
       color: var(--dark);
@@ -273,7 +264,7 @@ nav a:active {
       background: var(--blue);
     }
 
-    /* ---- FEEDBACK PANEL ---- */
+    /* Feedback Panel */
     .feedback {
       background: var(--white);
       border-radius: 14px;
@@ -283,7 +274,6 @@ nav a:active {
     }
 
     .feedback h2 {
-      font-family: Helvetica, sans-serif;
       font-size: 1.1rem;
       font-weight: 700;
       color: var(--blue-dark);
@@ -300,7 +290,6 @@ nav a:active {
       padding: 0.5rem 0 1rem;
     }
 
-    /* Score row */
     .score-row {
       display: flex;
       align-items: center;
@@ -323,7 +312,6 @@ nav a:active {
     }
 
     .score-circle .num {
-      font-family: Helvetica, sans-serif;
       font-size: 1.9rem;
       font-weight: 800;
       color: var(--blue-dark);
@@ -341,7 +329,6 @@ nav a:active {
       display: inline-block;
       padding: 6px 18px;
       border-radius: 30px;
-      font-family: Helvetica, sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
       transition: background 0.4s, color 0.4s;
@@ -351,14 +338,12 @@ nav a:active {
     .level-pill.medium { background: #fffbe6; color: #a07800; border: 2px solid #ffe57f; }
     .level-pill.high   { background: var(--blue-light); color: var(--blue-dark); border: 2px solid var(--blue-mid); }
 
-    /* Progress bar */
     .prog-label {
       display: flex;
       justify-content: space-between;
       font-size: 0.79rem;
       color: var(--grey-text);
       margin-bottom: 6px;
-      font-family: Helvetica, sans-serif;
       font-weight: 500;
     }
 
@@ -378,7 +363,6 @@ nav a:active {
       transition: width 0.6s cubic-bezier(0.4,0,0.2,1), background 0.4s;
     }
 
-    /* Summary message */
     .summary {
       font-size: 0.92rem;
       line-height: 1.75;
@@ -387,10 +371,8 @@ nav a:active {
       border-left: 4px solid var(--blue);
       background: var(--blue-light);
       border-radius: 0 8px 8px 0;
-      transition: background 0.4s, border-color 0.4s;
     }
 
-    /* ---- DIVIDER ---- */
     .divider {
       height: 1px;
       background: var(--grey-light);
@@ -400,39 +382,135 @@ nav a:active {
     @media (max-width: 640px) {
       .score-row { flex-direction: column; align-items: flex-start; }
     }
+
+    /* Footer */
+    footer {
+      background-color: #009cd9;
+      margin-top: 50px;
+      padding: 30px 20px 15px 20px;
+      width: 100%;
+      color: white;
+    }
+
+    .foot-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 30px;
+    }
+
+    .foot-section {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .foot-section h2, .foot-section h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .foot-tagline {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-top: 8px;
+    }
+
+    .college-id-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .college-id-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .foot-link {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .foot-link li {
+      margin-bottom: 8px;
+    }
+
+    .foot-link a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .foot-link a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+
+    .foot-bottom {
+      text-align: center;
+      padding-top: 20px;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 15px;
+    }
+
+    .top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+      z-index: 1000;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .top-btn:hover {
+      background-color: #1abc9c;
+    }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-    <header>
+  <header>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="../StudentOne/home.html">Home</a></li>
+        <li class="active"><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+        <li><a href="../StudentOne/gallery.html">Gallery</a></li>
+        <li><a href="../StudentFour/profile.html">User Profile</a></li>
+        <li><a href="../StudentThree/feedback.html">Feedback</a></li>
+        <li><a href="../StudentThree/team.html">Team Page</a></li>
+        <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
+        <li class="logo-item">
+          <div class="logo-img">
+            <img src="../assets/AMAZE.png" alt="Amaze Logo - Quality Education">
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- NAVIGATION -->
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../StudentOne/home.html">Home</a></li>
-                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
-                <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-                <li><a href="../StudentFour/profile.html">User Profile</a></li>
-                <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
-                <li><a href="../StudentThree/team.html">Team Page</a></li>
-                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
-
-                <!-- LOGO -->
-                <img src="../assets/AMAZE.png" height="50px" width="50px">
-            </ul>
-        </nav>
-    </header>
-
-  <!-- Hero Banner -->
   <div class="hero">
     <div class="hero-chip">SDG 4 — Quality Education</div>
     <h1>Action Impact Simulator</h1>
     <p>Select the actions you take in daily life to support quality education. See how your choices add up!</p>
   </div>
 
-  <!-- Main Content -->
   <div class="wrapper">
-
     <!-- Feedback Panel -->
     <div class="feedback" aria-live="polite">
       <h2>
@@ -442,9 +520,7 @@ nav a:active {
         </svg>
         Your Impact Summary
       </h2>
-
       <p class="hint" id="hint">Select one or more actions above to see your impact score.</p>
-
       <div id="results" style="display:none;">
         <div class="score-row">
           <div class="score-circle">
@@ -452,11 +528,10 @@ nav a:active {
             <span class="lbl">points</span>
           </div>
           <div>
-            <div style="font-size:0.78rem;color:#9aa;margin-bottom:6px;font-family:Helvetica,sans-serif;font-weight:500;">Impact level</div>
+            <div style="font-size:0.78rem;color:#9aa;margin-bottom:6px;">Impact level</div>
             <div class="level-pill" id="level-pill"></div>
           </div>
         </div>
-
         <div class="prog-label">
           <span>Progress toward High Impact</span>
           <span id="prog-pct">0%</span>
@@ -464,7 +539,6 @@ nav a:active {
         <div class="prog-track">
           <div class="prog-fill" id="prog-fill"></div>
         </div>
-
         <div class="summary" id="summary-msg"></div>
       </div>
     </div>
@@ -472,111 +546,139 @@ nav a:active {
     <p class="section-heading">Choose Your Actions</p>
     <p class="section-sub">Select one or more actions below to calculate your impact score.</p>
 
-    <!-- Cards Grid -->
+    <!-- Cards Grid - using div elements with proper ARIA roles (button) for accessibility and to fix validation errors -->
     <div class="cards-grid">
-
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="3" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Read educational articles, 3 points">
+      <!-- Card 1 -->
+      <div class="action-card" role="button" tabindex="0" data-points="3" 
+           aria-label="Read Educational Articles, 3 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/Person reading educational content on a laptop.jpg" alt="Person reading educational content on a laptop"/>
+          <img src="../assets/y1.jpg" alt="Person reading educational content on a laptop" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Reading+Articles'">
         </div>
         <div class="card-body">
           <h3>Read Educational Articles</h3>
           <p>Spend 20 minutes daily reading credible content — news, research, or learning blogs — to broaden your knowledge.</p>
           <span class="badge"><span class="badge-dot"></span>3 Impact Points</span>
         </div>
-      </article>
+      </div>
 
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="5" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Volunteer as a peer tutor, 5 points">
+      <!-- Card 2 -->
+      <div class="action-card" role="button" tabindex="0" data-points="5" 
+           aria-label="Volunteer as a peer tutor, 5 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/Student tutoring a peer at a table.jpg" alt="Student tutoring a peer at a table"/>
+          <img src="../assets/y2.jpg" alt="Student tutoring a peer at a table" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Peer+Tutoring'">
         </div>
         <div class="card-body">
           <h3>Volunteer as a Peer Tutor</h3>
           <p>Help a classmate or younger student understand a subject. Peer tutoring improves outcomes for both people involved.</p>
           <span class="badge"><span class="badge-dot"></span>5 Impact Points</span>
         </div>
-      </article>
+      </div>
 
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="4" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Donate books or stationery, 4 points">
+      <!-- Card 3 -->
+      <div class="action-card" role="button" tabindex="0" data-points="4" 
+           aria-label="Donate books or stationery, 4 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/Stack of colourful books being donated.jpg" alt="Stack of colourful books being donated"/>
+          <img src="../assets/y3.jpg" alt="Stack of colourful books being donated" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Donate+Books'">
         </div>
         <div class="card-body">
           <h3>Donate Books or Stationery</h3>
           <p>Donate books, pens, or notebooks to local schools or charity drives that support underprivileged learners.</p>
           <span class="badge"><span class="badge-dot"></span>4 Impact Points</span>
         </div>
-      </article>
+      </div>
 
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="2" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Complete a free online course, 2 points">
+      <!-- Card 4 -->
+      <div class="action-card" role="button" tabindex="0" data-points="2" 
+           aria-label="Complete a free online course, 2 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/Person attending an online course on a laptop at home.jpg" alt="Person attending an online course on a laptop at home"/>
+          <img src="../assets/y4.jpg" alt="Person attending an online course on a laptop at home" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Online+Course'">
         </div>
         <div class="card-body">
           <h3>Complete a Free Online Course</h3>
           <p>Platforms like Coursera, edX, and Khan Academy offer free courses. Self-education is a direct SDG 4 action.</p>
           <span class="badge"><span class="badge-dot"></span>2 Impact Points</span>
         </div>
-      </article>
+      </div>
 
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="5" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Fundraise for an education charity, 5 points">
+      <!-- Card 5 -->
+      <div class="action-card" role="button" tabindex="0" data-points="5" 
+           aria-label="Fundraise for an education charity, 5 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/Group of students organising a fundraising event.jpg" alt="Group of students organising a fundraising event"/>
+          <img src="../assets/y5.jpg" alt="Group of students organising a fundraising event" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Fundraising'">
         </div>
         <div class="card-body">
           <h3>Fundraise for an Education Charity</h3>
           <p>Organise or join a sponsored event or online campaign to raise funds for education in underserved areas.</p>
           <span class="badge"><span class="badge-dot"></span>5 Impact Points</span>
         </div>
-      </article>
+      </div>
 
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="3" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Advocate on social media, 3 points">
+      <!-- Card 6 -->
+      <div class="action-card" role="button" tabindex="0" data-points="3" 
+           aria-label="Advocate on social media, 3 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/social.jpg" alt="Person posting about education on social media"/>
+          <img src="../assets/y6.jpg" alt="Person posting about education on social media" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Social+Advocacy'">
         </div>
         <div class="card-body">
           <h3>Advocate on Social Media</h3>
           <p>Share facts and campaigns about education inequality. Awareness is the first step toward systemic change.</p>
           <span class="badge"><span class="badge-dot"></span>3 Impact Points</span>
         </div>
-      </article>
+      </div>
 
-      <article class="action-card" role="checkbox" aria-checked="false" tabindex="0"
-        data-points="4" onclick="toggle(this)" onkeydown="keyNav(event,this)"
-        aria-label="Join a study group, 4 points">
+      <!-- Card 7 -->
+      <div class="action-card" role="button" tabindex="0" data-points="4" 
+           aria-label="Join a study group, 4 impact points" aria-pressed="false">
         <div class="tick" aria-hidden="true">✓</div>
         <div class="card-img">
-          <img src="../assets/Students sitting together in a collaborative study group.jpg" alt="Students sitting together in a collaborative study group"/>
+          <img src="../assets/y7.jpg" alt="Students sitting together in a collaborative study group" onerror="this.src='https://placehold.co/400x200/1a90c4/white?text=Study+Group'">
         </div>
         <div class="card-body">
           <h3>Join a Study Group</h3>
           <p>Collaborative learning deepens understanding and builds community. Everyone's progress improves together.</p>
           <span class="badge"><span class="badge-dot"></span>4 Impact Points</span>
         </div>
-      </article>
-
+      </div>
     </div>
-
     <div class="divider"></div>
+  </div>
 
+  <footer>
+    <div class="foot-container">
+      <div class="foot-section">
+        <h2>© AMAZE</h2>
+        <p class="foot-tagline">Building a better future through quality education</p>
+      </div>
+      <div class="foot-section">
+        <h2>COLLABORATORS</h2>
+        <ul class="college-id-list">
+          <li><span>Sulav Maharjan</span> <span>w2124044</span></li>
+          <li><span>Yugesh Maharjan</span> <span>w2121990</span></li>
+          <li><span>Shreejal Manandhar</span> <span>w2122052</span></li>
+          <li><span>Sohem Rai</span> <span>w2124053</span></li>
+        </ul>
+      </div>
+      <div class="foot-section">
+        <h2>Quick Links</h2>
+        <ul class="foot-link">
+          <li><a href="pageEditor_ST2.html">Page Editor</a></li>
+          <li><a href="validation_ST2.html">Validation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Sustainable Development Goal 4 | Quality Education for All</p>
+    </div>
+  </footer>
+
+  <div class="back-top">
+    <a href="#" class="top-btn" id="top-btn" aria-label="Back to top">↑</a>
   </div>
 
   <script>
@@ -586,58 +688,118 @@ nav a:active {
       high:   "Outstanding! You are a champion of Quality Education. Your commitment to SDG 4 is truly inspiring — keep it up!"
     };
 
-    let total = 0;
+    let totalPoints = 0;
 
-    function toggle(card) {
-      const pts = parseInt(card.dataset.points, 10);
-      if (card.classList.contains('selected')) {
-        card.classList.remove('selected');
-        card.setAttribute('aria-checked', 'false');
-        total -= pts;
-      } else {
-        card.classList.add('selected');
-        card.setAttribute('aria-checked', 'true');
-        total += pts;
-      }
-      render();
-    }
+    // Get all action cards
+    const cards = document.querySelectorAll('.action-card');
+    const hintEl = document.getElementById('hint');
+    const resultsEl = document.getElementById('results');
+    const scoreNumEl = document.getElementById('score-num');
+    const levelPillEl = document.getElementById('level-pill');
+    const summaryMsgEl = document.getElementById('summary-msg');
+    const progFillEl = document.getElementById('prog-fill');
+    const progPctEl = document.getElementById('prog-pct');
 
-    function keyNav(e, card) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(card); }
-    }
-
-    function render() {
-      const hint    = document.getElementById('hint');
-      const results = document.getElementById('results');
-
-      if (total === 0) {
-        hint.style.display    = 'block';
-        results.style.display = 'none';
+    function updateUI() {
+      if (totalPoints === 0) {
+        hintEl.style.display = 'block';
+        resultsEl.style.display = 'none';
         return;
       }
-
-      hint.style.display    = 'none';
-      results.style.display = 'block';
-
-      document.getElementById('score-num').textContent = total;
+      hintEl.style.display = 'none';
+      resultsEl.style.display = 'block';
+      scoreNumEl.textContent = totalPoints;
 
       let level, label;
-      if      (total <= 6)  { level = 'low';    label = '🌱 Low Impact'; }
-      else if (total <= 13) { level = 'medium'; label = '🌿 Medium Impact'; }
-      else                  { level = 'high';   label = '🌳 High Impact'; }
+      if (totalPoints <= 6) {
+        level = 'low';
+        label = '🌱 Low Impact';
+      } else if (totalPoints <= 13) {
+        level = 'medium';
+        label = '🌿 Medium Impact';
+      } else {
+        level = 'high';
+        label = '🌳 High Impact';
+      }
 
-      const pill = document.getElementById('level-pill');
-      pill.textContent = label;
-      pill.className   = 'level-pill ' + level;
+      levelPillEl.textContent = label;
+      levelPillEl.className = 'level-pill ' + level;
+      summaryMsgEl.textContent = MSGS[level];
 
-      document.getElementById('summary-msg').textContent = MSGS[level];
-
-      const pct  = Math.min(Math.round((total / 25) * 100), 100);
-      const fill = document.getElementById('prog-fill');
-      fill.style.width      = pct + '%';
-      fill.style.background = level === 'low' ? '#f59a30' : level === 'medium' ? '#f5c842' : '#1a90c4';
-      document.getElementById('prog-pct').textContent = pct + '%';
+      const maxPoints = 25;
+      let pct = Math.min(Math.round((totalPoints / maxPoints) * 100), 100);
+      progFillEl.style.width = pct + '%';
+      let fillColor = level === 'low' ? '#f59a30' : (level === 'medium' ? '#f5c842' : '#1a90c4');
+      progFillEl.style.background = fillColor;
+      progPctEl.textContent = pct + '%';
     }
+
+    function toggleCard(card) {
+      const points = parseInt(card.getAttribute('data-points'), 10);
+      const isSelected = card.classList.contains('selected');
+      
+      if (isSelected) {
+        card.classList.remove('selected');
+        card.setAttribute('aria-pressed', 'false');
+        totalPoints -= points;
+      } else {
+        card.classList.add('selected');
+        card.setAttribute('aria-pressed', 'true');
+        totalPoints += points;
+      }
+      updateUI();
+    }
+
+    function handleCardClick(event) {
+      const card = event.currentTarget;
+      toggleCard(card);
+    }
+
+    function handleKeydown(event, card) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleCard(card);
+      }
+    }
+
+    // Attach event listeners
+    cards.forEach(card => {
+      card.addEventListener('click', handleCardClick);
+      card.addEventListener('keydown', (e) => handleKeydown(e, card));
+    });
+
+    // Back to top button with smooth behavior
+    const topBtn = document.getElementById('top-btn');
+    if (topBtn) {
+      topBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      topBtn.addEventListener('mouseenter', () => {
+        topBtn.innerHTML = "↑ Back To Top";
+        topBtn.style.backgroundColor = "#1abc9c";
+        topBtn.style.padding = "12px 18px";
+        topBtn.style.width = "auto";
+      });
+      topBtn.addEventListener('mouseleave', () => {
+        topBtn.innerHTML = "↑";
+        topBtn.style.backgroundColor = "#2c3e50";
+        topBtn.style.padding = "12px 18px";
+      });
+    }
+
+    // Smooth scroll for hash links (if any)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
   </script>
 </body>
 </html>

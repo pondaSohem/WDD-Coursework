@@ -11,27 +11,29 @@
 
 </head>
 <body>
-    
-    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
 
-    <header id="top">
-             <!-- NAVIGATION -->
-        <nav>
+    <header>
+
+        <!-- NAVIGATION -->
+         <nav>
             <ul class="nav-menu">
                 <li><a href="../StudentOne/home.html">Home</a></li>
-                <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
+                <li><a href="ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
                 <li><a href="../StudentFour/profile.html">User Profile</a></li>
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
-    
+
                 <!-- LOGO -->
-                <div class="logo-img">
-                    <img src="../assets/MUULA.png" height="50px" width="50px">
-                </div>
+                <li class = "logo-item"> 
+                    <div class="logo-img">
+                    <img src="../assets/AMAZE.png" height="50" width="50" alt="logo">
+                 </div>
+                 </li>
+                
             </ul>
-        </nav>
+        </nav>  
     </header>
 
     <section class="stud">
@@ -45,77 +47,227 @@
             <!-- Update those first three sections for the pages you were responsible to implement -->
 
             <section>
-                <h2 id="home">Home page</h2>
-                    <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
-                    
-                    <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
-                    
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
-
-                    <h3>Link to the page</h3>
-                        <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+                <h2 id="feedback">Splash Page</h2>
+    
+                <h3>Technical Description</h3>
+                <p>
+    The Splash page is a single full-screen introductory screen that auto-redirects the user to the 
+    home page after a 3-second countdown. The page is structured around one main 
+    <code class="html-c">&lt;div&gt;</code> with the ID <code class="css-c">#splash</code>, which 
+    wraps all visible content including the heading, description paragraph, circular countdown loader, 
+    and skip button.
+    <br>
+    The heading uses <code class="html-c">&lt;h1&gt;</code> with a class of 
+    <code class="css-c">.logo</code> to display the page title. Below it, a 
+    <code class="html-c">&lt;p&gt;</code> tag with ID <code class="css-c">#para</code> is positioned 
+    at the bottom of the screen using <code class="css-c">position: absolute</code>, 
+    <code class="css-c">bottom: 40px</code>, and <code class="css-c">transform: translateX(-50%)</code> 
+    to keep it horizontally centred.
+    <br>
+    The circular countdown loader is built using an inline 
+    <code class="html-c">&lt;svg&gt;</code> with a <code class="css-c">viewBox</code> of 
+    <code class="css-c">0 0 100 100</code>. It contains two 
+    <code class="html-c">&lt;circle&gt;</code> elements: a static background circle with class 
+    <code class="css-c">.circle-bg</code>, and an animated progress circle with class 
+    <code class="css-c">.circle-progress</code> and ID <code class="css-c">#circleProgress</code>. 
+    The countdown number is displayed in the centre using a 
+    <code class="html-c">&lt;span&gt;</code> with ID <code class="css-c">#countdown</code>, overlaid 
+    on the SVG using CSS positioning within the <code class="css-c">.circle-container</code> wrapper.
+    <br>
+    All countdown logic is handled with JavaScript inline in the page. The circle's stroke animation 
+    uses <code class="js-c">strokeDasharray</code> and <code class="js-c">strokeDashoffset</code>, 
+    calculated from the circumference formula <code class="js-c">2 * Math.PI * 40 ≈ 251.2</code>. 
+    A <code class="js-c">setInterval()</code> decrements the counter every 1000ms, updates 
+    <code class="js-c">countdown.textContent</code>, and shrinks the visible stroke by adjusting 
+    <code class="js-c">strokeDashoffset</code> proportionally. When the count reaches zero, 
+    <code class="js-c">clearInterval()</code> stops the timer, the 
+    <code class="css-c">.fade-out</code> class is added to <code class="css-c">#splash</code> 
+    triggering a CSS <code class="css-c">opacity: 0</code> transition over 0.4 seconds, and 
+    <code class="js-c">window.location.href</code> redirects to the home page after an 800ms delay.
+    <br>
+    A skip button styled with class <code class="css-c">.skipbutton</code> is fixed to the 
+    bottom-right corner using <code class="css-c">position: fixed</code>, 
+    <code class="css-c">bottom: 30px</code>, and <code class="css-c">right: 30px</code>. It has a 
+    hover effect that changes its background to <code class="css-c">#1abc9c</code> and scales it up 
+    using <code class="css-c">transform: scale(1.1)</code>. Clicking it triggers the same 
+    <code class="js-c">redirectWithFade()</code> function via an 
+    <code class="js-c">addEventListener("click", ...)</code> with 
+    <code class="js-c">e.preventDefault()</code> to prevent default anchor navigation and ensure the 
+    fade transition plays first.
+</p>
+    
+            <h3>Accessibility</h3>
+                <p>All images include descriptive <strong>alt</strong> text. Form fields use <strong>&lt;label&gt;</strong> tags properly associated with inputs. <strong>&lt;fieldset&gt;</strong> and <strong>&lt;legend&gt;</strong> group form sections logically. Error messages appear near relevant fields with visible color contrast. The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, <strong>&lt;main&gt;</strong>, and <strong>&lt;footer&gt;</strong> for screen reader navigation. A "Back to Top" button provides easy keyboard navigation.</p>
+    
+            <h3>Link to the validation page</h3>
+                <p><a href="validation_ST2.html#splashVal">Validation Page</a></p>
+    
+            <h3>Link to the page</h3>
+                <p><a href="splash.html">Splash Page</a></p>
+            
             </section>
 
+
             <section>
-                <h2 id="splash">splash Page</h2>
+                <h2 id="team">Action Impact Simulator Page</h2>
+    
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
-
+                        <p>The team page displays four student profiles using a card-based layout. 
+                            Key HTML tags include <strong>&lt;header&gt;</strong> for navigation, 
+                            <strong>&lt;main&gt;</strong> for content, and <strong>&lt;footer&gt;</strong> 
+                            for page footer. Each team member is represented using an <strong>&lt;a&gt;</strong> 
+                            tag wrapped around an <strong>&lt;img&gt;</strong> and a 
+                            <strong>&lt;div class="info-card"&gt;</strong>. Unordered lists 
+                            <strong>&lt;ul&gt;</strong> and <strong>&lt;li&gt;</strong> display each 
+                            member's responsibilities.</p>
+    
+                        <p>Key CSS properties: <strong>display: grid</strong> or <strong>flex</strong> 
+                            arranges cards in a responsive gallery. <strong>position: relative</strong> on 
+                            image containers and <strong>position: absolute</strong> on overlay text 
+                            creates hover effects. <strong>transform: translateY(100%)</strong> hides 
+                            overlay text initially, changing to <strong>translateY(0)</strong> on hover 
+                            to reveal names. <strong>transition</strong> provides smooth animation. 
+                            <strong>object-fit: cover</strong> ensures images fill their containers 
+                            properly. <strong>box-shadow</strong> and <strong>border-radius</strong> 
+                            add visual polish to cards.</p>
+    
+                        <p>JavaScript is not used on this page. All interactivity comes from CSS hover 
+                            effects only. The image overlay that reveals student names on hover, the 
+                            subtle zoom effect on images, and the card shadows are all achieved with 
+                            pure CSS. No form validation, dynamic content loading, or event handling 
+                            is implemented.</p>
+    
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
-
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#volunteerVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
-
-                        
+                        <p>All images include descriptive <strong>alt</strong> text with student names. 
+                            The page uses semantic HTML elements like <strong>&lt;header&gt;</strong>, 
+                            <strong>&lt;main&gt;</strong>, <strong>&lt;footer&gt;</strong>, and 
+                            <strong>&lt;ul&gt;</strong> for proper document structure. The active 
+                            page link is highlighted in the navigation bar. Heading hierarchy starts 
+                            with <strong>&lt;h1&gt;</strong> for the main title, then <strong>&lt;h3&gt;</strong> 
+                            for student names inside cards. The entire card is clickable as an 
+                            <strong>&lt;a&gt;</strong> tag, making it keyboard accessible. Color 
+                            contrast meets readability standards.</p>
+    
+                    <h3>Link to the validation page</h3>
+                        <p><a href="validation_ST2.html#aisVal">Validation Page</a></p>
+    
                     <h3>Link to the page</h3>
-                        <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="ais.html">Action impact simulator Page</a></p>
             </section>
-
+            
             <section>
-                <h2 id="ais">Action Impact Simulator Page</h2>
+                <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <p>This content page uses basic HTML and CSS to present information about UN Sustainable 
+                            Development Goal Target 4.1. Key HTML tags include <strong>&lt;header&gt;</strong> 
+                            for the navigation bar, and an internal nav bar for easier navigation between different 
+                            sections of the content page. The nav bar and the internal nav bar is created using a 
+                            <strong>&lt;nav&gt;</strong> with an unordered list 
+                            <strong>&lt;ul&gt;</strong> for menu links, and <strong>&lt;main&gt;</strong> to 
+                            contain the primary page content. <strong>&lt;div class="head-card"&gt;</strong> 
+                            introduces the topic with a main heading <strong>&lt;h1&gt;</strong> and paragraph 
+                            <strong>&lt;p&gt;</strong>. <strong>&lt;div class="container"&gt;</strong> and 
+                            <strong>&lt;div class="card"&gt;</strong> provide structural containers for different 
+                            content sections, with the card class typically offering visual separation through 
+                            background styling defined in the global template CSS. <strong>&lt;img&gt;</strong> 
+                            tags embed educational photographs with <strong>alt</strong> attributes for accessibility 
+                            and inline styles controlling width, float positioning, border radius, and margins to 
+                            create wrapped text layouts.</p>
+
+                        <p>The page organizes information into four logical sections: overview, key elements, challenges, 
+                            and progress. Each section combines images with text to reinforce learning. In the key elements 
+                            card, an unordered list <strong>&lt;ul&gt;</strong> with list items <strong>&lt;li&gt;</strong> 
+                            presents the five core principles of Target 4.1 including free education, equitable access, 
+                            and quality learning. This list structure helps screen reader users understand the relationship 
+                            between items and allows keyboard navigation through each point individually. The challenges and 
+                            progress sections use floated images with text wrapping, achieved through inline CSS properties 
+                            <strong>float: left</strong> or <strong>float: right</strong>, <strong>margin-right</strong>, and 
+                            <strong>margin-left</strong>. These properties create a magazine style reading flow where images 
+                            sit beside their accompanying paragraphs rather than forcing vertical scrolling through large 
+                            image blocks.</p>
+
+                        <p>The footer contains <strong>&lt;div class="foot-container"&gt;</strong> with a copyright heading 
+                            <strong>&lt;h4&gt;</strong> and an unordered list <strong>&lt;ul&gt;</strong> of footer links 
+                            including the page editor and validation pages. The back to top button uses a <strong>&lt;div 
+                            class="back-top"&gt;</strong> wrapper containing an anchor <strong>&lt;a href="#"&gt;</strong> 
+                            with an arrow symbol. JavaScript event listeners for <strong>mouseenter</strong> and 
+                            <strong>mouseleave</strong> dynamically change the button inner HTML and background color, 
+                            expanding the text from a simple arrow to "Back To Top" on hover. This progressive enhancement 
+                            improves usability without requiring additional page loads. The button remains fixed during 
+                            scrolling, ensuring it is always accessible regardless of how far down the page the user has 
+                            navigated.</p>
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                       <p>This content page prioritizes accessibility through semantic HTML and thoughtful interactive design. 
+                        The use of <strong>&lt;header&gt;</strong>, <strong>&lt;nav&gt;</strong>, <strong>&lt;main&gt;</strong>, 
+                        and <strong>&lt;footer&gt;</strong> creates clear document landmarks that screen reader users can 
+                        navigate efficiently. The navigation menu structured as an unordered list <strong>&lt;ul&gt;</strong> 
+                        announces the number of available links, helping users understand the page structure before investing 
+                        time in exploration. Every image includes a descriptive <strong>alt</strong> attribute, such as 
+                        "Children in a classroom" and "Young girl studying", which conveys the educational context rather 
+                        than merely describing visual characteristics. This ensures blind users receive the same informational 
+                        value as sighted users when learning about Target 4.1.</p>
+
+                        <p>The back to top button includes JavaScript that expands its text on hover or focus, changing from 
+                            an arrow symbol to the descriptive phrase "Back To Top". This transformation benefits users with 
+                            cognitive disabilities who benefit from explicit action labels and users with motor impairments 
+                            who benefit from the enlarged click target area. The button maintains a consistent dark background 
+                            that contrasts sufficiently with the light page content, ensuring it remains visible regardless of 
+                            scroll position. The viewport meta tag <strong>width=device-width, initial-scale=1.0</strong> 
+                            prevents automatic zoom out on mobile devices and allows users with low vision to pinch zoom 
+                            without breaking the layout. When users zoom to 200 percent, the use of percentage based widths 
+                            and responsive design principles ensures text reflows naturally within its container rather than 
+                            disappearing off screen or requiring horizontal scrolling.</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST2.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
-                        
                     <h3>Link to the page</h3>
-                        <p><a href="ais.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="content_ST2.html">Content Page - Student 3</a></p>
             </section>
 
             <section>
                 <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
+                    <p>
+                        <h3>Challenges Encountered :</h3>
+                        <ul>
+                            <li>Steep Learning Curve in Understanding Github, and the concept of Pushing and Pulling</li>
+                            <li>Had A Difficult time comprehending and integrating Javascript into feedback html pages</li>
+                            <li>Had Conflicting Push-Pull Issues on Github with other team members</li>
+                            <li>Had Difficulty Getting the Gradient and transition right on cards of the Team and Feedback Page(s)</li>
+                            <li>Had Difficulty writing "&lt;" and "&gt;" tags correctly in the form of text earlier in the Page Editor</li>
+                            <li>Finding the right balance between functionality and aesthetics</li>
+                            <li>Difficulty aligning different elements of the page into an aesthetically pleasing layout</li>
+                            <li>Difficulty getting the html to pass through validation</li>
+                            <li>Difficulty in hosting the webpage</li>
+                        </ul>
+                    </p> 
+                    <p>
+                        <h3>How I Resolved These Challenges :</h3>
+                        <ul>
+                            <li>Watched multiple tutorials on Github and practiced pushing and pulling to get the hang of it</li>
+                            <li>Watched multiple tutorials on Javascript and referred to documentation to understand how to implement it into the feedback page</li>
+                            <li>Communicated with team members to resolve conflicting push-pull issues on Github</li>
+                            <li>Experimented with different gradient and transition settings, and referred to online resources for guidance</li>
+                            <li>Practiced writing "&lt;" and "&gt;" tags correctly in the form of text, and referred to documentation for guidance</li>
+                            <li>Experimented with different design elements and layouts, and sought feedback from team members to find the right balance between functionality and aesthetics</li>
+                            <li>Used CSS Grid and Flexbox to align different elements of the page into an aesthetically pleasing layout</li>
+                            <li>Individually debugged parts of the erroneous code, partly with the assistance of Generative AI</li>
+                        </ul>
+                    </p>
             </section>
 
             <section>
                 <h2 id="compliance"> Compliance</h2>
-                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
-
-                    
+                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes 
+                        demonstrating your understanding and application of these regulations. Be realistic and truthful. 
+                        <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
             </section>
 
-         <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
-                    Requirements:
-                        <ul> 
-                            <li>A minimum of six (6) group meetings must be recorded.</li>
-                            <li>Each student must provide their own account of the meetings.</li>
-                            <li>The log must focus on individual contribution, not just group activity.</li>
-                        </ul>
-                        <p>Feel free to follow the example table structure below:</p>
-
+            <section>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+                    <p>Group meetings and personal contribution log</p> 
                         <table >
-    
                             <thead>
                                 <tr>
                                     <th colspan="6">Group Meetings and Contribution Log</th>
@@ -133,56 +285,56 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>3 Feb 2026</td>
-                                    <td>Face-to-face</td>
-                                    <td>Agree SDG and assign roles</td>
+                                    <td>28 Feb 2026</td>
+                                    <td>Online</td>
+                                    <td>Group Meetings and Contribution Log	</td>
                                     <td>Yes</td>
-                                    <td>I agreed to take responsibility for the Splash Screen and Action Impact Simulator.</td>
+                                    <td>Took the role of Student three and subsequent responsiblitiies.</td>
                                 </tr>
                         
                                 <tr>
                                     <td>2</td>
-                                    <td>17 Feb 2026</td>
+                                    <td>15 Mar 2026</td>
                                     <td>Online</td>
                                     <td>Review Home Page design</td>
                                     <td>Yes</td>
-                                    <td>I suggested the Logo design and .</td>
+                                    <td>Assisted in selecting colour theme for the overall project and in choosing CSS elements.</td>
                                 </tr>
                         
                                 <tr>
                                     <td>3</td>
-                                    <td>03 Mar 2026</td>
-                                    <td>Hybrid</td>
+                                    <td>27 Mar 2026</td>
+                                    <td>Face-To-Face</td>
                                     <td>Progress review</td>
-                                    <td>No</td>
-                                    <td>I reviewed meeting notes and followed up with tasks.</td>
+                                    <td>Yes</td>
+                                    <td>Presented progress I had made so far, gave tips to team members regarding issues faced.</td>
                                 </tr>
                         
                                 <tr>
                                     <td>4</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
+                                    <td>1 Apr 2026</td>
+                                    <td>Online</td>
+                                    <td>Progress Review And Fatal Error Resolving</td>
+                                    <td>Yes</td>
+                                    <td>Presented progress I had made so far, gave tips to team members regarding issues faced</td>
                                 </tr>
                         
                                 <tr>
                                     <td>5</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
+                                    <td>3 Apr 2026</td>
+                                    <td>Online</td>
+                                    <td>Matching Template Designs And Overall Aesthetics</td>
+                                    <td>Yes</td>
+                                    <td>Made and reviewed suggestions on changes that could be made to each other's html pages</td>
                                 </tr>
                         
                                 <tr>
                                     <td>6</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
+                                    <td>4 Apr 2026</td>
+                                    <td>Face-To-Face</td>
+                                    <td>Final Checklist for Submission</td>
+                                    <td>Yes</td>
+                                    <td>Completed the final checklist for submission, Attempted in hosting webpage</td>
                                 </tr>
                         
                             </tbody>
@@ -211,11 +363,11 @@
             <ul class="top-level-ul">
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
 
-                <li>Student 3</li>
+                <li>Student 2</li>
                     <ul>
-                        <li><a href="splash.html">splash</a> </li>
-                        <li><a href="ais.html">Action Impact Simulator</a></li>
-                        <li><a href="content.html">Content</a></li>
+                        <li><a href="splash.html">Splash</a> </li>
+                        <li><a href="ais.html">Action impact simulator</a></li>
+                        <li><a href="content_ST2.html">Content</a></li>
                     </ul>
 
 
@@ -229,12 +381,54 @@
 
 <footer>
     <div class="foot-container">
-        <h4>&copy; AMAZE</h4>
-        <ul class="foot-link">
-            <li><a href="#PageEditor">Page Editor</a></li>
-            <li><a href="#Validation">Validation</a></li>
-        </ul>
+        <div class="foot-section">
+            <h4>&copy; AMAZE</h4>
+            <p class="foot-tagline">Building a better future through quality education</p>
+        </div>
+        
+        <div class="foot-section">
+            <h4>COLLABORATORS</h4>
+            <ul class="college-id-list">
+                <li><span>Sulav Maharjan</span> <span></span></li>
+                <li><span>Yugesh Maharjan</span> <span>w2121990</span></li>
+                <li><span>Shreejal Manandhar</span> <span>w2122052</span></li>
+                <li><span>Sohem Rai</span> <span>w2124053</span></li>
+            </ul>
+        </div>
+        
+        <div class="foot-section">
+            <h4>Quick Links</h4>
+            <ul class="foot-link">
+                <li><a href="pageEditor_ST2.html">Page Editor</a></li>
+                <li><a href="validation_ST2.html">Validation</a></li>
+            </ul>
+        </div>
     </div>
+    
+    <div class="foot-bottom">
+        <p>Sustainable Development Goal 4 | Quality Education for All</p>
+    </div>
+    <br>
 </footer>
+
+      <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
+
 </body>
+
 </html>

@@ -28,8 +28,10 @@
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
         
                 <!-- LOGO -->
-                <li class="logo-img">
-                    <img src="../assets/AMAZE.png" height="50px" width="50px">
+                <li class="logo-item">
+                    <div class="logo-img">
+                        <img src="../assets/AMAZE.png" alt="Website Logo Rocky" height="50rem" width="50rem">
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -71,7 +73,7 @@
                     The prgoress bar is a very friendly user-friendly system to show user what their progress is without reading the numbers, because the colour changes with each field value completion.
                     The use of <code class="html-c">fieldset</code> and <code class="html-c">legend</code> creates logical groupings that screen readers can announce, helping users understand the structure of the profile form.
                     The first edition of the prompt system used to look very different and had a very non-user-friendly system of working. The current one I have impletement was inspired by the one we have in our VLE Blackboard. As you click on the <code class="html-c">button</code> that says <code>Enter Here</code>, it prompts user what they want to enter there. If it already has a value, clicking on it again asks the user to change it. If the user inputs anything invalid or empty value, it skips it while also not updating the progress.
-                    Users will also be able to see if they are on the buttons with the <code class="css-c">:hover</code> pseudoclass with a colour change and a little scaling effect.
+                    Users will also be able to see if they are on the buttons with the <code class="css-c">:hover</code> pseudo-element with a colour change and a little scaling effect.
                     Each prompts for getting value are also clearly displayed.
                 </p>
 
@@ -101,10 +103,10 @@
 
                 <h3>Accessibility</h3>
                 <p>
-                    In the nodes, added the <code class="html-c">tabindex="0"</code> attribute to make everything keyboard-focusable. I also have added the <code class="css-c">:hover</code> and <code class="css-c">:focus</code> pseudoclass on some classes so that it changes to show user they have a cursor on it or have selected something. Everything is responsive in the Sitemap.
+                    In the nodes, added the <code class="html-c">tabindex="0"</code> attribute to make everything keyboard-focusable. I also have added the <code class="css-c">:hover</code> and <code class="css-c">:focus</code> pseudo-element on some classes so that it changes to show user they have a cursor on it or have selected something. Everything is responsive in the Sitemap.
                     I have also added a legend below the SVG which shows what colour nodes lead to what kind of pages.
                     Each <code class="html-c">&lt;a&gt;</code> tag also contains descriptive text content, ensuring screen readers can announce the destination of each link. 
-                    There also is another <code class="css-c">:focus</code> pseudoclass on the <code class="css-c">.node-rect</code> so the user knows which one they selected. 
+                    There also is another <code class="css-c">:focus</code> pseudo-element on the <code class="css-c">.node-rect</code> so the user knows which one they selected. 
                     Since the sitemap is active in the sitemap itself, the colour for the <code class="css-c">#sitemap-node</code> is different compared to others.
                 </p>
 
@@ -289,12 +291,11 @@
 
     <footer>
         <div class="foot-container">
-            <h4>&copy; AMAZE</h4>
+            <h2>&copy; AMAZE</h2>
             <ul class="foot-link">
                 <li><a href="pageEditor_ST4.html" class="footer-link"> Page Editor</a></li>
                 <li><a href="validation_ST4.html" class="footer-link">Validation</a></li>
             </ul>
-    
         </div>
     </footer>
 

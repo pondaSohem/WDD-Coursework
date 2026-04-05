@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coursework - ST3 Content Page</title>
+    <link rel="stylesheet" href="../GlobalTemplate/template.css">
 </head>
 <body>
         <header>
@@ -14,17 +15,121 @@
                 <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
-                <li><a href="profile.html">User Profile</a></li>
+                <li><a href="../StudentFour/profile.html">User Profile</a></li>
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
-                <li class="active"><a href="#">Sitemap</a></li>
+                <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
     
                 <!-- LOGO -->
                 <div class="logo-img">
-                    <img src="../assets/MUULA.png" height="50px" width="50px">
+                    <img src="../assets/AMAZE.png" height="50px" width="50px">
                 </div>
             </ul>
         </nav>
     </header>
+
+  <main>
+
+    <!-- HEAD CARD -->
+    <div class="head-card" id="overview">
+      <h1>SDG 4: Target 4.1</h1>
+      <p><strong>Ensuring inclusive and equitable quality education for all</strong></p>
+    </div>
+
+    <!-- OVERVIEW SECTION -->
+    <div class="container" id="overview">
+      <img src="../assets/childrenInClass.jpg" alt="Children in a classroom" style="width:100%; border-radius:8px; margin-bottom:15px; object-fit:cover; max-height:300px;">
+      <h2>What is Target 4.1?</h2>
+      <p>
+        Target 4.1 is part of the United Nations' Sustainable Development Goal 4 (Quality Education). It aims to 
+        ensure that by 2030, all girls and boys complete free, equitable, and quality primary and secondary education 
+        leading to relevant and effective learning outcomes.
+      </p>
+      <p>
+        This target goes beyond simply getting children into school. It focuses on the quality of education received, 
+        ensuring that students actually learn foundational skills such as reading and mathematics. A child who attends 
+        school but does not gain these skills is still considered to be left behind by Target 4.1.
+      </p>
+      <p>
+        Achieving this target requires addressing deep inequalities across gender, geography, disability, and socioeconomic 
+        status. Children in conflict zones, rural areas, and disadvantaged communities remain the hardest to reach, and 
+        closing these gaps is central to the mission of Target 4.1.
+      </p>
+    </div>
+
+    <!-- KEY ELEMENTS CARD -->
+    <div class="card" id="targets">
+    <img src="../assets/youngGirlStudying.jpg" 
+        alt="Young girl studying" 
+        style="width: 25%; float: left; margin-right: 15px; border-radius: 8px; margin-bottom: 15px; object-fit: cover; max-height: 200px; padding-right:20px; border-radius: 15px;">
+    <h2>Key Elements of Target 4.1</h2>
+      <p>Target 4.1 is built around several interconnected principles that together define what quality universal education looks like:</p>
+      <ul>
+        <li><strong>Free education:</strong> Primary and secondary schooling must be accessible without financial barriers for all children.</li>
+        <li><strong>Equitable access:</strong> No child should be excluded based on gender, ethnicity, disability, or economic background.</li>
+        <li><strong>Quality learning:</strong> Attendance alone is not enough; students must acquire foundational literacy and numeracy skills.</li>
+        <li><strong>Completion of full cycles:</strong> The goal covers both primary and secondary education, not just initial enrolment.</li>
+        <li><strong>Relevant outcomes:</strong> Education should prepare young people for further learning and participation in society.</li>
+      </ul>
+    </div>
+
+    <!-- CHALLENGES CARD -->
+    <div class="card" id="challenges">
+               <img src="../assets/readingBoy.jpg" 
+            alt="Boy Reading in a developing region" 
+            style="width: 40%; float: right; margin-left: 15px; border-radius: 8px; margin-bottom: 15px; object-fit: cover; max-height: 200px;">
+       <h2>Challenges to Achieving Target 4.1</h2>
+            <p>
+                Despite significant global progress over the past two decades, hundreds of millions of children still lack access to quality education. The COVID-19 pandemic caused major disruptions, with school closures affecting over 1.6 billion learners worldwide and reversing years of gains in literacy and numeracy.
+        </p>
+      <p>
+        Children in sub-Saharan Africa and South Asia face the greatest barriers, including teacher shortages, inadequate school infrastructure, and poverty that forces children into work instead of education. Girls in particular continue to face cultural and social obstacles that limit their access to secondary schooling.
+      </p>
+    </div>
+
+    <!-- PROGRESS SECTION -->
+    <div class="container" id="progress">
+        <img src="../assets/studentWithTeacher.jpg" 
+                alt="A teacher with students" 
+                style="width: 30%; float: left; margin-right: 15px; border-radius: 8px; margin-bottom: 15px; object-fit: cover; max-height: 200px;">   
+     <h2>Progress and the Road Ahead</h2>
+      <p>
+        The international community has made commitments through funding bodies such as the Global Partnership for Education (GPE) to support low-income countries in building stronger education systems. Measuring progress towards Target 4.1 relies on indicators such as minimum proficiency levels in reading and mathematics at the end of primary and lower secondary school.
+      </p>
+      <p>
+        As the 2030 deadline approaches, accelerated action is needed. Governments, NGOs, and communities must work together to ensure no child is left without the foundational education they need to thrive.
+      </p>
+    </div>
+
+  </main>
+
+<footer>
+    <div class="foot-container">
+        <h4>&copy; AMAZE</h4>
+        <ul class="foot-link">
+            <li><a href="pageEditor_ST3.html#feedback">Page Editor</a></li>
+            <li><a href="pageEditor_ST3.html#validation">Validation</a></li>
+        </ul>
+    </div>
+</footer>
+
+      <div class="back-top">
+        <a href="#" class="top-btn" id="top-btn">⬆</a>
+    </div>
+    <script>
+        const topButton = document.getElementById("top-btn");
+        topButton.addEventListener('mouseenter', () => {
+            topButton.innerHTML = "⬆ Back To Top";
+            topButton.style.backgroundColor = "#1abc9c";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.style.widows = "auto";
+        })
+        topButton.addEventListener('mouseleave', () => {
+            topButton.innerHTML = "⬆";
+            topButton.style.backgroundColor = "#2c3e50";
+            topButton.style.padding = "12px 18px"; // Consistent Padding;
+        })
+    </script>
+
 </body>
 </html>

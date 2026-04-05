@@ -66,27 +66,6 @@ aside li{
     margin-top: 70px;
 }
 
-.top {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-}
-        
-.top a {
-    padding: 10px 20px; /* Adds padding for button-like feel */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    text-decoration: none; /* Removes underline */
-    border-radius: 20px; /* Rounds the corners */
-    font-size: 12px; /* Adjust font size */
-    font-weight: bold; /* Make the text stand out */
-}
-
-.top a:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-}
-
 img{
     width: 90%;
 }
@@ -104,4 +83,23 @@ th, td{
 thead{
     background-color: #333;
     color: azure;
+}
+
+code {
+    background-color: hsl(0, 0%, 80%);
+    border-radius: 5px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.html-c {
+    color: chocolate;
+}
+
+.css-c {
+    color: steelblue;
+}
+
+.js-c {
+    color: goldenrod;
 }

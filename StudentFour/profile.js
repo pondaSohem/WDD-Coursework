@@ -104,7 +104,6 @@ function isValidUsername(username) {
                 continue;
         }
     }
-
     return Object.values(checks).every(value => value === true) ? true : false;
 }
 
@@ -136,10 +135,5 @@ function enterValue(field) {
         alert("Keeping original value!");
     } else {
         showSkipMessage();
-    }
-
-    if (field === "username") {
-        console.log(isValidUsername(value));
-    }   
+    } 
 }
-

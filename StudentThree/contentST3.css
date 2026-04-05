@@ -90,3 +90,30 @@
     font-size: 12px;
     line-height: 20px;
 }
+
+.internal-nav {
+    position: sticky;
+    top: 70px; /* sits just under fixed header */
+    background-color: #08142b;
+    padding: 10px;
+    z-index: 999;
+    display: flex;
+    overflow-x: auto;
+}
+
+.internal-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.internal-nav a:hover {
+    color: #1abc9c;
+}
+
+/* Prevent anchor overlap from fixed header */
+[id] {
+    scroll-margin-top: 110px;
+}

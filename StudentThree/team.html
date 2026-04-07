@@ -2,28 +2,41 @@
 <html lang="en">
 
 <head>
+    <!-- METADATA AND PAGE SETUP BLOCK -->
+    <!-- This block defines the character encoding, responsive viewport settings, 
+         page title, and links to external CSS stylesheets. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coursework - Team Page</title>
+    <!-- GlobalTemplate/template.css: Likely contains shared styles across all pages (header, footer, fonts, etc.) -->
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
+    <!-- teamPage.css: Specific styles for the team gallery and card layout -->
     <link rel="stylesheet" href="teamPage.css">
+    <!-- feedback.css: Included possibly for consistency or minor shared components, even on team page -->
     <link rel="stylesheet" href="feedback.css">
 </head>
 
 <body>
 
+    <!-- HEADER AND NAVIGATION BLOCK -->
+    <!-- This section contains the main navigation menu for the entire website.
+         It allows users to jump between different student pages and sections. -->
     <header>
         <nav>
             <ul class="nav-menu">
+                <!-- Each list item is a link to a different page created by team members -->
                 <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
                 <li><a href="../StudentFour/profile.html">User Profile</a></li>
                 <li><a href="../StudentThree/feedback.html"> Feedback</a></li>
+                <!-- 'active' class highlights the current page in the navigation bar -->
                 <li class="active"><a href="../StudentThree/team.html">Team Page</a></li>
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
-                <!-- LOGO -->
+                <!-- LOGO ITEM BLOCK -->
+                <!-- Displays the project logo as part of the navigation bar.
+                     The logo is likely a clickable image, though wrapped in a non-link li here. -->
                 <li class="logo-item"> 
                     <div class="logo-img">
                         <img src="../assets/AMAZE.png" height="50" width="50" alt="logo">
@@ -35,22 +48,35 @@
 
 
 <main>
+    <!-- MAIN CONTENT BLOCK -->
+    <!-- The primary content area of the team page starts here -->
     
+    <!-- HERO SECTION BLOCK -->
+    <!-- A visually prominent header area that introduces the page purpose. -->
     <div class="hero">
         <h1>Team Page</h1>
         <p>Get to know about the team members (us) behind our project.</p>
     </div>
 
+    <!-- TEAM GALLERY / CARDS CONTAINER BLOCK -->
+    <!-- This block holds all team member profile cards arranged in a gallery layout.
+         Each card is an interactive link that reveals more information on hover/click. -->
     <div class="team-gallery">
 
-        <!-- CARD 1 -->
+        <!-- CARD 1: STUDENT 1 (SULAV) BLOCK -->
+        <!-- Wrapping anchor tag makes the whole card clickable, but href="#" prevents actual navigation.
+             In a real scenario, this could link to individual profile pages. -->
         <a href="#" class="image-card">
+            <!-- Image wrapper with overlay text -->
             <div class="image-card__img-wrap">
+                <!-- Team member photo -->
                 <img src="../assets/Safal.jpeg" alt="Sulav Maharjan">
+                <!-- Overlay text that appears on top of the image (name display) -->
                 <div class="overlay-text left-align">
                     <div class="image-card__name">SULAV</div>
                 </div>
             </div>
+            <!-- Info card: Detailed information that appears when interacting with the card -->
             <div class="info-card">
                 <p><strong>Sulav Maharjan</strong></p>
                 <p><strong>Role:</strong> Student 1</p>
@@ -65,7 +91,8 @@
             </div>
         </a>
 
-        <!-- CARD 2 -->
+        <!-- CARD 2: STUDENT 2 (YUGESH) BLOCK -->
+        <!-- Similar structure as Card 1, with different content for second team member -->
         <a href="#" class="image-card">
             <div class="image-card__img-wrap">
                 <img src="../assets/Gesh.jpeg" alt="Yugesh Maharjan">
@@ -86,7 +113,8 @@
             </div>
         </a>
 
-        <!-- CARD 3 -->
+        <!-- CARD 3: STUDENT 3 (SHREEJAL) BLOCK -->
+        <!-- This card represents the developer of this team page itself -->
         <a href="#" class="image-card">
             <div class="image-card__img-wrap">
                 <img src="../assets/Water.jpeg" alt="Shreejal Manandhar">
@@ -108,7 +136,8 @@
             </div>
         </a>
 
-        <!-- CARD 4 -->
+        <!-- CARD 4: STUDENT 4 (SOHEM) BLOCK -->
+        <!-- Last team member card with details about sitemap and GitHub management -->
         <a href="#" class="image-card">
             <div class="image-card__img-wrap">
                 <img src="../assets/PandaTeam.jpeg" alt="Sohem Rai">
@@ -133,13 +162,17 @@
     </div>
 </main>
 
+<!-- FOOTER BLOCK -->
+<!-- Contains copyright information, collaborator details, and quick links for page editors/validation -->
 <footer>
     <div class="foot-container">
+        <!-- Left footer section: Branding and tagline -->
         <div class="foot-section">
             <h2>&copy; AMAZE</h2>
             <p class="foot-tagline">Building a better future through quality education</p>
         </div>
         
+        <!-- Middle footer section: List of team members with their student IDs -->
         <div class="foot-section">
             <h2>COLLABORATORS</h2>
             <ul class="college-id-list">
@@ -150,6 +183,7 @@
             </ul>
         </div>
         
+        <!-- Right footer section: Quick links to page editor and validation pages (specific to Student 3) -->
         <div class="foot-section">
             <h2>Quick Links</h2>
             <ul class="foot-link">
@@ -159,27 +193,42 @@
         </div>
     </div>
     
+    <!-- Footer bottom line: Reference to Sustainable Development Goal 4 -->
     <div class="foot-bottom">
         <p>Sustainable Development Goal 4 | Quality Education for All</p>
     </div>
     <br>
 </footer>
 
-        <div class="back-top">
+    <!-- BACK TO TOP BUTTON BLOCK -->
+    <!-- A floating button that appears to help users scroll back to the top of the page.
+         It includes JavaScript interactivity that changes its text and style on hover. -->
+    <div class="back-top">
         <a href="#" class="top-btn" id="top-btn">⬆</a>
     </div>
+    
+    <!-- JAVASCRIPT INTERACTION BLOCK FOR BACK-TO-TOP BUTTON -->
+    <!-- This script adds hover effects to the back-to-top button:
+         - On mouse enter: changes the button text to "⬆ Back To Top", adjusts background color and padding.
+         - On mouse leave: reverts to just the arrow symbol "⬆" and original styling.
+         Note: The actual scroll-to-top behavior is handled by the browser's default anchor link behavior (href="#"). -->
     <script>
+        // Get reference to the back-to-top button element by its ID
         const topButton = document.getElementById("top-btn");
+        
+        // Add event listener for when mouse pointer enters the button area
         topButton.addEventListener('mouseenter', () => {
-            topButton.innerHTML = "⬆ Back To Top";
-            topButton.style.backgroundColor = "#1abc9c";
-            topButton.style.padding = "12px 18px"; // Consistent Padding;
-            topButton.style.widows = "auto";
+            topButton.innerHTML = "⬆ Back To Top";    // Change text to descriptive phrase
+            topButton.style.backgroundColor = "#1abc9c"; // Change to teal/green color
+            topButton.style.padding = "12px 18px";      // Maintain consistent padding
+            topButton.style.widows = "auto";            // Fix for any widow/orphan issues (likely a typo, meant 'width')
         })
+        
+        // Add event listener for when mouse pointer leaves the button area
         topButton.addEventListener('mouseleave', () => {
-            topButton.innerHTML = "⬆";
-            topButton.style.backgroundColor = "#2c3e50";
-            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.innerHTML = "⬆";                  // Revert to simple arrow symbol
+            topButton.style.backgroundColor = "#2c3e50"; // Change back to dark blue-gray
+            topButton.style.padding = "12px 18px";       // Keep padding consistent
         })
     </script>
 </body>

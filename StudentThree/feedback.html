@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ============================================ -->
+    <!-- HEAD SECTION: METADATA AND EXTERNAL RESOURCES -->
+    <!-- ============================================ -->
+    <!-- Defines document character set as UTF-8 for proper text rendering -->
     <meta charset="UTF-8">
+    <!-- Ensures responsive design on mobile devices by setting viewport width -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coursework</title>
+    <!-- Global template styles: shared across all pages (header, footer, navigation, typography) -->
     <link rel="stylesheet" href="../GlobalTemplate/template.css">
+    <!-- Page-specific styles: feedback form layout, cards, review sections, scroll containers -->
     <link rel="stylesheet" href="feedback.css">
 </head>
+<!-- BODY STARTS WITH ANCHOR ID FOR BACK-TO-TOP FUNCTIONALITY -->
 <body id="top">
 
+    <!-- ============================================ -->
+    <!-- HEADER & NAVIGATION BLOCK                     -->
+    <!-- ============================================ -->
+    <!-- Contains the main navigation menu with links to all team member pages -->
     <header>
-        <!-- NAVIGATION -->
-         <nav>
+        <nav>
             <ul class="nav-menu">
                 <li><a href="../StudentOne/home.html">Home</a></li>
                 <li><a href="../StudentTwo/ais.html">Action Impact Simulator</a></li>
                 <li><a href="../StudentOne/gallery.html">Gallery</a></li>
                 <li><a href="../StudentFour/profile.html">User Profile</a></li>
+                <!-- 'active' class highlights the current page (Feedback) in the navigation bar -->
                 <li class="active"><a href="../StudentThree/feedback.html"> Feedback</a></li>
                 <li><a href="../StudentThree/team.html">Team Page</a></li>
                 <li><a href="../StudentFour/sitemap.html">Sitemap</a></li>
 
-                <!-- LOGO -->
-                <li class = "logo-item"> 
+                <!-- LOGO ITEM: Displays the project logo in the navigation bar -->
+                <li class="logo-item"> 
                     <div class="logo-img">
-                    <img src="../assets/AMAZE.png" height="50" width="50" alt="logo">
-                 </div>
-                 </li>
-                
+                        <img src="../assets/AMAZE.png" height="50" width="50" alt="logo">
+                    </div>
+                </li>
             </ul>
         </nav>  
     </header>
 
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT BLOCK                           -->
+    <!-- ============================================ -->
     <main>
+        <!-- HERO SECTION: Page title and introductory text -->
         <div class="hero">
             <h1>Feedback - SDG 4</h1>
             <p>Join programmes, volunteer, and help achieve quality education for all.</p>
         </div>
 
-        <!-- PROGRAMS SECTION WITH HORIZONTAL SCROLL -->
+        <!-- ============================================ -->
+        <!-- PROGRAMMES SECTION WITH HORIZONTAL SCROLL    -->
+        <!-- ============================================ -->
+        <!-- Displays a horizontally scrollable list of volunteer/education programmes -->
         <div class="section">
             <h2>PROGRAMMES & OPPORTUNITIES</h2>
             <p>Browse initiatives below. Scroll sideways to see all available options →</p>
 
+            <!-- FILTER BAR: Dropdowns for sorting and filtering (UI only, no JS filtering implemented) -->
             <div class="filter-bar">
                 <label for="sortDropdown">Sort by:</label>
                 <select id="sortDropdown" class="filter-select">
@@ -60,8 +79,9 @@
                 </select>
             </div>
 
-            <!-- horizontal scroll container -->
+            <!-- HORIZONTAL SCROLL CONTAINER: Cards that scroll sideways -->
             <div class="cards-scroll">
+                <!-- PROGRAMME CARD 1: Teach & Reach -->
                 <div class="prog-card">
                     <div class="card-thumb">
                         <img src="../assets/img1.jpg" alt="Teach & Reach programme" class="card-image">
@@ -72,6 +92,7 @@
                     <a href="#" class="btn-card">Get Involved →</a>
                 </div>
 
+                <!-- PROGRAMME CARD 2: Digital Bridges -->
                 <div class="prog-card">
                     <div class="card-thumb">
                         <img src="../assets/img2.jpg" alt="Digital Bridges programme" class="card-image">
@@ -82,6 +103,7 @@
                     <a href="#" class="btn-card">Join Campaign →</a>
                 </div>
 
+                <!-- PROGRAMME CARD 3: Scholarship Connect -->
                 <div class="prog-card">
                     <div class="card-thumb">
                         <img src="../assets/img3.jpg" alt="Scholarship Connect programme" class="card-image">
@@ -92,6 +114,7 @@
                     <a href="#" class="btn-card">Learn More →</a>
                 </div>
 
+                <!-- PROGRAMME CARD 4: Multilingual Classrooms -->
                 <div class="prog-card">
                     <div class="card-thumb">
                         <img src="../assets/img4.jpg" alt="Multilingual Classrooms programme" class="card-image">
@@ -102,6 +125,7 @@
                     <a href="#" class="btn-card">Support →</a>
                 </div>
 
+                <!-- PROGRAMME CARD 5: Girls in STEM -->
                 <div class="prog-card">
                     <div class="card-thumb">
                         <img src="../assets/img5.jpg" alt="Girls in STEM programme" class="card-image">
@@ -112,6 +136,7 @@
                     <a href="#" class="btn-card">Get Involved →</a>
                 </div>
 
+                <!-- PROGRAMME CARD 6: Open Library Network -->
                 <div class="prog-card">
                     <div class="card-thumb">
                         <img src="../assets/img6.jpg" alt="Open Library Network programme" class="card-image">
@@ -124,21 +149,29 @@
             </div>
         </div>
 
+        <!-- HORIZONTAL DIVIDER LINE -->
         <hr class="divider">
 
-        <!-- reviews section -->
+        <!-- ============================================ -->
+        <!-- RATINGS & REVIEWS SECTION                    -->
+        <!-- ============================================ -->
+        <!-- Displays aggregate rating and user testimonials -->
         <div class="section">
             <h2>RATINGS & REVIEWS</h2>
             <p>See what participants are saying about these programmes.</p>
             <div class="reviews-wrapper">
+                <!-- LEFT SIDE: Summary rating display -->
                 <div class="rating-summary">
                     <div class="big-rating">8.6</div>
                     <div>out of 10</div>
+                    <!-- Unicode stars: 4 full stars + 1 half star (⯪ represents half star) -->
                     <div class="stars">★★★★⯪</div>
                     <div>Excellent</div>
                     <div style="font-size: 12px;">Based on 342 reviews</div>
                 </div>
+                <!-- RIGHT SIDE: Individual review cards list -->
                 <div class="reviews-list">
+                    <!-- REVIEW CARD 1 -->
                     <div class="review-card">
                         <div class="review-header">
                             <h2>Truly life-changing experience</h2>
@@ -151,6 +184,7 @@
                             <span>|  3 November 2025</span>
                         </div>
                     </div>
+                    <!-- REVIEW CARD 2 -->
                     <div class="review-card">
                         <div class="review-header">
                             <h2>Scholarship Connect gave me confidence</h2>
@@ -163,6 +197,7 @@
                             <span>|  28 September 2025</span>
                         </div>
                     </div>
+                    <!-- REVIEW CARD 3 -->
                     <div class="review-card">
                         <div class="review-header">
                             <h2>Digital Bridges Filling Physical Gaps</h2>
@@ -179,45 +214,57 @@
             </div>
         </div>
 
+        <!-- HORIZONTAL DIVIDER LINE -->
         <hr class="divider">
 
-        <!-- feedback form -->
+        <!-- ============================================ -->
+        <!-- FEEDBACK FORM SECTION                        -->
+        <!-- ============================================ -->
+        <!-- Main interactive form for users to submit their feedback about programmes -->
         <div class="section">
             <div class="form-box">
                 <h2>SHARE YOUR FEEDBACK</h2>
                 <p>Tell us about your experience. <span style="color:#e11d48;">*</span> means required.</p>
 
+                <!-- FORM ELEMENT: Contains all input fields with client-side validation -->
                 <form id="feedbackForm">
+                    <!-- FIELDSET 1: Personal Details -->
                     <fieldset>
                         <legend>Personal Details</legend>
                         
+                        <!-- FULL NAME FIELD -->
                         <div class="form-group">
                             <label>Full Name <span class="required">*</span></label>
                             <input type="text" id="fullName" class="form-control" placeholder="Your full name">
                             <div id="nameError" class="error-msg">Please enter your name</div>
                         </div>
                         
+                        <!-- EMAIL FIELD -->
                         <div class="form-group">
                             <label>Email <span class="required">*</span></label>
                             <input type="email" id="email" class="form-control" placeholder="email@example.com">
                             <div id="emailError" class="error-msg">Enter a valid email</div>
                         </div>
                         
+                        <!-- PHONE FIELD (Optional but validated if filled) -->
                         <div class="form-group">
                             <label>Phone</label>
                             <input type="tel" id="phone" class="form-control" placeholder="+44 7700 900000">
                             <div id="phoneError" class="error-msg">Numbers and + only</div>
                         </div>
                         
+                        <!-- ADDRESS FIELD (Optional textarea) -->
                         <div class="form-group">
                             <label>Address</label>
                             <textarea id="address" class="form-control" rows="2" placeholder="Street, City, Postcode"></textarea>
                         </div>
                     </fieldset>
 
+                    <!-- FIELDSET 2: Feedback Details -->
                     <fieldset>
                         <legend>Feedback Details</legend>
                         
+                        <!-- PROGRAMME SELECTION DROPDOWN -->
                         <div class="form-group">
                             <label>Programme <span class="required">*</span></label>
                             <select id="programmeSelect" class="form-control">
@@ -232,6 +279,7 @@
                             <div id="progError" class="error-msg">Select a programme</div>
                         </div>
                         
+                        <!-- RATING SELECTION DROPDOWN -->
                         <div class="form-group">
                             <label>Rating <span class="required">*</span></label>
                             <select id="ratingSelect" class="form-control">
@@ -246,17 +294,20 @@
                             <div id="ratingError" class="error-msg">Select a rating</div>
                         </div>
                         
+                        <!-- DATE OF PARTICIPATION (Required) -->
                         <div class="form-group">
                             <label>Date of Participation <span class="required">*</span></label>
                             <input type="date" id="participationDate" class="form-control">
                             <div id="dateError" class="error-msg">Select a date</div>
                         </div>
                         
+                        <!-- SUBMISSION TIMESTAMP (Auto-filled, editable) -->
                         <div class="form-group">
                             <label>Submission Timestamp</label>
                             <input type="datetime-local" id="submissionTime" class="form-control">
                         </div>
                         
+                        <!-- AREAS OF INTEREST: Multi-select list (Ctrl+Click for multiple) -->
                         <div class="form-group">
                             <label>Areas of Interest (Ctrl+Click to select multiple)</label>
                             <select id="interests" class="form-control" multiple size="5">
@@ -271,6 +322,7 @@
                             <small style="color: #666; font-size: 11px; display: block; margin-top: 4px;">Hold Ctrl (Windows) or Cmd (Mac) to select multiple options</small>
                         </div>
                         
+                        <!-- COUNTRY FIELD with datalist autocomplete suggestions -->
                         <div class="form-group">
                             <label>Country</label>
                             <input type="text" id="country" list="countryList" class="form-control" placeholder="Start typing...">
@@ -286,87 +338,120 @@
                             </datalist>
                         </div>
                         
+                        <!-- REVIEW MESSAGE TEXTAREA with character limit (max 500) -->
                         <div class="form-group">
                             <label>Your Review <span class="required">*</span></label>
                             <textarea id="reviewMessage" class="form-control" rows="4" maxlength="500" placeholder="Share your experience..."></textarea>
+                            <!-- Character counter display (updates in real-time via JS) -->
                             <div id="charCounter" class="char-count">500 characters left</div>
                             <div id="messageError" class="error-msg">Please write at least 20 characters</div>
                         </div>
                     </fieldset>
 
+                    <!-- FORM BUTTONS AND SUCCESS MESSAGE -->
                     <div class="form-actions">
                         <button type="button" id="clearBtn" class="btn-secondary">Clear</button>
                         <button type="submit" class="btn-primary">Submit</button>
                     </div>
+                    <!-- Success message (hidden by default, shown on successful submission) -->
                     <div id="successMsg" class="confirmation-msg">Thanks for your feedback!</div>
                 </form>
             </div>
         </div>
     </main>
 
-    <!-- footer -->
-<footer>
-    <div class="foot-container">
-        <div class="foot-section">
-            <h2>&copy; AMAZE</h2>
-            <p class="foot-tagline">Building a better future through quality education</p>
+    <!-- ============================================ -->
+    <!-- FOOTER BLOCK                                  -->
+    <!-- ============================================ -->
+    <footer>
+        <div class="foot-container">
+            <!-- Left: Copyright and tagline -->
+            <div class="foot-section">
+                <h2>&copy; AMAZE</h2>
+                <p class="foot-tagline">Building a better future through quality education</p>
+            </div>
+            
+            <!-- Middle: Team member names with student IDs -->
+            <div class="foot-section">
+                <h2>COLLABORATORS</h2>
+                <ul class="college-id-list">
+                    <li><span>Sulav Maharjan</span> <span>w2124044</span></li>
+                    <li><span>Yugesh Maharjan</span> <span>w2121990</span></li>
+                    <li><span>Shreejal Manandhar</span> <span>w2122052</span></li>
+                    <li><span>Sohem Rai</span> <span>w2124053</span></li>
+                </ul>
+            </div>
+            
+            <!-- Right: Quick links to page editor and validation pages -->
+            <div class="foot-section">
+                <h2>Quick Links</h2>
+                <ul class="foot-link">
+                    <li><a href="pageEditor_ST3.html#feedback">Page Editor</a></li>
+                    <li><a href="validation_ST3.html#feedback">Validation</a></li>
+                </ul>
+            </div>
         </div>
         
-        <div class="foot-section">
-            <h2>COLLABORATORS</h2>
-            <ul class="college-id-list">
-                <li><span>Sulav Maharjan</span> <span>w2124044</span></li>
-                <li><span>Yugesh Maharjan</span> <span>w2121990</span></li>
-                <li><span>Shreejal Manandhar</span> <span>w2122052</span></li>
-                <li><span>Sohem Rai</span> <span>w2124053</span></li>
-            </ul>
+        <!-- Footer bottom: SDG reference -->
+        <div class="foot-bottom">
+            <p>Sustainable Development Goal 4 | Quality Education for All</p>
         </div>
-        
-        <div class="foot-section">
-            <h2>Quick Links</h2>
-            <ul class="foot-link">
-                <li><a href="pageEditor_ST3.html#feedback">Page Editor</a></li>
-                <li><a href="validation_ST3.html#feedback">Validation</a></li>
-            </ul>
-        </div>
-    </div>
-    
-    <div class="foot-bottom">
-        <p>Sustainable Development Goal 4 | Quality Education for All</p>
-    </div>
-    <br>
-</footer>
+        <br>
+    </footer>
 
-        <div class="back-top">
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                            -->
+    <!-- ============================================ -->
+    <!-- Floating button that appears to help users scroll back to top -->
+    <div class="back-top">
         <a href="#" class="top-btn" id="top-btn">⬆</a>
     </div>
 
+    <!-- ============================================ -->
+    <!-- FIRST JAVASCRIPT BLOCK: BACK-TO-TOP HOVER    -->
+    <!-- ============================================ -->
+    <!-- Changes button text and styling on mouse hover -->
     <script>
+        // Get reference to the back-to-top button element
         const topButton = document.getElementById("top-btn");
+        
+        // MOUSE ENTER EVENT: Expands button text to "⬆ Back To Top"
         topButton.addEventListener('mouseenter', () => {
-            topButton.innerHTML = "⬆ Back To Top";
-            topButton.style.backgroundColor = "#1abc9c";
-            topButton.style.padding = "12px 18px"; // Consistent Padding;
-            topButton.style.widows = "auto";
+            topButton.innerHTML = "⬆ Back To Top";      // Change from arrow to descriptive text
+            topButton.style.backgroundColor = "#1abc9c"; // Teal color on hover
+            topButton.style.padding = "12px 18px";       // Maintain consistent padding
+            topButton.style.widows = "auto";             // (Note: likely a typo, meant 'width')
         })
+        
+        // MOUSE LEAVE EVENT: Reverts to original arrow symbol
         topButton.addEventListener('mouseleave', () => {
-            topButton.innerHTML = "⬆";
-            topButton.style.backgroundColor = "#2c3e50";
-            topButton.style.padding = "12px 18px"; // Consistent Padding;
+            topButton.innerHTML = "⬆";                   // Back to simple arrow
+            topButton.style.backgroundColor = "#2c3e50"; // Dark blue-gray original color
+            topButton.style.padding = "12px 18px";       // Keep padding consistent
         })
     </script>
 
+    <!-- ============================================ -->
+    <!-- SECOND JAVASCRIPT BLOCK: FORM VALIDATION &   -->
+    <!-- INTERACTIVE FEATURES                         -->
+    <!-- ============================================ -->
     <script>
-        // Scripts Using Javascript
-        
-        // Character counter for messagebox
+        // ============================================
+        // FEATURE 1: CHARACTER COUNTER FOR REVIEW TEXTAREA
+        // ============================================
+        // This creates a live character counter that updates as the user types.
+        // Maximum allowed characters is 500 (enforced by HTML maxlength attribute).
         let msgBox = document.getElementById('reviewMessage');
         let counter = document.getElementById('charCounter');
         
         if (msgBox) {
+            // 'oninput' event fires every time the user types, pastes, or deletes content
             msgBox.oninput = function() {
-                let left = 500 - this.value.length;
+                let left = 500 - this.value.length;  // Calculate remaining characters
                 counter.innerHTML = left + ' characters left';
+                
+                // Visual warning: turn counter red when less than 20 characters remain
+                // (since validation requires at least 20 characters)
                 if (left < 20) {
                     counter.style.color = 'red';
                 } else {
@@ -375,14 +460,17 @@
             }
         }
         
-        // form validation and submission
+        // ============================================
+        // FEATURE 2: FORM SUBMISSION WITH COMPREHENSIVE VALIDATION
+        // ============================================
         let form = document.getElementById('feedbackForm');
         
         if (form) {
+            // Intercept form submission event to perform client-side validation
             form.onsubmit = function(e) {
-                e.preventDefault();
+                e.preventDefault();  // PREVENT DEFAULT: Stops page reload on form submit
                 
-                // get values
+                // ---------- GET ALL FIELD VALUES (trimmed where applicable) ----------
                 let name = document.getElementById('fullName').value.trim();
                 let email = document.getElementById('email').value.trim();
                 let phone = document.getElementById('phone').value.trim();
@@ -391,7 +479,7 @@
                 let date = document.getElementById('participationDate').value;
                 let message = document.getElementById('reviewMessage').value.trim();
                 
-                // hide all errors first
+                // ---------- HIDE ALL PREVIOUS ERROR MESSAGES ----------
                 document.getElementById('nameError').classList.remove('show');
                 document.getElementById('emailError').classList.remove('show');
                 document.getElementById('phoneError').classList.remove('show');
@@ -400,7 +488,7 @@
                 document.getElementById('dateError').classList.remove('show');
                 document.getElementById('messageError').classList.remove('show');
                 
-                // remove red borders
+                // ---------- REMOVE RED BORDERS FROM ALL FORM FIELDS ----------
                 let inputs = document.querySelectorAll('.form-control');
                 for (let i = 0; i < inputs.length; i++) {
                     inputs[i].classList.remove('error-field');
@@ -408,23 +496,28 @@
                 
                 let isValid = true;
                 
-                // check name
+                // ---------- VALIDATION RULE 1: FULL NAME (Required, cannot be empty) ----------
                 if (name == "") {
                     document.getElementById('nameError').classList.add('show');
                     document.getElementById('fullName').classList.add('error-field');
                     isValid = false;
                 }
                 
-                // check email (must have @ and .)
+                // ---------- VALIDATION RULE 2: EMAIL (Required, must contain '@' and '.') ----------
+                // Basic email format validation: checks for presence of @ symbol and a dot after it
                 if (email == "" || !email.includes('@') || !email.includes('.')) {
                     document.getElementById('emailError').classList.add('show');
                     document.getElementById('email').classList.add('error-field');
                     isValid = false;
                 }
                 
-                // check phone if filled (basic check)
+                // ---------- VALIDATION RULE 3: PHONE (Optional but validated if provided) ----------
+                // If phone field is not empty, validate that it contains only:
+                // - digits (0-9), plus sign (+), hyphens (-), spaces, parentheses
+                // Also requires minimum length of 7 characters
                 if (phone != "") {
                     let badChars = false;
+                    // Loop through each character and check if it's allowed
                     for (let i = 0; i < phone.length; i++) {
                         let char = phone[i];
                         if (!(char >= '0' && char <= '9') && char != '+' && char != '-' && char != ' ' && char != '(' && char != ')') {
@@ -439,64 +532,65 @@
                     }
                 }
                 
-                // check programme
+                // ---------- VALIDATION RULE 4: PROGRAMME (Required, cannot be empty/default) ----------
                 if (programme == "") {
                     document.getElementById('progError').classList.add('show');
                     document.getElementById('programmeSelect').classList.add('error-field');
                     isValid = false;
                 }
                 
-                // check rating
+                // ---------- VALIDATION RULE 5: RATING (Required, cannot be empty/default) ----------
                 if (rating == "") {
                     document.getElementById('ratingError').classList.add('show');
                     document.getElementById('ratingSelect').classList.add('error-field');
                     isValid = false;
                 }
                 
-                // check date
+                // ---------- VALIDATION RULE 6: PARTICIPATION DATE (Required) ----------
                 if (date == "") {
                     document.getElementById('dateError').classList.add('show');
                     document.getElementById('participationDate').classList.add('error-field');
                     isValid = false;
                 }
                 
-                // check message (at least 20 chars)
+                // ---------- VALIDATION RULE 7: REVIEW MESSAGE (Required, minimum 20 characters) ----------
+                // Ensures user provides substantive feedback, not just "ok" or "good"
                 if (message.length < 20) {
                     document.getElementById('messageError').classList.add('show');
                     document.getElementById('reviewMessage').classList.add('error-field');
                     isValid = false;
                 }
                 
-                // if valid, show confirmation and reset
+                // ---------- IF ALL VALIDATIONS PASS ----------
                 if (isValid) {
                     let success = document.getElementById('successMsg');
-                    success.classList.add('show');
+                    success.classList.add('show');  // Display success message
                     
-                    // reset form
-                    form.reset();
+                    form.reset();  // Clear all form fields
                     
-                    // reset character counter
+                    // Reset character counter display
                     if (counter) {
                         counter.innerHTML = '500 characters left';
                         counter.style.color = '#666';
                     }
                     
-                    // set current time in datetime field
+                    // Auto-fill submission timestamp with current date and time
                     let dtField = document.getElementById('submissionTime');
                     if (dtField) {
                         let now = new Date();
                         let year = now.getFullYear();
-                        let month = String(now.getMonth() + 1).padStart(2, '0');
+                        let month = String(now.getMonth() + 1).padStart(2, '0');  // Months are 0-indexed
                         let day = String(now.getDate()).padStart(2, '0');
                         let hours = String(now.getHours()).padStart(2, '0');
                         let minutes = String(now.getMinutes()).padStart(2, '0');
+                        // Format: YYYY-MM-DDTHH:MM (datetime-local input format)
                         dtField.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
                     }
                     
-                    // scroll to message
+                    // Smooth scroll to success message so user sees confirmation
                     success.scrollIntoView({ behavior: 'smooth' });
                     
-                    // hide after 4 seconds
+                    // Auto-hide success message after 4 seconds (4000 milliseconds)
                     setTimeout(function() {
                         success.classList.remove('show');
                     }, 4000);
@@ -504,30 +598,35 @@
             }
         }
         
-        // clear button
+        // ============================================
+        // FEATURE 3: CLEAR BUTTON FUNCTIONALITY
+        // ============================================
+        // Resets the entire form, clears all error messages and styling,
+        // and re-populates the timestamp field with current time.
         let clearBtn = document.getElementById('clearBtn');
         if (clearBtn) {
             clearBtn.onclick = function() {
-                form.reset();
+                form.reset();  // Reset all form fields to their default values
                 
-                // remove all errors
+                // Remove all visible error messages
                 let errors = document.querySelectorAll('.error-msg');
                 for (let i = 0; i < errors.length; i++) {
                     errors[i].classList.remove('show');
                 }
                 
+                // Remove red border styling from all fields
                 let redInputs = document.querySelectorAll('.error-field');
                 for (let i = 0; i < redInputs.length; i++) {
                     redInputs[i].classList.remove('error-field');
                 }
                 
-                // reset counter
+                // Reset character counter display
                 if (counter) {
                     counter.innerHTML = '500 characters left';
                     counter.style.color = '#666';
                 }
                 
-                // set current time
+                // Re-populate the submission timestamp with current time
                 let dtField = document.getElementById('submissionTime');
                 if (dtField) {
                     let now = new Date();
@@ -539,7 +638,7 @@
                     dtField.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
                 }
                 
-                // hide success if visible
+                // Hide success message if it was visible
                 let successMsg = document.getElementById('successMsg');
                 if (successMsg) {
                     successMsg.classList.remove('show');
@@ -547,7 +646,11 @@
             }
         }
         
-        // set current time in datetime field on page load
+        // ============================================
+        // FEATURE 4: PAGE LOAD INITIALIZATION
+        // ============================================
+        // Automatically populates the submission timestamp field
+        // with the current date and time when the page first loads.
         let dtField = document.getElementById('submissionTime');
         if (dtField) {
             let now = new Date();
@@ -559,12 +662,15 @@
             dtField.value = year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
         }
         
-        // simple back to top
+        // ============================================
+        // FEATURE 5: BACK-TO-TOP SCROLL FUNCTIONALITY
+        // ============================================
+        // Overrides the default anchor link behavior to provide smooth scrolling to top.
         let topLink = document.querySelector('.top-btn');
         if (topLink) {
             topLink.onclick = function(e) {
-                e.preventDefault();
-                window.scrollTo(0, 0);
+                e.preventDefault();        // Prevent default anchor behavior (# jumping)
+                window.scrollTo(0, 0);     // Scroll to top-left corner of page
             }
         }
     </script>

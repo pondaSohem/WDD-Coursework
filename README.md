@@ -165,7 +165,7 @@ Everyone has written their references in their respective pageEditor_STX.html's 
 |-------|-------|--------|
 | Student 1 |	Template & Home Page | @Kija-hub |
 | Student 2	| Splash & AIS |	@yugeshraj11-dot |
-| Student 3	| Feedback & Team |	@KI-wont-be-employed-because-of-AI |
+| Student 3	| Feedback & Team |	@I-wont-be-employed-because-of-AI |
 | Student 4 |	Profile, Sitemap & Content | @pondaSohem |
 
 
